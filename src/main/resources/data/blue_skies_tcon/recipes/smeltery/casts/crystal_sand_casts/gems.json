@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "item": "blue_skies_tcon:blank_crystal_sand_cast"
+  },
+  "pattern": {
+    "tag": "forge:gems"
+  },
+  "result": "blue_skies_tcon:gem_crystal_sand_cast"
+}

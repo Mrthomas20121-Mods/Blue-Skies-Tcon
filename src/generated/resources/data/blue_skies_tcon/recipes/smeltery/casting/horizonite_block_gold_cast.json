@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "fluid": {
+    "tag": "blue_skies_tcon:molten_horizonite",
+    "amount": 144
+  },
+  "result": "blue_skies:horizonite_ingot",
+  "cooling_time": 57
+}

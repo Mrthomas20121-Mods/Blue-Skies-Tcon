@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "blue_skies_tcon:block/fluid/molten_pyrope_still"
+  }
+}

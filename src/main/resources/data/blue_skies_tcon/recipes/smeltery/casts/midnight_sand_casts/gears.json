@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:molding_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "material": {
+    "item": "blue_skies_tcon:blank_midnight_sand_cast"
+  },
+  "pattern": {
+    "tag": "forge:gears"
+  },
+  "result": "blue_skies_tcon:gear_midnight_sand_cast"
+}

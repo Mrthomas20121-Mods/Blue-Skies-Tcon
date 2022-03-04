@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:sheetmetals/aquite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:sheetmetals/aquite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_aquite",
+    "amount": 144
+  },
+  "temperature": 500,
+  "time": 50
+}

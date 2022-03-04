@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gem"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "blue_skies_tcon:molten_pyrope",
+    "amount": 144
+  },
+  "result": "blue_skies:pyrope_gem",
+  "cooling_time": 50
+}

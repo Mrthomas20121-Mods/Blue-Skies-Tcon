@@ -1,0 +1,53 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:gems/moonstone",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "tag": "forge:ores/pyrope"
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_pyrope",
+          "amount": 144
+        },
+        "temperature": 500,
+        "time": 75,
+        "byproducts": [
+          {
+            "fluid": "blue_skies_tcon:molten_moonstone",
+            "amount": 48
+          }
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "tag": "forge:ores/pyrope"
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_pyrope",
+          "amount": 144
+        },
+        "temperature": 500,
+        "time": 75
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/pyrope",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/pyrope"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_pyrope",
+    "amount": 48
+  },
+  "temperature": 500,
+  "time": 33
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/aquite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:wires/aquite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_aquite",
+    "amount": 72
+  },
+  "temperature": 500,
+  "time": 10
+}

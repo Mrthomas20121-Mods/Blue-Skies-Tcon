@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "blue_skies:ventium_bucket"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "name": "minecraft:water",
+    "amount": 1000
+  },
+  "result": "blue_skies:ventium_water_bucket",
+  "cooling_time": 74
+}

@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "blue_skies:ventium_bucket"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "forge:molten_falsite",
+    "amount": 1000
+  },
+  "result": "blue_skies_tcon:molten_falsite_ventium_bucket",
+  "cooling_time": 132
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/horizonite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/horizonite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_horizonite",
+    "amount": 576
+  },
+  "temperature": 700,
+  "time": 114
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "blue_skies_tcon:item/moonstone_nugget"
+  }
+}

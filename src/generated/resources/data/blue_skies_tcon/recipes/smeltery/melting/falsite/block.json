@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/falsite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_falsite",
+    "amount": 1296
+  },
+  "temperature": 500,
+  "time": 150
+}

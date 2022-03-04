@@ -1,0 +1,7 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "tag": "tconstruct:casts/midnight_sand"
+  },
+  "result": "blue_skies_tcon:blank_midnight_sand_cast"
+}

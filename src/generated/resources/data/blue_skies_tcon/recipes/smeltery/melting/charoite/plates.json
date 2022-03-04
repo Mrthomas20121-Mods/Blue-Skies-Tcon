@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:plates/charoite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/charoite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_charoite",
+    "amount": 144
+  },
+  "temperature": 700,
+  "time": 57
+}

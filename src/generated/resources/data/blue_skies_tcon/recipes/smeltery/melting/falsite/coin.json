@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/falsite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/falsite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_falsite",
+    "amount": 48
+  },
+  "temperature": 500,
+  "time": 33
+}

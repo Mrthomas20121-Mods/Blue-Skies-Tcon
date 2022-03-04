@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gem"
+  },
+  "fluid": {
+    "tag": "blue_skies_tcon:molten_diopside",
+    "amount": 144
+  },
+  "result": "blue_skies:diopside_gem",
+  "cooling_time": 57
+}

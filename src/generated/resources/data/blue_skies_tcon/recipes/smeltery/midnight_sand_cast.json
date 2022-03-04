@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blue_skies:midnight_sand"
+    }
+  ],
+  "result": {
+    "item": "blue_skies_tcon:blank_midnight_sand_cast",
+    "count": 4
+  }
+}
