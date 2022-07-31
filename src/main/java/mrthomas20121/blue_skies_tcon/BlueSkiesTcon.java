@@ -3,21 +3,17 @@ package mrthomas20121.blue_skies_tcon;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
 import mrthomas20121.blue_skies_tcon.datagen.*;
-import mrthomas20121.blue_skies_tcon.init.Modifiers;
-import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
-import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
-import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 @Mod(BlueSkiesTcon.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -28,8 +24,7 @@ public static final String MOD_ID = "blue_skies_tcon";
 
 	public BlueSkiesTcon() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		Modifiers.MODIFIERS.register(bus);
-		Fluids.register(bus);
+		Fluids.FLUIDS.register(bus);
 		BlueItems.ITEMS.register(bus);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

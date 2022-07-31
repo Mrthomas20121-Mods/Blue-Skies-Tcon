@@ -1,0 +1,88 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "registry": "minecraft:item",
+      "base": "forge:ores/ventium",
+      "subtracted": [
+        "forge:ore_rates/sparse",
+        "forge:ore_rates/dense"
+      ],
+      "type": "tconstruct:tag_difference_present"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/moonstone",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "metal",
+        "ingredient": {
+          "type": "forge:difference",
+          "base": {
+            "tag": "forge:ores/ventium"
+          },
+          "subtracted": [
+            {
+              "tag": "forge:ore_rates/sparse"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_ventium",
+          "amount": 180
+        },
+        "temperature": 500,
+        "time": 125,
+        "byproducts": [
+          {
+            "fluid": "blue_skies_tcon:molten_moonstone",
+            "amount": 60
+          }
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "metal",
+        "ingredient": {
+          "type": "forge:difference",
+          "base": {
+            "tag": "forge:ores/ventium"
+          },
+          "subtracted": [
+            {
+              "tag": "forge:ore_rates/sparse"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_ventium",
+          "amount": 180
+        },
+        "temperature": 500,
+        "time": 125
+      }
+    }
+  ]
+}

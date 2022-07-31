@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "blue_skies_tcon:molten_aquite",
-    "blue_skies_tcon:molten_aquite_flowing"
+    "blue_skies_tcon:molten_aquite"
   ]
 }

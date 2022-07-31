@@ -1,0 +1,55 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/moonstone",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "metal",
+        "ingredient": {
+          "tag": "forge:storage_blocks/raw_ventium"
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_ventium",
+          "amount": 810
+        },
+        "temperature": 500,
+        "time": 300,
+        "byproducts": [
+          {
+            "fluid": "blue_skies_tcon:molten_moonstone",
+            "amount": 270
+          }
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "metal",
+        "ingredient": {
+          "tag": "forge:storage_blocks/raw_ventium"
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_ventium",
+          "amount": 810
+        },
+        "temperature": 500,
+        "time": 300
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_small_buds/aquite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_small_buds/aquite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_aquite",
+    "amount": 100
+  },
+  "temperature": 500,
+  "time": 50
+}

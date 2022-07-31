@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "blue_skies_tcon:molten_charoite",
-    "blue_skies_tcon:molten_charoite_flowing"
+    "blue_skies_tcon:molten_charoite"
   ]
 }

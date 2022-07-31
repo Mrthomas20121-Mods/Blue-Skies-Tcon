@@ -6,7 +6,7 @@
   "cast_consumed": true,
   "fluid": {
     "tag": "blue_skies_tcon:molten_horizonite",
-    "amount": 144
+    "amount": 90
   },
   "result": "blue_skies:horizonite_ingot",
   "cooling_time": 57

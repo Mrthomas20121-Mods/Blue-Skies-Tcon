@@ -1,0 +1,81 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "registry": "minecraft:item",
+      "tags": [
+        "forge:ores/diopside",
+        "forge:ore_rates/dense"
+      ],
+      "type": "tconstruct:tag_intersection_present"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/moonstone",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "gem",
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/diopside"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_diopside",
+          "amount": 300
+        },
+        "temperature": 700,
+        "time": 256,
+        "byproducts": [
+          {
+            "fluid": "blue_skies_tcon:molten_moonstone",
+            "amount": 90
+          }
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "gem",
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/diopside"
+            },
+            {
+              "tag": "forge:ore_rates/dense"
+            }
+          ]
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_diopside",
+          "amount": 300
+        },
+        "temperature": 700,
+        "time": 256
+      }
+    }
+  ]
+}

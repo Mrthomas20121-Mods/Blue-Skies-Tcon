@@ -1,20 +1,18 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
-import mrthomas20121.blue_skies_tcon.init.Modifiers;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import javax.annotation.Nonnull;
 
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
+import static net.minecraft.world.item.Tiers.DIAMOND;
 
 public class BlueMaterials extends AbstractMaterialDataProvider {
 
@@ -34,11 +32,11 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(aquite, 3, ORDER_HARVEST, false, 0x93DCF9);
-        addMaterial(charoite, 3, ORDER_WEAPON, false, 0xB587D6);
-        addMaterial(diopside, 3, ORDER_WEAPON, false, 0x00DC19);
-        addMaterial(horizonite, 3, ORDER_WEAPON, false, 0xFF8F84);
-        addMaterial(pyrope, 3, ORDER_GENERAL, false, 0xFCAB39);
+        addMaterial(aquite, 3, ORDER_HARVEST, false);
+        addMaterial(charoite, 3, ORDER_WEAPON, false);
+        addMaterial(diopside, 3, ORDER_WEAPON, false);
+        addMaterial(horizonite, 3, ORDER_WEAPON, false);
+        addMaterial(pyrope, 3, ORDER_GENERAL, false);
     }
 
     @Nonnull
@@ -55,11 +53,11 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialTraits() {
-            addDefaultTraits(aquite, Modifiers.chemical_bonds.get());
-            addDefaultTraits(charoite, TinkerModifiers.fractured.get());
-            addDefaultTraits(diopside, TinkerModifiers.gilded.get());
-            addDefaultTraits(horizonite, TinkerModifiers.autosmelt.get(), TinkerModifiers.fiery.get());
-            addDefaultTraits(pyrope, Modifiers.chemical_bonds.get());
+//            addDefaultTraits(aquite, Modifiers.chemical_bonds.get());
+//            addDefaultTraits(charoite, TinkerModifiers.fractured.get());
+//            addDefaultTraits(diopside, TinkerModifiers.gilded.get());
+//            addDefaultTraits(horizonite, TinkerModifiers.autosmelt.get(), TinkerModifiers.fiery.get());
+//            addDefaultTraits(pyrope, Modifiers.chemical_bonds.get());
         }
 
         @Nonnull

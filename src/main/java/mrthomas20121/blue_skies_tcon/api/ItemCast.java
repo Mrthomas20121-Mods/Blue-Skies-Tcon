@@ -1,8 +1,8 @@
 package mrthomas20121.blue_skies_tcon.api;
 
 import com.google.common.collect.Lists;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;

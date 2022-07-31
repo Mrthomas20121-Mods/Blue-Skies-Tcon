@@ -6,8 +6,8 @@
   "cast_consumed": true,
   "fluid": {
     "tag": "blue_skies_tcon:molten_pyrope",
-    "amount": 144
+    "amount": 100
   },
   "result": "blue_skies:pyrope_gem",
-  "cooling_time": 50
+  "cooling_time": 53
 }

@@ -3,7 +3,7 @@
   "switch_slots": true,
   "fluid": {
     "tag": "forge:molten_ventium",
-    "amount": 1296
+    "amount": 810
   },
   "result": "blue_skies:ventium_block",
   "cooling_time": 150

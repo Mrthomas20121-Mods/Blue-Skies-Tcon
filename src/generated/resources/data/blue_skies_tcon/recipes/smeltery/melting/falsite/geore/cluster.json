@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_clusters/falsite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_clusters/falsite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_falsite",
+    "amount": 360
+  },
+  "temperature": 500,
+  "time": 125
+}

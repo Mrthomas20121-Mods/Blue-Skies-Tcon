@@ -2,34 +2,39 @@ package mrthomas20121.blue_skies_tcon.datagen;
 
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import net.minecraft.block.Block;
-import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ITag;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
 
 public class BlueBlockTags extends BlockTagsProvider {
 
-    public static final ITag.INamedTag<Block> AQUITE_BLOCK = BlockTags.bind("forge:storage_blocks/aquite");
-    public static final ITag.INamedTag<Block> CHAROITE_BLOCK = BlockTags.bind("forge:storage_blocks/charoite");
-    public static final ITag.INamedTag<Block> DIOPSIDE_BLOCK = BlockTags.bind("forge:storage_blocks/diopside");
-    public static final ITag.INamedTag<Block> HORIZONITE_BLOCK = BlockTags.bind("forge:storage_blocks/horizonite");
-    public static final ITag.INamedTag<Block> FALSITE_BLOCK = BlockTags.bind("forge:storage_blocks/falsite");
-    public static final ITag.INamedTag<Block> VENTIUM_BLOCK = BlockTags.bind("forge:storage_blocks/ventium");
-    public static final ITag.INamedTag<Block> MOONSTONE_BLOCK = BlockTags.bind("forge:storage_blocks/moonstone");
-    public static final ITag.INamedTag<Block> PYROPE_BLOCK = BlockTags.bind("forge:storage_blocks/pyrope");
+    public static final TagKey<Block> AQUITE_BLOCK = create("forge:storage_blocks/aquite");
+    public static final TagKey<Block> CHAROITE_BLOCK = create("forge:storage_blocks/charoite");
+    public static final TagKey<Block> DIOPSIDE_BLOCK = create("forge:storage_blocks/diopside");
+    public static final TagKey<Block> HORIZONITE_BLOCK = create("forge:storage_blocks/horizonite");
+    public static final TagKey<Block> FALSITE_BLOCK = create("forge:storage_blocks/falsite");
+    public static final TagKey<Block> VENTIUM_BLOCK = create("forge:storage_blocks/ventium");
+    public static final TagKey<Block> MOONSTONE_BLOCK = create("forge:storage_blocks/moonstone");
+    public static final TagKey<Block> PYROPE_BLOCK = create("forge:storage_blocks/pyrope");
 
-    public static final ITag.INamedTag<Block> AQUITE_ORE = BlockTags.bind("forge:ores/aquite");
-    public static final ITag.INamedTag<Block> CHAROITE_ORE = BlockTags.bind("forge:ores/charoite");
-    public static final ITag.INamedTag<Block> DIOPSIDE_ORE = BlockTags.bind("forge:ores/diopside");
-    public static final ITag.INamedTag<Block> HORIZONITE_ORE = BlockTags.bind("forge:ores/horizonite");
-    public static final ITag.INamedTag<Block> FALSITE_ORE = BlockTags.bind("forge:ores/falsite");
-    public static final ITag.INamedTag<Block> VENTIUM_ORE = BlockTags.bind("forge:ores/ventium");
-    public static final ITag.INamedTag<Block> MOONSTONE_ORE = BlockTags.bind("forge:ores/moonstone");
-    public static final ITag.INamedTag<Block> PYROPE_ORE = BlockTags.bind("forge:ores/pyrope");
+    public static final TagKey<Block> AQUITE_ORE = create("forge:ores/aquite");
+    public static final TagKey<Block> CHAROITE_ORE = create("forge:ores/charoite");
+    public static final TagKey<Block> DIOPSIDE_ORE = create("forge:ores/diopside");
+    public static final TagKey<Block> HORIZONITE_ORE = create("forge:ores/horizonite");
+    public static final TagKey<Block> FALSITE_ORE = create("forge:ores/falsite");
+    public static final TagKey<Block> VENTIUM_ORE = create("forge:ores/ventium");
+    public static final TagKey<Block> MOONSTONE_ORE = create("forge:ores/moonstone");
+    public static final TagKey<Block> PYROPE_ORE = create("forge:ores/pyrope");
+
+    public static TagKey<Block> create(String name) {
+        return BlockTags.create(new ResourceLocation(name));
+    }
 
     public BlueBlockTags(DataGenerator gen, @Nullable ExistingFileHelper existingFileHelper) {
         super(gen, BlueSkiesTcon.MOD_ID, existingFileHelper);

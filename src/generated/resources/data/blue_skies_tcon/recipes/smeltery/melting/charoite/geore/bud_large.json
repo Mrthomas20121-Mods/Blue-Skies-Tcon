@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_large_buds/charoite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_large_buds/charoite"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_charoite",
+    "amount": 300
+  },
+  "temperature": 700,
+  "time": 114
+}

@@ -1,13 +1,14 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.api.BlueFluid;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
+import slimeknights.mantle.registration.object.FluidObject;
 
 public class BlueLang extends LanguageProvider {
 
@@ -31,10 +32,7 @@ public class BlueLang extends LanguageProvider {
         addItem(BlueItems.charoite_nugget, "Charoite Nugget");
         addItem(BlueItems.diopside_nugget, "Diopside Nugget");
         addItem(BlueItems.moonstone_nugget, "Moonstone Nugget");
-        addItem(BlueItems.falsite_nugget, "Falsite Nugget");
-        addItem(BlueItems.horizonite_nugget, "Horizonite Nugget");
         addItem(BlueItems.pyrope_nugget, "Pyrope Nugget");
-        addItem(BlueItems.ventium_nugget, "Ventium Nugget");
         add("modifier.blue_skies_tcon.chemical_bonds", "Chemical Bonds");
         add("modifier.blue_skies_tcon.chemical_bonds.description", "Your tools damage feels off.");
         add("modifier.blue_skies_tcon.chemical_bonds.flavor", "Crystals have chemical bonds");
@@ -42,11 +40,10 @@ public class BlueLang extends LanguageProvider {
         addCast(BlueItems.crystal_sand);
     }
 
-    private void addFluid(BlueFluid fluid, String name) {
+    private void addFluid(FluidObject<ForgeFlowingFluid> fluid, String name) {
         String capName = capitalize(name);
         add(String.format("fluid.%s.%s", BlueSkiesTcon.MOD_ID, name), capName);
-        addItem(fluid.getBucket(), capitalize(String.format("%s_bucket", name)));
-        addItem(fluid.getVentiumBucket(), capitalize(String.format("%s_ventium_bucket", name)));
+        add(fluid.asItem(), capitalize(String.format("%s_bucket", name)));
         String materialName = name.replace("molten_", "");
         add(String.format("material.%s.%s", BlueSkiesTcon.MOD_ID, materialName), capitalize(materialName));
     }

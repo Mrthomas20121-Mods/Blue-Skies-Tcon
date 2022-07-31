@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_blocks/moonstone",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_blocks/moonstone"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_moonstone",
+    "amount": 400
+  },
+  "temperature": 700,
+  "time": 114
+}

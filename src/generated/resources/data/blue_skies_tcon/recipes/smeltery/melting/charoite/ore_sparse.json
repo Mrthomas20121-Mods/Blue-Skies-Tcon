@@ -1,0 +1,81 @@
+{
+  "type": "forge:conditional",
+  "conditions": [
+    {
+      "registry": "minecraft:item",
+      "tags": [
+        "forge:ores/charoite",
+        "forge:ore_rates/sparse"
+      ],
+      "type": "tconstruct:tag_intersection_present"
+    }
+  ],
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/moonstone",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "gem",
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/charoite"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_charoite",
+          "amount": 50
+        },
+        "temperature": 700,
+        "time": 57,
+        "byproducts": [
+          {
+            "fluid": "blue_skies_tcon:molten_moonstone",
+            "amount": 15
+          }
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "rate": "gem",
+        "ingredient": {
+          "type": "forge:intersection",
+          "children": [
+            {
+              "tag": "forge:ores/charoite"
+            },
+            {
+              "tag": "forge:ore_rates/sparse"
+            }
+          ]
+        },
+        "result": {
+          "fluid": "blue_skies_tcon:molten_charoite",
+          "amount": 50
+        },
+        "temperature": 700,
+        "time": 57
+      }
+    }
+  ]
+}

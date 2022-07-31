@@ -1,34 +1,30 @@
 package mrthomas20121.blue_skies_tcon.init;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.api.BlueFluid;
-import net.minecraft.block.Block;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.material.Material;
+import net.minecraftforge.fluids.FluidAttributes;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
+import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
+import slimeknights.mantle.registration.object.FluidObject;
 
 public class Fluids {
 
-    public static DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, BlueSkiesTcon.MOD_ID);
-    public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BlueSkiesTcon.MOD_ID);
+    public static FluidDeferredRegister FLUIDS = new FluidDeferredRegister(BlueSkiesTcon.MOD_ID);
 
-    public static BlueFluid aquite = register("molten_aquite", 800, 12);
-    public static BlueFluid charoite = register("molten_charoite", 1000, 12);
-    public static BlueFluid diopside = register("molten_diopside", 1000, 12);
-    public static BlueFluid horizonite = register("molten_horizonite", 1000, 12);
-    public static BlueFluid pyrope = register("molten_pyrope", 800, 12);
-    public static BlueFluid moonstone = register("molten_moonstone", 1000, 12);
-    public static BlueFluid falsite = register("molten_falsite", 800, 12);
-    public static BlueFluid ventium = register("molten_ventium", 800, 12);
+    public static FluidObject<ForgeFlowingFluid> aquite = register("molten_aquite", 800);
+    public static FluidObject<ForgeFlowingFluid> charoite = register("molten_charoite", 1000);
+    public static FluidObject<ForgeFlowingFluid> diopside = register("molten_diopside", 1000);
+    public static FluidObject<ForgeFlowingFluid> horizonite = register("molten_horizonite", 1000);
+    public static FluidObject<ForgeFlowingFluid> pyrope = register("molten_pyrope", 800);
+    public static FluidObject<ForgeFlowingFluid> moonstone = register("molten_moonstone", 1000);
+    public static FluidObject<ForgeFlowingFluid> falsite = register("molten_falsite", 800);
+    public static FluidObject<ForgeFlowingFluid> ventium = register("molten_ventium", 800);
 
-    public static void register(IEventBus bus) {
-        FLUIDS.register(bus);
-        BLOCKS.register(bus);
-    }
-
-    public static BlueFluid register(String key, int temp, int light) {
-        return BlueFluid.register(key, temp, light);
+    private static FluidObject<ForgeFlowingFluid> register(String name, int temp) {
+        String still = String.format("%s:block/fluid/%s_still", BlueSkiesTcon.MOD_ID, name);
+        String flow = String.format("%s:block/fluid/%s_flowing", BlueSkiesTcon.MOD_ID, name);
+        return FLUIDS.register(name, FluidAttributes.builder(new ResourceLocation(still), new ResourceLocation(flow)).density(2000).viscosity(10000).temperature(temp).sound(SoundEvents.BUCKET_FILL_LAVA, SoundEvents.BUCKET_EMPTY_LAVA), Material.LAVA, 15);
     }
 }

@@ -1,15 +1,14 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.api.BlueFluid;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
-import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
+import slimeknights.mantle.registration.object.FluidObject;
 
 public class BlueBlockStates extends BlockStateProvider {
 
@@ -30,17 +29,8 @@ public class BlueBlockStates extends BlockStateProvider {
         fluid(Fluids.moonstone);
     }
 
-    public void blockWithItem(RegistryObject<Block> registryObject) {
-        //block model
-        simpleBlock(registryObject.get());
-        //itemblock model
-        ResourceLocation id = registryObject.getId();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "block/" + id.getPath());
-        itemModels().cubeAll(id.getPath(), textureLocation);
-    }
-
-    public void fluid(BlueFluid fluid) {
-        ResourceLocation name = fluid.getBlock().get().getRegistryName();
-        simpleBlock(fluid.getBlock().get(), models().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath()+"_still")));
+    public void fluid(FluidObject<ForgeFlowingFluid> fluid) {
+        ResourceLocation name = fluid.getId();
+        simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath()+"_still")));
     }
 }

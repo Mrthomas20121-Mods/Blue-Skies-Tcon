@@ -3,7 +3,7 @@
   "switch_slots": true,
   "fluid": {
     "tag": "forge:molten_horizonite",
-    "amount": 1296
+    "amount": 810
   },
   "result": "blue_skies:horizonite_block",
   "cooling_time": 171

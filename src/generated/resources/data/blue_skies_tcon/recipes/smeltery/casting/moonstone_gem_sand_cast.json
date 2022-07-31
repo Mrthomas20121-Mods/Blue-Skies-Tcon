@@ -6,8 +6,8 @@
   "cast_consumed": true,
   "fluid": {
     "tag": "blue_skies_tcon:molten_moonstone",
-    "amount": 144
+    "amount": 100
   },
   "result": "blue_skies:moonstone",
-  "cooling_time": 57
+  "cooling_time": 60
 }

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_shards/ventium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_shards/ventium"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_ventium",
+    "amount": 90
+  },
+  "temperature": 500,
+  "time": 50
+}

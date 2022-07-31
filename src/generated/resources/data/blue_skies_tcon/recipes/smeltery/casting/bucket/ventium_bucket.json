@@ -2,7 +2,7 @@
   "type": "tconstruct:casting_table",
   "fluid": {
     "tag": "forge:molten_ventium",
-    "amount": 432
+    "amount": 270
   },
   "result": "blue_skies:ventium_bucket",
   "cooling_time": 86

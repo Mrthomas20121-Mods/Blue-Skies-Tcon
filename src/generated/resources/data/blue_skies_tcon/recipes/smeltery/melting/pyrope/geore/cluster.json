@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_clusters/pyrope",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_clusters/pyrope"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_pyrope",
+    "amount": 400
+  },
+  "temperature": 500,
+  "time": 125
+}

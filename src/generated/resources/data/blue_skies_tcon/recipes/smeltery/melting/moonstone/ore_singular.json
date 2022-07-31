@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:ore_melting",
+  "conditions": [
+    {
+      "registry": "minecraft:item",
+      "base": "forge:ores/moonstone",
+      "subtracted": [
+        "forge:ore_rates/sparse",
+        "forge:ore_rates/dense"
+      ],
+      "type": "tconstruct:tag_difference_present"
+    }
+  ],
+  "rate": "gem",
+  "ingredient": {
+    "type": "forge:difference",
+    "base": {
+      "tag": "forge:ores/moonstone"
+    },
+    "subtracted": [
+      {
+        "tag": "forge:ore_rates/sparse"
+      },
+      {
+        "tag": "forge:ore_rates/dense"
+      }
+    ]
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_moonstone",
+    "amount": 100
+  },
+  "temperature": 700,
+  "time": 85
+}

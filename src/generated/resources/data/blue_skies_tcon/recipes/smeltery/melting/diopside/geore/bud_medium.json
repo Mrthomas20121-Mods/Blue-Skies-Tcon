@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_medium_buds/diopside",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_medium_buds/diopside"
+  },
+  "result": {
+    "fluid": "blue_skies_tcon:molten_diopside",
+    "amount": 200
+  },
+  "temperature": 700,
+  "time": 85
+}

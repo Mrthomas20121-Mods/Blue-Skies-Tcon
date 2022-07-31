@@ -6,7 +6,7 @@
   "cast_consumed": true,
   "fluid": {
     "tag": "blue_skies_tcon:molten_ventium",
-    "amount": 144
+    "amount": 90
   },
   "result": "blue_skies:ventium_ingot",
   "cooling_time": 50

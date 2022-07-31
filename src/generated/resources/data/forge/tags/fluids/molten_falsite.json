@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "blue_skies_tcon:molten_falsite",
-    "blue_skies_tcon:molten_falsite_flowing"
+    "blue_skies_tcon:molten_falsite"
   ]
 }
