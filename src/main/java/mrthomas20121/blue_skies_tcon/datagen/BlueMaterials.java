@@ -1,14 +1,14 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
-import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 import javax.annotation.Nonnull;
 
@@ -26,8 +26,8 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
         return new MaterialId(new ResourceLocation("blue_skies_tcon", name));
     }
 
-    public BlueMaterials(DataGenerator gen) {
-        super(gen);
+    public BlueMaterials(PackOutput packOutput) {
+        super(packOutput);
     }
 
     @Override
@@ -47,8 +47,8 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
     public static class BlueSkiesTraits extends AbstractMaterialTraitDataProvider {
 
-        public BlueSkiesTraits(DataGenerator gen, AbstractMaterialDataProvider materials) {
-            super(gen, materials);
+        public BlueSkiesTraits(PackOutput packOutput, AbstractMaterialDataProvider materials) {
+            super(packOutput, materials);
         }
 
         @Override
@@ -69,8 +69,8 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
     public static class BlueSkiesMaterialStats extends AbstractMaterialStatsDataProvider {
 
-        public BlueSkiesMaterialStats(DataGenerator gen, AbstractMaterialDataProvider materials) {
-            super(gen, materials);
+        public BlueSkiesMaterialStats(PackOutput packOutput, AbstractMaterialDataProvider materials) {
+            super(packOutput, materials);
         }
 
         @Nonnull
@@ -84,28 +84,28 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
             addMaterialStats(aquite,
                     new HeadMaterialStats(300, 6f, DIAMOND, 2f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.1f).withAttackSpeed(1.2f),
-                    ExtraMaterialStats.DEFAULT);
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.2f).build(),
+                    StatlessMaterialStats.BINDING);
 
             addMaterialStats(charoite,
                     new HeadMaterialStats(1500, 6.5f, DIAMOND, 2f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.1f).withAttackSpeed(1.1f),
-                    ExtraMaterialStats.DEFAULT);
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.1f).build(),
+                    StatlessMaterialStats.BINDING);
 
             addMaterialStats(diopside,
                     new HeadMaterialStats(1600, 6f, DIAMOND, 6f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.1f).withAttackSpeed(0.7f),
-                    ExtraMaterialStats.DEFAULT);
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(0.7f).build(),
+                    StatlessMaterialStats.BINDING);
 
             addMaterialStats(horizonite,
                     new HeadMaterialStats(300, 6.5f, DIAMOND, 3f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.1f).withAttackSpeed(1f),
-                    ExtraMaterialStats.DEFAULT);
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1f).build(),
+                    StatlessMaterialStats.BINDING);
 
             addMaterialStats(pyrope,
                     new HeadMaterialStats(300, 5f, DIAMOND, 1f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.1f).withAttackSpeed(1.1f),
-                    ExtraMaterialStats.DEFAULT);
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.1f).build(),
+                    StatlessMaterialStats.BINDING);
         }
     }
 }

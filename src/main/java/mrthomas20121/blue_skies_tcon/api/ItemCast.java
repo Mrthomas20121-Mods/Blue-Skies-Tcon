@@ -5,7 +5,6 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ItemCast {
 

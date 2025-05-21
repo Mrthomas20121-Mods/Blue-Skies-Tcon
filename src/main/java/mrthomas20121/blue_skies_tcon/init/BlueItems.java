@@ -1,6 +1,5 @@
 package mrthomas20121.blue_skies_tcon.init;
 
-import com.legacy.blue_skies.items.SkiesItemGroups;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import net.minecraft.world.item.Item;
@@ -21,7 +20,8 @@ public class BlueItems {
     public static ItemCast crystal_sand = registerCast("crystal_sand");
 
     public static Item register() {
-        return new Item(new Item.Properties().tab(SkiesItemGroups.MISC));
+        // TODO: BuildCreativeModeTabContentsEvent
+        return new Item(new Item.Properties());
     }
 
     public static ItemCast registerCast(String sand) {

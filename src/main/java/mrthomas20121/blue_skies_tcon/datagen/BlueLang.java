@@ -4,7 +4,7 @@ import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
@@ -12,7 +12,7 @@ import slimeknights.mantle.registration.object.FluidObject;
 
 public class BlueLang extends LanguageProvider {
 
-    public BlueLang(DataGenerator gen) {
+    public BlueLang(PackOutput gen) {
         super(gen, BlueSkiesTcon.MOD_ID, "en_us");
     }
 
@@ -49,9 +49,7 @@ public class BlueLang extends LanguageProvider {
     }
 
     protected void addCast(ItemCast cast) {
-        cast.getALL().forEach(itemCast -> {
-            addItem(itemCast, capitalize(itemCast.getId().getPath()));
-        });
+        cast.getALL().forEach(itemCast -> addItem(itemCast, capitalize(itemCast.getId().getPath())));
     }
 
     public String capitalize(String input) {

@@ -1,11 +1,12 @@
 package mrthomas20121.blue_skies_tcon.api;
 
 import mrthomas20121.blue_skies_tcon.init.Fluids;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import slimeknights.mantle.recipe.helper.FluidOutput;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.data.recipe.IByproduct;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 
 import javax.annotation.Nonnull;
 import java.util.Locale;
@@ -36,12 +37,13 @@ public enum CustomByProduct implements IByproduct {
 
     @Nonnull
     @Override
-    public Fluid getFluid() {
-        return this.fluidSupplier.get();
+    public FluidOutput getFluid(float v) {
+        return this.fluidSupplier.result((int) (nuggets * v));
     }
 
     @Override
-    public int getAmount() {
-        return nuggets;
+    public IMeltingContainer.OreRateType getOreRate() {
+        // TODO: undecided
+        return IMeltingContainer.OreRateType.METAL;
     }
 }

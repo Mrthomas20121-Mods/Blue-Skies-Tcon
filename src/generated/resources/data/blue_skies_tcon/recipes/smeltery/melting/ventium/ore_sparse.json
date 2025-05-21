@@ -2,28 +2,30 @@
   "type": "forge:conditional",
   "conditions": [
     {
-      "registry": "minecraft:item",
-      "tags": [
+      "type": "mantle:tag_combination_filled",
+      "match": [
         "forge:ores/ventium",
         "forge:ore_rates/sparse"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+      ]
     }
   ],
   "recipes": [
     {
       "conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/moonstone",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/moonstone"
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "metal",
+        "byproducts": [
+          {
+            "amount": 30,
+            "rate": "metal",
+            "tag": "forge:molten_moonstone"
+          }
+        ],
         "ingredient": {
           "type": "forge:intersection",
           "children": [
@@ -35,18 +37,13 @@
             }
           ]
         },
+        "rate": "metal",
         "result": {
-          "fluid": "blue_skies_tcon:molten_ventium",
-          "amount": 90
+          "amount": 90,
+          "fluid": "blue_skies_tcon:molten_ventium"
         },
         "temperature": 500,
-        "time": 75,
-        "byproducts": [
-          {
-            "fluid": "blue_skies_tcon:molten_moonstone",
-            "amount": 30
-          }
-        ]
+        "time": 75
       }
     },
     {
@@ -57,7 +54,6 @@
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "metal",
         "ingredient": {
           "type": "forge:intersection",
           "children": [
@@ -69,9 +65,10 @@
             }
           ]
         },
+        "rate": "metal",
         "result": {
-          "fluid": "blue_skies_tcon:molten_ventium",
-          "amount": 90
+          "amount": 90,
+          "fluid": "blue_skies_tcon:molten_ventium"
         },
         "temperature": 500,
         "time": 75

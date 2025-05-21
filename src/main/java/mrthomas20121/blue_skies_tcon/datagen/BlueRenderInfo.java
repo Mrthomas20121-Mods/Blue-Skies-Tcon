@@ -1,15 +1,17 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialRenderInfoProvider;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class BlueRenderInfo extends AbstractMaterialRenderInfoProvider {
 
-    public BlueRenderInfo(DataGenerator gen, AbstractMaterialSpriteProvider spriteProvider) {
-        super(gen, spriteProvider);
+    public BlueRenderInfo(PackOutput packOutput, AbstractMaterialSpriteProvider spriteProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, spriteProvider, existingFileHelper);
     }
 
     @Override

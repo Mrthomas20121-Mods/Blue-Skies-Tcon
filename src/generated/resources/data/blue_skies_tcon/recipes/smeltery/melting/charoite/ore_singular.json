@@ -2,55 +2,44 @@
   "type": "forge:conditional",
   "conditions": [
     {
-      "registry": "minecraft:item",
-      "base": "forge:ores/charoite",
-      "subtracted": [
-        "forge:ore_rates/sparse",
-        "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_difference_present"
+      "type": "mantle:tag_combination_filled",
+      "ignore": "tconstruct:non_singular_ore_rates",
+      "match": "forge:ores/charoite"
     }
   ],
   "recipes": [
     {
       "conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/moonstone",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/moonstone"
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "gem",
+        "byproducts": [
+          {
+            "amount": 30,
+            "rate": "metal",
+            "tag": "forge:molten_moonstone"
+          }
+        ],
         "ingredient": {
           "type": "forge:difference",
           "base": {
             "tag": "forge:ores/charoite"
           },
-          "subtracted": [
-            {
-              "tag": "forge:ore_rates/sparse"
-            },
-            {
-              "tag": "forge:ore_rates/dense"
-            }
-          ]
+          "subtracted": {
+            "tag": "tconstruct:non_singular_ore_rates"
+          }
         },
+        "rate": "gem",
         "result": {
-          "fluid": "blue_skies_tcon:molten_charoite",
-          "amount": 100
+          "amount": 100,
+          "fluid": "blue_skies_tcon:molten_charoite"
         },
         "temperature": 700,
-        "time": 85,
-        "byproducts": [
-          {
-            "fluid": "blue_skies_tcon:molten_moonstone",
-            "amount": 30
-          }
-        ]
+        "time": 142
       }
     },
     {
@@ -61,27 +50,22 @@
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "gem",
         "ingredient": {
           "type": "forge:difference",
           "base": {
             "tag": "forge:ores/charoite"
           },
-          "subtracted": [
-            {
-              "tag": "forge:ore_rates/sparse"
-            },
-            {
-              "tag": "forge:ore_rates/dense"
-            }
-          ]
+          "subtracted": {
+            "tag": "tconstruct:non_singular_ore_rates"
+          }
         },
+        "rate": "gem",
         "result": {
-          "fluid": "blue_skies_tcon:molten_charoite",
-          "amount": 100
+          "amount": 100,
+          "fluid": "blue_skies_tcon:molten_charoite"
         },
         "temperature": 700,
-        "time": 85
+        "time": 142
       }
     }
   ]

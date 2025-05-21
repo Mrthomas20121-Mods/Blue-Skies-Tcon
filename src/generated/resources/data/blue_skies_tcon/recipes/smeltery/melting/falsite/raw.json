@@ -4,31 +4,29 @@
     {
       "conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/moonstone",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/moonstone"
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "metal",
+        "byproducts": [
+          {
+            "amount": 30,
+            "rate": "metal",
+            "tag": "forge:molten_moonstone"
+          }
+        ],
         "ingredient": {
           "tag": "forge:raw_materials/falsite"
         },
+        "rate": "metal",
         "result": {
-          "fluid": "blue_skies_tcon:molten_falsite",
-          "amount": 90
+          "amount": 90,
+          "fluid": "blue_skies_tcon:molten_falsite"
         },
         "temperature": 500,
-        "time": 75,
-        "byproducts": [
-          {
-            "fluid": "blue_skies_tcon:molten_moonstone",
-            "amount": 30
-          }
-        ]
+        "time": 75
       }
     },
     {
@@ -39,13 +37,13 @@
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "metal",
         "ingredient": {
           "tag": "forge:raw_materials/falsite"
         },
+        "rate": "metal",
         "result": {
-          "fluid": "blue_skies_tcon:molten_falsite",
-          "amount": 90
+          "amount": 90,
+          "fluid": "blue_skies_tcon:molten_falsite"
         },
         "temperature": 500,
         "time": 75

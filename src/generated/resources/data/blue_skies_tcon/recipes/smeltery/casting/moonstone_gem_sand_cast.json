@@ -4,10 +4,10 @@
     "tag": "tconstruct:casts/single_use/gem"
   },
   "cast_consumed": true,
+  "cooling_time": 60,
   "fluid": {
-    "tag": "blue_skies_tcon:molten_moonstone",
-    "amount": 100
+    "amount": 100,
+    "tag": "forge:molten_moonstone"
   },
-  "result": "blue_skies:moonstone",
-  "cooling_time": 60
+  "result": "blue_skies:moonstone"
 }

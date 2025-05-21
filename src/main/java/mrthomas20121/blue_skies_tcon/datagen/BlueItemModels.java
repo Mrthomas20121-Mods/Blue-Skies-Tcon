@@ -4,7 +4,7 @@ import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -13,27 +13,26 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BlueItemModels extends ItemModelProvider {
 
-    public BlueItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, BlueSkiesTcon.MOD_ID, existingFileHelper);
+    public BlueItemModels(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+        super(packOutput, BlueSkiesTcon.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
+        fluidWithModel(Fluids.aquite.getId(), "item/generated");
+        fluidWithModel(Fluids.charoite.getId(), "item/generated");
+        fluidWithModel(Fluids.diopside.getId(), "item/generated");
+        fluidWithModel(Fluids.horizonite.getId(), "item/generated");
+        fluidWithModel(Fluids.pyrope.getId(), "item/generated");
+        fluidWithModel(Fluids.moonstone.getId(), "item/generated");
+        fluidWithModel(Fluids.falsite.getId(), "item/generated");
+        fluidWithModel(Fluids.ventium.getId(), "item/generated");
 
-        itemWithModel(Fluids.aquite.asItem(), "item/generated");
-        itemWithModel(Fluids.charoite.asItem(), "item/generated");
-        itemWithModel(Fluids.diopside.asItem(), "item/generated");
-        itemWithModel(Fluids.horizonite.asItem(), "item/generated");
-        itemWithModel(Fluids.pyrope.asItem(), "item/generated");
-        itemWithModel(Fluids.moonstone.asItem(), "item/generated");
-        itemWithModel(Fluids.falsite.asItem(), "item/generated");
-        itemWithModel(Fluids.ventium.asItem(), "item/generated");
-
-        itemWithModel(BlueItems.aquite_nugget, "item/generated");
-        itemWithModel(BlueItems.charoite_nugget, "item/generated");
-        itemWithModel(BlueItems.diopside_nugget, "item/generated");
-        itemWithModel(BlueItems.moonstone_nugget, "item/generated");
-        itemWithModel(BlueItems.pyrope_nugget, "item/generated");
+        fluidWithModel(BlueItems.aquite_nugget, "item/generated");
+        fluidWithModel(BlueItems.charoite_nugget, "item/generated");
+        fluidWithModel(BlueItems.diopside_nugget, "item/generated");
+        fluidWithModel(BlueItems.moonstone_nugget, "item/generated");
+        fluidWithModel(BlueItems.pyrope_nugget, "item/generated");
 
         castModel(BlueItems.midnight_sand);
         castModel(BlueItems.crystal_sand);
@@ -51,9 +50,8 @@ public class BlueItemModels extends ItemModelProvider {
         });
     }
 
-    public void itemWithModel(Item registryObject, String model) {
-        ResourceLocation id = registryObject.getRegistryName();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
+    public void fluidWithModel(ResourceLocation id, String model) {
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath() + "_bucket");
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 
@@ -63,7 +61,7 @@ public class BlueItemModels extends ItemModelProvider {
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 
-    public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {
+    public void fluidWithModel(RegistryObject<? extends Item> registryObject, String model) {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);

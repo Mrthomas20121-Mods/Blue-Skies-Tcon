@@ -2,7 +2,8 @@ package mrthomas20121.blue_skies_tcon.datagen;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
@@ -11,6 +12,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 public class BlueFluidTags extends FluidTagsProvider {
 
@@ -45,13 +47,12 @@ public class BlueFluidTags extends FluidTagsProvider {
         return FluidTags.create(name);
     }
 
-    public BlueFluidTags(DataGenerator gen, @Nullable ExistingFileHelper existingFileHelper) {
-        super(gen, BlueSkiesTcon.MOD_ID, existingFileHelper);
+    public BlueFluidTags(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, lookupProvider, BlueSkiesTcon.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
-
+    protected void addTags(HolderLookup.Provider provider) {
         tag(AQUITE).add(Fluids.aquite.get());
         tag(AQUITE_).add(Fluids.aquite.get());
         tag(CHAROITE).add(Fluids.charoite.get());

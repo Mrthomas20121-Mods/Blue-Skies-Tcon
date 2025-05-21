@@ -2,15 +2,17 @@ package mrthomas20121.blue_skies_tcon.datagen;
 
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 public class BlueBlockTags extends BlockTagsProvider {
 
@@ -36,12 +38,12 @@ public class BlueBlockTags extends BlockTagsProvider {
         return BlockTags.create(new ResourceLocation(name));
     }
 
-    public BlueBlockTags(DataGenerator gen, @Nullable ExistingFileHelper existingFileHelper) {
-        super(gen, BlueSkiesTcon.MOD_ID, existingFileHelper);
+    public BlueBlockTags(PackOutput gen, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(gen, lookupProvider, BlueSkiesTcon.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         tag(AQUITE_ORE).add(SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore);
         tag(CHAROITE_ORE).add(SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore);
         tag(DIOPSIDE_ORE).add(SkiesBlocks.everbright_diopside_ore, SkiesBlocks.everdawn_diopside_ore);

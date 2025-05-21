@@ -6,48 +6,49 @@ import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.CustomByProduct;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.common.crafting.conditions.TrueCondition;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.data.recipe.*;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
-import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import javax.annotation.Nonnull;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
 
-    public BlueRecipes(DataGenerator gen) {
+    public BlueRecipes(PackOutput gen) {
         super(gen);
     }
 
     @Override
-    protected void buildCraftingRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         String materialFolder = "materials/";
         String meltingFolder = "smeltery/melting/";
         String castingFolder = "smeltery/casting/";
         String bucketCastingFolder = "smeltery/casting/bucket/";
 
         // sand casts
-        ShapelessRecipeBuilder.shapeless(BlueItems.crystal_sand.getBlank().get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BlueItems.crystal_sand.getBlank().get(), 4)
                 .requires(SkiesBlocks.crystal_sand)
                 .unlockedBy("has_casting", has(TinkerSmeltery.searedTable))
                 .save(consumer, modResource("smeltery/crystal_sand_cast"));
-        ShapelessRecipeBuilder.shapeless(BlueItems.midnight_sand.getBlank().get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BlueItems.midnight_sand.getBlank().get(), 4)
                 .requires(SkiesBlocks.midnight_sand)
                 .unlockedBy("has_casting", has(TinkerSmeltery.searedTable))
                 .save(consumer, modResource("smeltery/midnight_sand_cast"));
@@ -65,7 +66,7 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
                 .save(consumer, modResource(bucketCastingFolder+"water"));
         ItemCastingRecipeBuilder
                 .tableRecipe(SkiesItems.ventium_bucket)
-                .setFluidAndTime(Fluids.ventium, true, FluidValues.INGOT*3)
+                .setFluidAndTime(Fluids.ventium, FluidValues.INGOT*3)
                 .save(consumer, modResource(bucketCastingFolder+"ventium_bucket"));
 
         gemCasting(consumer, Fluids.aquite, SkiesItems.aquite, castingFolder+"aquite_gem");
@@ -109,9 +110,13 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
 
     protected void blockBasin(Consumer<FinishedRecipe> consumer, FluidObject<ForgeFlowingFluid> object, Block block, String folder) {
         ItemCastingRecipeBuilder.basinRecipe(block)
-                .setFluidAndTime(object, true, FluidValues.METAL_BLOCK)
+                .setFluidAndTime(object, FluidValues.METAL_BLOCK)
                 .setSwitchSlots()
-                .save(consumer, modResource(folder+block.getRegistryName().getPath()));
+                .save(consumer, modResource(folder + block.getDescriptionId()));
+    }
+
+    ResourceLocation modResource(String name) {
+        return new ResourceLocation(this.getModId(), name);
     }
 
     @Nonnull

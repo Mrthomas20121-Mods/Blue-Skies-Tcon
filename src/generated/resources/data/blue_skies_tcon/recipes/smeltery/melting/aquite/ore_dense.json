@@ -2,28 +2,30 @@
   "type": "forge:conditional",
   "conditions": [
     {
-      "registry": "minecraft:item",
-      "tags": [
+      "type": "mantle:tag_combination_filled",
+      "match": [
         "forge:ores/aquite",
         "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+      ]
     }
   ],
   "recipes": [
     {
       "conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/moonstone",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/moonstone"
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "gem",
+        "byproducts": [
+          {
+            "amount": 90,
+            "rate": "metal",
+            "tag": "forge:molten_moonstone"
+          }
+        ],
         "ingredient": {
           "type": "forge:intersection",
           "children": [
@@ -35,18 +37,13 @@
             }
           ]
         },
+        "rate": "gem",
         "result": {
-          "fluid": "blue_skies_tcon:molten_aquite",
-          "amount": 300
+          "amount": 300,
+          "fluid": "blue_skies_tcon:molten_aquite"
         },
         "temperature": 500,
-        "time": 225,
-        "byproducts": [
-          {
-            "fluid": "blue_skies_tcon:molten_moonstone",
-            "amount": 90
-          }
-        ]
+        "time": 225
       }
     },
     {
@@ -57,7 +54,6 @@
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "gem",
         "ingredient": {
           "type": "forge:intersection",
           "children": [
@@ -69,9 +65,10 @@
             }
           ]
         },
+        "rate": "gem",
         "result": {
-          "fluid": "blue_skies_tcon:molten_aquite",
-          "amount": 300
+          "amount": 300,
+          "fluid": "blue_skies_tcon:molten_aquite"
         },
         "temperature": 500,
         "time": 225

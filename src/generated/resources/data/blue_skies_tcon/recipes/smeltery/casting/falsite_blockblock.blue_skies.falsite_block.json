@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 150,
+  "fluid": {
+    "amount": 810,
+    "tag": "forge:molten_falsite"
+  },
+  "result": "blue_skies:falsite_block",
+  "switch_slots": true
+}

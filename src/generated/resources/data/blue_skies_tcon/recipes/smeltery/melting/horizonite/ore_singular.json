@@ -1,41 +1,33 @@
 {
   "type": "tconstruct:ore_melting",
-  "conditions": [
+  "byproducts": [
     {
-      "registry": "minecraft:item",
-      "base": "forge:ores/horizonite",
-      "subtracted": [
-        "forge:ore_rates/sparse",
-        "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_difference_present"
+      "amount": 180,
+      "rate": "metal",
+      "tag": "forge:molten_iron"
     }
   ],
-  "rate": "metal",
+  "conditions": [
+    {
+      "type": "mantle:tag_combination_filled",
+      "ignore": "tconstruct:non_singular_ore_rates",
+      "match": "forge:ores/horizonite"
+    }
+  ],
   "ingredient": {
     "type": "forge:difference",
     "base": {
       "tag": "forge:ores/horizonite"
     },
-    "subtracted": [
-      {
-        "tag": "forge:ore_rates/sparse"
-      },
-      {
-        "tag": "forge:ore_rates/dense"
-      }
-    ]
+    "subtracted": {
+      "tag": "tconstruct:non_singular_ore_rates"
+    }
   },
+  "rate": "metal",
   "result": {
-    "fluid": "blue_skies_tcon:molten_horizonite",
-    "amount": 180
+    "amount": 180,
+    "fluid": "blue_skies_tcon:molten_horizonite"
   },
   "temperature": 700,
-  "time": 142,
-  "byproducts": [
-    {
-      "fluid": "tconstruct:molten_iron",
-      "amount": 180
-    }
-  ]
+  "time": 142
 }

@@ -2,55 +2,44 @@
   "type": "forge:conditional",
   "conditions": [
     {
-      "registry": "minecraft:item",
-      "base": "forge:ores/ventium",
-      "subtracted": [
-        "forge:ore_rates/sparse",
-        "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_difference_present"
+      "type": "mantle:tag_combination_filled",
+      "ignore": "tconstruct:non_singular_ore_rates",
+      "match": "forge:ores/ventium"
     }
   ],
   "recipes": [
     {
       "conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/moonstone",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/moonstone"
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "metal",
+        "byproducts": [
+          {
+            "amount": 60,
+            "rate": "metal",
+            "tag": "forge:molten_moonstone"
+          }
+        ],
         "ingredient": {
           "type": "forge:difference",
           "base": {
             "tag": "forge:ores/ventium"
           },
-          "subtracted": [
-            {
-              "tag": "forge:ore_rates/sparse"
-            },
-            {
-              "tag": "forge:ore_rates/dense"
-            }
-          ]
+          "subtracted": {
+            "tag": "tconstruct:non_singular_ore_rates"
+          }
         },
+        "rate": "metal",
         "result": {
-          "fluid": "blue_skies_tcon:molten_ventium",
-          "amount": 180
+          "amount": 180,
+          "fluid": "blue_skies_tcon:molten_ventium"
         },
         "temperature": 500,
-        "time": 125,
-        "byproducts": [
-          {
-            "fluid": "blue_skies_tcon:molten_moonstone",
-            "amount": 60
-          }
-        ]
+        "time": 125
       }
     },
     {
@@ -61,24 +50,19 @@
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
-        "rate": "metal",
         "ingredient": {
           "type": "forge:difference",
           "base": {
             "tag": "forge:ores/ventium"
           },
-          "subtracted": [
-            {
-              "tag": "forge:ore_rates/sparse"
-            },
-            {
-              "tag": "forge:ore_rates/dense"
-            }
-          ]
+          "subtracted": {
+            "tag": "tconstruct:non_singular_ore_rates"
+          }
         },
+        "rate": "metal",
         "result": {
-          "fluid": "blue_skies_tcon:molten_ventium",
-          "amount": 180
+          "amount": 180,
+          "fluid": "blue_skies_tcon:molten_ventium"
         },
         "temperature": 500,
         "time": 125

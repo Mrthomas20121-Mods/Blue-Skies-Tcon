@@ -3,17 +3,21 @@ package mrthomas20121.blue_skies_tcon;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
 import mrthomas20121.blue_skies_tcon.datagen.*;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod(BlueSkiesTcon.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -32,25 +36,27 @@ public static final String MOD_ID = "blue_skies_tcon";
 	@SubscribeEvent
 	public static void gatherData(final GatherDataEvent event) {
 		DataGenerator gen = event.getGenerator();
+		PackOutput packOutput = gen.getPackOutput();
 		ExistingFileHelper fileHelper = event.getExistingFileHelper();
-		if (event.includeServer()) {
-			BlockTagsProvider blockTagsProvider = new BlueBlockTags(gen, fileHelper);
-			gen.addProvider(blockTagsProvider);
-			gen.addProvider(new BlueItemTags(gen, blockTagsProvider, fileHelper));
-			//BlueMaterials materials = new BlueMaterials(gen);
-			//gen.addProvider(materials);
-			//gen.addProvider(new BlueMaterials.BlueSkiesMaterialStats(gen, materials));
-			//gen.addProvider(new BlueMaterials.BlueSkiesTraits(gen, materials));
-			gen.addProvider(new BlueFluidTags(gen, fileHelper));
-			gen.addProvider(new BlueRecipes(gen));
-		}
-		if(event.includeClient()) {
-			gen.addProvider(new BlueLang(gen));
-			gen.addProvider(new BlueBlockStates(gen, fileHelper));
-			gen.addProvider(new BlueItemModels(gen, fileHelper));
-			//AbstractMaterialSpriteProvider provider = new BlueMaterialSpriteProvider();
-			//gen.addProvider(new BlueRenderInfo(gen, provider));
-			//gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new TinkerPartSpriteProvider(), provider));
-		}
-	}
+		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+		boolean server = event.includeServer();
+		BlockTagsProvider blockTagsProvider = new BlueBlockTags(packOutput, lookupProvider, fileHelper);
+		gen.addProvider(server, blockTagsProvider);
+		gen.addProvider(server, new BlueItemTags(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), fileHelper));
+		//BlueMaterials materials = new BlueMaterials(gen);
+		//gen.addProvider(materials);
+		//gen.addProvider(new BlueMaterials.BlueSkiesMaterialStats(gen, materials));
+		//gen.addProvider(new BlueMaterials.BlueSkiesTraits(gen, materials));
+		gen.addProvider(server, new BlueFluidTags(packOutput, lookupProvider, fileHelper));
+		gen.addProvider(server, new BlueRecipes(packOutput));
+
+		boolean client = event.includeClient();
+		gen.addProvider(client, new BlueLang(packOutput));
+		gen.addProvider(client, new BlueBlockStates(packOutput, fileHelper));
+		gen.addProvider(client, new BlueItemModels(packOutput, fileHelper));
+		//AbstractMaterialSpriteProvider provider = new BlueMaterialSpriteProvider();
+		//gen.addProvider(new BlueRenderInfo(gen, provider));
+		//gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new TinkerPartSpriteProvider(), provider));
+}
 }

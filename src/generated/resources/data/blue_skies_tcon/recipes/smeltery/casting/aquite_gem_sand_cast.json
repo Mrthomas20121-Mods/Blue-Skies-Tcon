@@ -4,10 +4,10 @@
     "tag": "tconstruct:casts/single_use/gem"
   },
   "cast_consumed": true,
+  "cooling_time": 53,
   "fluid": {
-    "tag": "blue_skies_tcon:molten_aquite",
-    "amount": 100
+    "amount": 100,
+    "tag": "forge:molten_aquite"
   },
-  "result": "blue_skies:aquite",
-  "cooling_time": 53
+  "result": "blue_skies:aquite"
 }

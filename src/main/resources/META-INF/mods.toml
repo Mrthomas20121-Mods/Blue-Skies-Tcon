@@ -1,11 +1,11 @@
 modLoader = "javafml"
-loaderVersion = "[40,)"
+loaderVersion = "[47,)"
 license = "MIT License"
 issueTrackerURL = "https://github.com/Mrthomas20121/Blue-Skies-Tcon/issues"
 
 [[mods]]
 modId = "blue_skies_tcon"
-version = "0.0.2"
+version = "0.0.3"
 displayName = "Blue Skies Tinkers Compat"
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/blue_skies_tcon"
 authors = "Mrthomas20121"
@@ -16,18 +16,18 @@ Add Tinkers Compat to Blue Skies
 [[dependencies.blue_skies_tcon]]
     modId="forge"
     mandatory=true
-    versionRange="[40,)"
+    versionRange="[47,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.blue_skies_tcon]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,1.19)"
+    versionRange="[1.20.1,1.20.2)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.blue_skies_tcon]]
     modId="tconstruct"
     mandatory=true
-    versionRange="[3.5.1.31,)"
+    versionRange="[3.9.2,)"
     ordering="NONE"
     side="BOTH"

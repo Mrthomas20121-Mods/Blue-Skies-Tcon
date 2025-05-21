@@ -5,10 +5,11 @@ import com.legacy.blue_skies.registries.SkiesItems;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 public class BlueItemTags extends ItemTagsProvider {
 
@@ -29,12 +31,12 @@ public class BlueItemTags extends ItemTagsProvider {
         return ItemTags.create(new ResourceLocation(name));
     }
 
-    public BlueItemTags(DataGenerator gen, BlockTagsProvider tag, @Nullable ExistingFileHelper existingFileHelper) {
-        super(gen, tag, BlueSkiesTcon.MOD_ID, existingFileHelper);
+    public BlueItemTags(PackOutput gen, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(gen, lookupProvider, blockTagProvider, BlueSkiesTcon.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesItems.aquite,  BlueItems.aquite_nugget.get());
         addGemTags("charoite", SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore, SkiesBlocks.charoite_block, SkiesItems.charoite, BlueItems.charoite_nugget.get());
         addGemTags("diopside", SkiesBlocks.everdawn_diopside_ore, SkiesBlocks.everbright_diopside_ore, SkiesBlocks.diopside_block, SkiesItems.diopside_gem, BlueItems.diopside_nugget.get());
@@ -57,12 +59,12 @@ public class BlueItemTags extends ItemTagsProvider {
             TagKey<Item> castTag = create("tconstruct:casts/single_use/"+registryName.getPath().replace("_crystal_sand_cast", "").replace("_midnight_sand_cast", ""));
             tag(castTag).add(item);
             if(registryName.getPath().contains("midnight")) {
-                midnightSandProvider.add(item);
+                midnightSandProvider.add(itemCast.getKey());
             }
             else {
-                crystalSandProvider.add(item);
+                crystalSandProvider.add(itemCast.getKey());
             }
-            singleUseProvider.add(item);
+            singleUseProvider.add(itemCast.getKey());
         });
     }
 

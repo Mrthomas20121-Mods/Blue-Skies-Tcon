@@ -3,10 +3,10 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
+  "cooling_time": 50,
   "fluid": {
-    "tag": "blue_skies_tcon:molten_falsite",
-    "amount": 90
+    "amount": 90,
+    "tag": "forge:molten_falsite"
   },
-  "result": "blue_skies:falsite_ingot",
-  "cooling_time": 50
+  "result": "blue_skies:falsite_ingot"
 }
