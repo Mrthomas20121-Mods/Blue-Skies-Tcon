@@ -28,11 +28,11 @@ public class BlueItemModels extends ItemModelProvider {
         fluidWithModel(Fluids.falsite.getId(), "item/generated");
         fluidWithModel(Fluids.ventium.getId(), "item/generated");
 
-        fluidWithModel(BlueItems.aquite_nugget, "item/generated");
-        fluidWithModel(BlueItems.charoite_nugget, "item/generated");
-        fluidWithModel(BlueItems.diopside_nugget, "item/generated");
-        fluidWithModel(BlueItems.moonstone_nugget, "item/generated");
-        fluidWithModel(BlueItems.pyrope_nugget, "item/generated");
+        itemWithModel(BlueItems.aquite_nugget, "item/generated");
+        itemWithModel(BlueItems.charoite_nugget, "item/generated");
+        itemWithModel(BlueItems.diopside_nugget, "item/generated");
+        itemWithModel(BlueItems.moonstone_nugget, "item/generated");
+        itemWithModel(BlueItems.pyrope_nugget, "item/generated");
 
         castModel(BlueItems.midnight_sand);
         castModel(BlueItems.crystal_sand);
@@ -50,9 +50,10 @@ public class BlueItemModels extends ItemModelProvider {
         });
     }
 
+    // for buckets
     public void fluidWithModel(ResourceLocation id, String model) {
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath() + "_bucket");
-        singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
+        singleTexture(id.getPath() + "_bucket", new ResourceLocation(model), "layer0", textureLocation);
     }
 
     public void itemCastModel(RegistryObject<? extends Item> registryObject, String model, String cast) {
@@ -61,7 +62,7 @@ public class BlueItemModels extends ItemModelProvider {
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 
-    public void fluidWithModel(RegistryObject<? extends Item> registryObject, String model) {
+    public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
