@@ -16,6 +16,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
+import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -44,10 +47,12 @@ public static final String MOD_ID = "blue_skies_tcon";
 		BlockTagsProvider blockTagsProvider = new BlueBlockTags(packOutput, lookupProvider, fileHelper);
 		gen.addProvider(server, blockTagsProvider);
 		gen.addProvider(server, new BlueItemTags(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), fileHelper));
-		//BlueMaterials materials = new BlueMaterials(gen);
-		//gen.addProvider(materials);
-		//gen.addProvider(new BlueMaterials.BlueSkiesMaterialStats(gen, materials));
-		//gen.addProvider(new BlueMaterials.BlueSkiesTraits(gen, materials));
+
+		BlueMaterials materials = new BlueMaterials(packOutput);
+		gen.addProvider(server, materials);
+		gen.addProvider(server, new BlueMaterials.BlueSkiesMaterialStats(packOutput, materials));
+		gen.addProvider(server, new BlueMaterials.BlueSkiesTraits(packOutput, materials));
+
 		gen.addProvider(server, new BlueFluidTags(packOutput, lookupProvider, fileHelper));
 		gen.addProvider(server, new BlueRecipes(packOutput));
 
@@ -55,8 +60,8 @@ public static final String MOD_ID = "blue_skies_tcon";
 		gen.addProvider(client, new BlueLang(packOutput));
 		gen.addProvider(client, new BlueBlockStates(packOutput, fileHelper));
 		gen.addProvider(client, new BlueItemModels(packOutput, fileHelper));
-		//AbstractMaterialSpriteProvider provider = new BlueMaterialSpriteProvider();
-		//gen.addProvider(new BlueRenderInfo(gen, provider));
-		//gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new TinkerPartSpriteProvider(), provider));
-}
+		AbstractMaterialSpriteProvider provider = new BlueMaterialSpriteProvider();
+		gen.addProvider(client, new BlueRenderInfo(packOutput, provider, fileHelper));
+		gen.addProvider(client, new MaterialPartTextureGenerator(packOutput, fileHelper, new TinkerPartSpriteProvider(), provider));
+	}
 }

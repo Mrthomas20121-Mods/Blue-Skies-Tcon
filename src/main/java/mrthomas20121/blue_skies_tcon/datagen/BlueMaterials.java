@@ -6,6 +6,7 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
@@ -53,11 +54,11 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialTraits() {
-//            addDefaultTraits(aquite, Modifiers.chemical_bonds.get());
-//            addDefaultTraits(charoite, TinkerModifiers.fractured.get());
-//            addDefaultTraits(diopside, TinkerModifiers.gilded.get());
-//            addDefaultTraits(horizonite, TinkerModifiers.autosmelt.get(), TinkerModifiers.fiery.get());
-//            addDefaultTraits(pyrope, Modifiers.chemical_bonds.get());
+            addDefaultTraits(aquite, TinkerModifiers.overworked); // TODO: no default
+            addDefaultTraits(charoite, TinkerModifiers.piercing); // TODO: not what it was
+            addDefaultTraits(diopside, TinkerModifiers.golden);
+            addDefaultTraits(horizonite, TinkerModifiers.autosmelt, TinkerModifiers.fiery);
+            addDefaultTraits(pyrope, TinkerModifiers.overworked); // TODO: no default
         }
 
         @Nonnull
@@ -81,7 +82,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialStats() {
-
+            // TODO: these are all missing attackDamage
             addMaterialStats(aquite,
                     new HeadMaterialStats(300, 6f, DIAMOND, 2f),
                     HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.2f).build(),

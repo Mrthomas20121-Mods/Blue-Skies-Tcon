@@ -30,6 +30,7 @@ public class BlueBlockStates extends BlockStateProvider {
 
     public void fluid(FlowingFluidObject<ForgeFlowingFluid> fluid) {
         ResourceLocation name = fluid.getId();
-        simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath()+"_still")));
+        // TODO: fluids have no color
+        simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath()+ "_still")));
     }
 }
