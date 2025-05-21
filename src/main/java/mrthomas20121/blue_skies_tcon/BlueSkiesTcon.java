@@ -1,7 +1,7 @@
 package mrthomas20121.blue_skies_tcon;
 
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
-import mrthomas20121.blue_skies_tcon.init.Fluids;
+import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.datagen.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -31,7 +31,7 @@ public static final String MOD_ID = "blue_skies_tcon";
 
 	public BlueSkiesTcon() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		Fluids.FLUIDS.register(bus);
+		BlueFluids.FLUIDS.register(bus);
 		BlueItems.ITEMS.register(bus);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -60,6 +60,7 @@ public static final String MOD_ID = "blue_skies_tcon";
 		gen.addProvider(client, new BlueLang(packOutput));
 		gen.addProvider(client, new BlueBlockStates(packOutput, fileHelper));
 		gen.addProvider(client, new BlueItemModels(packOutput, fileHelper));
+		gen.addProvider(client, new BlueFluidTextureProvider(packOutput));
 		AbstractMaterialSpriteProvider provider = new BlueMaterialSpriteProvider();
 		gen.addProvider(client, new BlueRenderInfo(packOutput, provider, fileHelper));
 		gen.addProvider(client, new MaterialPartTextureGenerator(packOutput, fileHelper, new TinkerPartSpriteProvider(), provider));

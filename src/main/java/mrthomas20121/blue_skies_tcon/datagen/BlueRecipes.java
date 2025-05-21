@@ -5,7 +5,7 @@ import com.legacy.blue_skies.registries.SkiesItems;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.CustomByProduct;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
-import mrthomas20121.blue_skies_tcon.init.Fluids;
+import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -64,29 +64,29 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
                 .save(consumer, modResource(bucketCastingFolder+"water"));
         ItemCastingRecipeBuilder
                 .tableRecipe(SkiesItems.ventium_bucket)
-                .setFluidAndTime(Fluids.ventium, FluidValues.INGOT*3)
+                .setFluidAndTime(BlueFluids.ventium, FluidValues.INGOT*3)
                 .save(consumer, modResource(bucketCastingFolder+"ventium_bucket"));
 
-        gemCasting(consumer, Fluids.aquite, SkiesItems.aquite, castingFolder+"aquite_gem");
-        gemCasting(consumer, Fluids.charoite, SkiesItems.charoite, castingFolder+"charoite_gem");
-        gemCasting(consumer, Fluids.diopside, SkiesItems.diopside_gem, castingFolder+"diopside_gem");
-        gemCasting(consumer, Fluids.pyrope, SkiesItems.pyrope_gem, castingFolder+"pyrope_gem");
-        gemCasting(consumer, Fluids.moonstone, SkiesBlocks.moonstone.asItem(), castingFolder+"moonstone_gem");
-        ingotCasting(consumer, Fluids.horizonite, SkiesItems.horizonite_ingot, castingFolder+"horizonite_block");
-        blockBasin(consumer, Fluids.horizonite, SkiesBlocks.horizonite_block, castingFolder+"horizonite_block");
-        ingotCasting(consumer, Fluids.falsite, SkiesItems.falsite_ingot, castingFolder+"falsite_block");
-        blockBasin(consumer, Fluids.falsite, SkiesBlocks.falsite_block, castingFolder+"falsite_block");
-        ingotCasting(consumer, Fluids.ventium, SkiesItems.ventium_ingot, castingFolder+"ventium_block");
-        blockBasin(consumer, Fluids.ventium, SkiesBlocks.ventium_block, castingFolder+"ventium_block");
+        gemCasting(consumer, BlueFluids.aquite, SkiesItems.aquite, castingFolder+"aquite_gem");
+        gemCasting(consumer, BlueFluids.charoite, SkiesItems.charoite, castingFolder+"charoite_gem");
+        gemCasting(consumer, BlueFluids.diopside, SkiesItems.diopside_gem, castingFolder+"diopside_gem");
+        gemCasting(consumer, BlueFluids.pyrope, SkiesItems.pyrope_gem, castingFolder+"pyrope_gem");
+        gemCasting(consumer, BlueFluids.moonstone, SkiesBlocks.moonstone.asItem(), castingFolder+"moonstone_gem");
+        ingotCasting(consumer, BlueFluids.horizonite, SkiesItems.horizonite_ingot, castingFolder+"horizonite_block");
+        blockBasin(consumer, BlueFluids.horizonite, SkiesBlocks.horizonite_block, castingFolder+"horizonite_block");
+        ingotCasting(consumer, BlueFluids.falsite, SkiesItems.falsite_ingot, castingFolder+"falsite_block");
+        blockBasin(consumer, BlueFluids.falsite, SkiesBlocks.falsite_block, castingFolder+"falsite_block");
+        ingotCasting(consumer, BlueFluids.ventium, SkiesItems.ventium_ingot, castingFolder+"ventium_block");
+        blockBasin(consumer, BlueFluids.ventium, SkiesBlocks.ventium_block, castingFolder+"ventium_block");
 
-        gemMelting(consumer, Fluids.aquite.get(), "aquite", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, Fluids.charoite.get(), "charoite", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, Fluids.diopside.get(), "diopside", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, Fluids.pyrope.get(), "pyrope", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        metalMelting(consumer, Fluids.horizonite.get(), "horizonite", true, false, meltingFolder, false, Byproduct.IRON);
-        metalMelting(consumer, Fluids.falsite.get(), "falsite", true, false, meltingFolder, false, CustomByProduct.MOONSTONE);
-        metalMelting(consumer, Fluids.ventium.get(), "ventium", true, false, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, Fluids.moonstone.get(), "moonstone", true, 9, meltingFolder, false);
+        gemMelting(consumer, BlueFluids.aquite.get(), "aquite", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
+        gemMelting(consumer, BlueFluids.charoite.get(), "charoite", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
+        gemMelting(consumer, BlueFluids.diopside.get(), "diopside", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
+        gemMelting(consumer, BlueFluids.pyrope.get(), "pyrope", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
+        metalMelting(consumer, BlueFluids.horizonite.get(), "horizonite", true, false, meltingFolder, false, Byproduct.IRON);
+        metalMelting(consumer, BlueFluids.falsite.get(), "falsite", true, false, meltingFolder, false, CustomByProduct.MOONSTONE);
+        metalMelting(consumer, BlueFluids.ventium.get(), "ventium", true, false, meltingFolder, false, CustomByProduct.MOONSTONE);
+        gemMelting(consumer, BlueFluids.moonstone.get(), "moonstone", true, 9, meltingFolder, false);
 
         MoldingRecipeBuilder.moldingTable(BlueItems.midnight_sand.getBlank().get())
                 .setMaterial(BlueItemTags.midnight_sand_casts)
@@ -97,11 +97,11 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
                 .save(consumer, modResource("smeltery/crystal_sand_cast_pickup"));
 
         // material melting
-        materialMeltingCasting(consumer, BlueMaterials.aquite, Fluids.aquite, materialFolder + "aquite");
-        materialMeltingCasting(consumer, BlueMaterials.charoite, Fluids.charoite, materialFolder + "charoite");
-        materialMeltingCasting(consumer, BlueMaterials.diopside, Fluids.diopside, materialFolder + "diopside");
-        materialMeltingCasting(consumer, BlueMaterials.horizonite, Fluids.horizonite,materialFolder + "horizonite");
-        materialMeltingCasting(consumer, BlueMaterials.pyrope, Fluids.pyrope, materialFolder + "pyrope");
+        materialMeltingCasting(consumer, BlueMaterials.aquite, BlueFluids.aquite, materialFolder + "aquite");
+        materialMeltingCasting(consumer, BlueMaterials.charoite, BlueFluids.charoite, materialFolder + "charoite");
+        materialMeltingCasting(consumer, BlueMaterials.diopside, BlueFluids.diopside, materialFolder + "diopside");
+        materialMeltingCasting(consumer, BlueMaterials.horizonite, BlueFluids.horizonite,materialFolder + "horizonite");
+        materialMeltingCasting(consumer, BlueMaterials.pyrope, BlueFluids.pyrope, materialFolder + "pyrope");
     }
 
     protected void blockBasin(Consumer<FinishedRecipe> consumer, FluidObject<ForgeFlowingFluid> object, Block block, String folder) {

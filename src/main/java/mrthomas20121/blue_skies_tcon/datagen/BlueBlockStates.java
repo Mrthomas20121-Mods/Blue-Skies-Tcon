@@ -1,7 +1,7 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.init.Fluids;
+import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -18,19 +18,18 @@ public class BlueBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        fluid(Fluids.aquite);
-        fluid(Fluids.charoite);
-        fluid(Fluids.diopside);
-        fluid(Fluids.horizonite);
-        fluid(Fluids.pyrope);
-        fluid(Fluids.ventium);
-        fluid(Fluids.falsite);
-        fluid(Fluids.moonstone);
+        fluid(BlueFluids.aquite);
+        fluid(BlueFluids.charoite);
+        fluid(BlueFluids.diopside);
+        fluid(BlueFluids.horizonite);
+        fluid(BlueFluids.pyrope);
+        fluid(BlueFluids.ventium);
+        fluid(BlueFluids.falsite);
+        fluid(BlueFluids.moonstone);
     }
 
     public void fluid(FlowingFluidObject<ForgeFlowingFluid> fluid) {
         ResourceLocation name = fluid.getId();
-        // TODO: fluids have no color
         simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath()+ "_still")));
     }
 }

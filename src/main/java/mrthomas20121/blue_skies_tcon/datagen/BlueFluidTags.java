@@ -1,7 +1,7 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.init.Fluids;
+import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
@@ -27,6 +27,7 @@ public class BlueFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> VENTIUM = forgeTag("molten_ventium");
 
     // Blue skies tags
+    // TODO: seems dumb to have both
     public static final TagKey<Fluid> AQUITE_ = modTag("molten_aquite");
     public static final TagKey<Fluid> CHAROITE_ = modTag("molten_charoite");
     public static final TagKey<Fluid> DIOPSIDE_ = modTag("molten_diopside");
@@ -53,21 +54,21 @@ public class BlueFluidTags extends FluidTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(AQUITE).add(Fluids.aquite.get());
-        tag(AQUITE_).add(Fluids.aquite.get());
-        tag(CHAROITE).add(Fluids.charoite.get());
-        tag(CHAROITE_).add(Fluids.charoite.get());
-        tag(DIOPSIDE).add(Fluids.diopside.get());
-        tag(DIOPSIDE_).add(Fluids.diopside.get());
-        tag(HORIZONITE).add(Fluids.horizonite.get());
-        tag(HORIZONITE_).add(Fluids.horizonite.get());
-        tag(PYROPE).add(Fluids.pyrope.get());
-        tag(PYROPE_).add(Fluids.pyrope.get());
-        tag(MOONSTONE).add(Fluids.moonstone.get());
-        tag(MOONSTONE_).add(Fluids.moonstone.get());
-        tag(FALSITE).add(Fluids.falsite.get());
-        tag(FALSITE_).add(Fluids.falsite.get());
-        tag(VENTIUM).add(Fluids.ventium.get());
-        tag(VENTIUM_).add(Fluids.ventium.get());
+        tag(AQUITE).add(BlueFluids.aquite.get());
+        tag(CHAROITE).add(BlueFluids.charoite.get());
+        tag(DIOPSIDE).add(BlueFluids.diopside.get());
+        tag(HORIZONITE).add(BlueFluids.horizonite.get());
+        tag(PYROPE).add(BlueFluids.pyrope.get());
+        tag(MOONSTONE).add(BlueFluids.moonstone.get());
+        tag(FALSITE).add(BlueFluids.falsite.get());
+        tag(VENTIUM).add(BlueFluids.ventium.get());
+//        tag(AQUITE_).add(BlueFluids.aquite.get());
+//        tag(CHAROITE_).add(BlueFluids.charoite.get());
+//        tag(DIOPSIDE_).add(BlueFluids.diopside.get());
+//        tag(HORIZONITE_).add(BlueFluids.horizonite.get());
+//        tag(PYROPE_).add(BlueFluids.pyrope.get());
+//        tag(MOONSTONE_).add(BlueFluids.moonstone.get());
+//        tag(FALSITE_).add(BlueFluids.falsite.get());
+//        tag(VENTIUM_).add(BlueFluids.ventium.get());
     }
 }

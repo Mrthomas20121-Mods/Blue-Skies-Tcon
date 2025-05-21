@@ -3,7 +3,7 @@ package mrthomas20121.blue_skies_tcon.datagen;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
-import mrthomas20121.blue_skies_tcon.init.Fluids;
+import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -19,14 +19,14 @@ public class BlueItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        fluidWithModel(Fluids.aquite.getId(), "item/generated");
-        fluidWithModel(Fluids.charoite.getId(), "item/generated");
-        fluidWithModel(Fluids.diopside.getId(), "item/generated");
-        fluidWithModel(Fluids.horizonite.getId(), "item/generated");
-        fluidWithModel(Fluids.pyrope.getId(), "item/generated");
-        fluidWithModel(Fluids.moonstone.getId(), "item/generated");
-        fluidWithModel(Fluids.falsite.getId(), "item/generated");
-        fluidWithModel(Fluids.ventium.getId(), "item/generated");
+        fluidWithModel(BlueFluids.aquite.getId(), "item/generated");
+        fluidWithModel(BlueFluids.charoite.getId(), "item/generated");
+        fluidWithModel(BlueFluids.diopside.getId(), "item/generated");
+        fluidWithModel(BlueFluids.horizonite.getId(), "item/generated");
+        fluidWithModel(BlueFluids.pyrope.getId(), "item/generated");
+        fluidWithModel(BlueFluids.moonstone.getId(), "item/generated");
+        fluidWithModel(BlueFluids.falsite.getId(), "item/generated");
+        fluidWithModel(BlueFluids.ventium.getId(), "item/generated");
 
         itemWithModel(BlueItems.aquite_nugget, "item/generated");
         itemWithModel(BlueItems.charoite_nugget, "item/generated");

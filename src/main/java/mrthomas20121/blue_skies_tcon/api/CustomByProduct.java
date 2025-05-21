@@ -1,6 +1,6 @@
 package mrthomas20121.blue_skies_tcon.api;
 
-import mrthomas20121.blue_skies_tcon.init.Fluids;
+import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.recipe.helper.FluidOutput;
 import slimeknights.mantle.registration.object.FluidObject;
@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 import java.util.Locale;
 
 public enum CustomByProduct implements IByproduct {
-    MOONSTONE(false, Fluids.moonstone);
+    MOONSTONE(false, BlueFluids.moonstone);
 
     private final boolean alwaysPresent;
     private final FluidObject<ForgeFlowingFluid> fluidSupplier;

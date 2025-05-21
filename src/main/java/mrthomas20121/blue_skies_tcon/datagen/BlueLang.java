@@ -3,7 +3,7 @@ package mrthomas20121.blue_skies_tcon.datagen;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
-import mrthomas20121.blue_skies_tcon.init.Fluids;
+import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -18,14 +18,14 @@ public class BlueLang extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        addFluid(Fluids.aquite, "molten_aquite");
-        addFluid(Fluids.charoite, "molten_charoite");
-        addFluid(Fluids.diopside, "molten_diopside");
-        addFluid(Fluids.horizonite, "molten_horizonite");
-        addFluid(Fluids.pyrope, "molten_pyrope");
-        addFluid(Fluids.moonstone, "molten_moonstone");
-        addFluid(Fluids.falsite, "molten_falsite");
-        addFluid(Fluids.ventium, "molten_ventium");
+        addFluid(BlueFluids.aquite, "molten_aquite");
+        addFluid(BlueFluids.charoite, "molten_charoite");
+        addFluid(BlueFluids.diopside, "molten_diopside");
+        addFluid(BlueFluids.horizonite, "molten_horizonite");
+        addFluid(BlueFluids.pyrope, "molten_pyrope");
+        addFluid(BlueFluids.moonstone, "molten_moonstone");
+        addFluid(BlueFluids.falsite, "molten_falsite");
+        addFluid(BlueFluids.ventium, "molten_ventium");
 
         addItem(BlueItems.aquite_nugget, "Aquite Nugget");
         addItem(BlueItems.charoite_nugget, "Charoite Nugget");
