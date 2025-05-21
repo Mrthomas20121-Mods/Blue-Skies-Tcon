@@ -6,8 +6,6 @@ import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.CustomByProduct;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.Fluids;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -98,14 +96,12 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
                 .setMaterial(BlueItemTags.crystal_sand_casts)
                 .save(consumer, modResource("smeltery/crystal_sand_cast_pickup"));
 
-
-
         // material melting
-        //materialMeltingCasting(consumer, BlueMaterials.aquite, Fluids.aquite.asObject(), true, materialFolder+"aquite");
-        //materialMeltingCasting(consumer, BlueMaterials.charoite, Fluids.charoite.asObject(), true,materialFolder+"charoite");
-        //materialMeltingCasting(consumer, BlueMaterials.diopside, Fluids.diopside.asObject(), true,materialFolder+"diopside");
-        //materialMeltingCasting(consumer, BlueMaterials.horizonite, Fluids.horizonite.asObject(), true,materialFolder+"horizonite");
-        //materialMeltingCasting(consumer, BlueMaterials.pyrope, Fluids.pyrope.asObject(), true,materialFolder+"pyrope");
+        materialMeltingCasting(consumer, BlueMaterials.aquite, Fluids.aquite, materialFolder + "aquite");
+        materialMeltingCasting(consumer, BlueMaterials.charoite, Fluids.charoite, materialFolder + "charoite");
+        materialMeltingCasting(consumer, BlueMaterials.diopside, Fluids.diopside, materialFolder + "diopside");
+        materialMeltingCasting(consumer, BlueMaterials.horizonite, Fluids.horizonite,materialFolder + "horizonite");
+        materialMeltingCasting(consumer, BlueMaterials.pyrope, Fluids.pyrope, materialFolder + "pyrope");
     }
 
     protected void blockBasin(Consumer<FinishedRecipe> consumer, FluidObject<ForgeFlowingFluid> object, Block block, String folder) {

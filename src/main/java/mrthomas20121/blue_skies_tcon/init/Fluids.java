@@ -25,14 +25,13 @@ public class Fluids {
     public static FlowingFluidObject<ForgeFlowingFluid> ventium = register("molten_ventium", 800);
 
     private static FlowingFluidObject<ForgeFlowingFluid> register(String name, int temp) {
-        String still = String.format("%s:block/fluid/%s_still", BlueSkiesTcon.MOD_ID, name);
-        String flow = String.format("%s:block/fluid/%s_flowing", BlueSkiesTcon.MOD_ID, name);
+        String key = String.format("fluid.%s.%s", BlueSkiesTcon.MOD_ID, name);
         return FLUIDS.register(name).type(
                 FluidType.Properties.create()
                         .density(2000)
                         .viscosity(10000)
                         .temperature(temp)
-                        .descriptionId(still)
+                        .descriptionId(key)
                         .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
                         .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
                         .motionScale(0.0023333333333333335D)
@@ -43,7 +42,7 @@ public class Fluids {
                         .lightLevel(15)
         )
         // TODO: might want a per fluid color
-        .block(BurningLiquidBlock.createBurning(MapColor.COLOR_CYAN, 15, 10, 5f))
+        .block(BurningLiquidBlock.createBurning(MapColor.COLOR_BLUE, 15, 10, 5f))
         .bucket()
         .commonTag()
         .flowing();

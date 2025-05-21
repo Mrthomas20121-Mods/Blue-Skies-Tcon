@@ -18,7 +18,6 @@ public class BlueLang extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-
         addFluid(Fluids.aquite, "molten_aquite");
         addFluid(Fluids.charoite, "molten_charoite");
         addFluid(Fluids.diopside, "molten_diopside");
