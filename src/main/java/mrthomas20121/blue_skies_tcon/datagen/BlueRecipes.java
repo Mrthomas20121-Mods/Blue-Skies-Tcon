@@ -12,6 +12,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fluids.FluidStack;
@@ -66,6 +67,13 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
                 .tableRecipe(SkiesItems.ventium_bucket)
                 .setFluidAndTime(BlueFluids.ventium, FluidValues.INGOT*3)
                 .save(consumer, modResource(bucketCastingFolder+"ventium_bucket"));
+
+        // repair materials
+        materialRecipe(consumer, BlueMaterials.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, "tools/materials/" + "aquite");
+        materialRecipe(consumer, BlueMaterials.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, "tools/materials/" + "charoite");
+        materialRecipe(consumer, BlueMaterials.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, "tools/materials/" + "diopside");
+        materialRecipe(consumer, BlueMaterials.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, "tools/materials/" + "pyrope");
+        metalMaterialRecipe(consumer, BlueMaterials.horizonite, "tools/materials/", "horizonite", false);
 
         gemCasting(consumer, BlueFluids.aquite, SkiesItems.aquite, castingFolder+"aquite_gem");
         gemCasting(consumer, BlueFluids.charoite, SkiesItems.charoite, castingFolder+"charoite_gem");

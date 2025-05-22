@@ -1,5 +1,6 @@
 package mrthomas20121.blue_skies_tcon.datagen;
 
+import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
@@ -24,7 +25,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
     public static final MaterialId pyrope = createMaterial("pyrope");
 
     private static MaterialId createMaterial(String name) {
-        return new MaterialId(new ResourceLocation("blue_skies_tcon", name));
+        return new MaterialId(new ResourceLocation(BlueSkiesTcon.MOD_ID, name));
     }
 
     public BlueMaterials(PackOutput packOutput) {
@@ -33,11 +34,11 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(aquite, 3, ORDER_HARVEST, false);
-        addMaterial(charoite, 3, ORDER_WEAPON, false);
-        addMaterial(diopside, 3, ORDER_WEAPON, false);
+        addMaterial(aquite, 3, ORDER_HARVEST, true);
+        addMaterial(charoite, 3, ORDER_WEAPON, true);
+        addMaterial(diopside, 3, ORDER_WEAPON, true);
         addMaterial(horizonite, 3, ORDER_WEAPON, false);
-        addMaterial(pyrope, 3, ORDER_GENERAL, false);
+        addMaterial(pyrope, 3, ORDER_GENERAL, true);
     }
 
     @Nonnull
@@ -74,12 +75,6 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             super(packOutput, materials);
         }
 
-        @Nonnull
-        @Override
-        public String getName() {
-            return "Blue Skies Material Stats";
-        }
-
         @Override
         protected void addMaterialStats() {
             // TODO: these are all missing attackDamage
@@ -107,6 +102,12 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
                     new HeadMaterialStats(300, 5f, DIAMOND, 1f),
                     HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.1f).build(),
                     StatlessMaterialStats.BINDING);
+        }
+
+        @Nonnull
+        @Override
+        public String getName() {
+            return "Blue Skies Material Stats";
         }
     }
 }

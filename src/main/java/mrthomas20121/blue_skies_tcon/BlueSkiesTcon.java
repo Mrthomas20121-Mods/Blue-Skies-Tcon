@@ -58,7 +58,8 @@ public static final String MOD_ID = "blue_skies_tcon";
 
 		boolean client = event.includeClient();
 		gen.addProvider(client, new BlueLang(packOutput));
-		gen.addProvider(client, new BlueBlockStates(packOutput, fileHelper));
+		// TODO: why is this even needed
+//		gen.addProvider(client, new BlueBlockStates(packOutput, fileHelper));
 		gen.addProvider(client, new BlueItemModels(packOutput, fileHelper));
 		gen.addProvider(client, new BlueFluidTextureProvider(packOutput));
 		AbstractMaterialSpriteProvider provider = new BlueMaterialSpriteProvider();
