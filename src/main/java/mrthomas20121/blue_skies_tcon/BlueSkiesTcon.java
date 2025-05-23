@@ -2,7 +2,7 @@ package mrthomas20121.blue_skies_tcon;
 
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
-import mrthomas20121.blue_skies_tcon.datagen.*;
+import mrthomas20121.blue_skies_tcon.data.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

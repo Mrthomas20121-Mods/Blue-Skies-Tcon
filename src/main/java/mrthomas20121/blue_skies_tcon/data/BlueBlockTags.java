@@ -1,4 +1,4 @@
-package mrthomas20121.blue_skies_tcon.datagen;
+package mrthomas20121.blue_skies_tcon.data;
 
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;

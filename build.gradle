@@ -128,6 +128,9 @@ dependencies {
 
     implementation fg.deobf("com.legacy:structure-gel:${minecraft_version}-2.16.2")
     implementation fg.deobf("curse.maven:blue_skies-${blue_skies_id}:${blue_skies_version}")
+
+    runtimeOnly fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6237015")
+    runtimeOnly fg.deobf("curse.maven:selene-499980:6507197")
 }
 
 jar {

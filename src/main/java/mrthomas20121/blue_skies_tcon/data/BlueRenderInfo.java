@@ -1,4 +1,4 @@
-package mrthomas20121.blue_skies_tcon.datagen;
+package mrthomas20121.blue_skies_tcon.data;
 
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;

@@ -1,4 +1,4 @@
-package mrthomas20121.blue_skies_tcon.datagen;
+package mrthomas20121.blue_skies_tcon.data;
 
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
