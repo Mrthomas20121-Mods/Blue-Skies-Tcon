@@ -1,14 +1,15 @@
 package mrthomas20121.blue_skies_tcon.data;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
+import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tiers;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
@@ -29,7 +30,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
     }
 
     private static MaterialId createMaterial(String name) {
-        return new MaterialId(new ResourceLocation(BlueSkiesTcon.MOD_ID, name));
+        return new MaterialId(BlueSkiesTcon.resource(name));
     }
 
     @Override
@@ -55,11 +56,12 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
         @Override
         protected void addMaterialTraits() {
             // TODO: everything needs to be changed
-            addDefaultTraits(aquite, TinkerModifiers.overworked);
-            addDefaultTraits(charoite, TinkerModifiers.holy);
-            addDefaultTraits(diopside, TinkerModifiers.holy);
+            addDefaultTraits(aquite, BlueModifiers.sky_breaker); // just give it the breaker trait only
+            addDefaultTraits(charoite, BlueModifiers.speedster, BlueModifiers.sky_breaker);
+            addDefaultTraits(diopside, BlueModifiers.sky_breaker);
             addDefaultTraits(horizonite, TinkerModifiers.autosmelt, TinkerModifiers.fiery);
-            addDefaultTraits(pyrope, TinkerModifiers.overworked);
+            addDefaultTraits(horizonite, BlueModifiers.sky_breaker);
+            addDefaultTraits(pyrope, ModifierIds.lightweight, BlueModifiers.sky_breaker);
         }
 
         @Nonnull

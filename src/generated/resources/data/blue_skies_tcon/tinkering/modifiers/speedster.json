@@ -1,0 +1,21 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "formula": [
+        "$speed"
+      ],
+      "percent": false,
+      "variables": {
+        "speed": {
+          "type": "tconstruct:entity",
+          "entity_type": "blue_skies_tcon:speedster",
+          "fallback": 0.0,
+          "which": "attacker"
+        }
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,11 +1,15 @@
 package mrthomas20121.blue_skies_tcon;
 
+import mrthomas20121.blue_skies_tcon.data.modifier.BlueModifierProvider;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.data.*;
+import mrthomas20121.blue_skies_tcon.init.BlueVariables;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -14,10 +18,12 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.library.json.variable.entity.EntityVariable;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -56,6 +62,8 @@ public static final String MOD_ID = "blue_skies_tcon";
 		gen.addProvider(server, new BlueFluidTags(packOutput, lookupProvider, fileHelper));
 		gen.addProvider(server, new BlueRecipes(packOutput));
 
+		gen.addProvider(server, new BlueModifierProvider(packOutput));
+
 		boolean client = event.includeClient();
 		gen.addProvider(client, new BlueLang(packOutput));
 		// TODO: why is this even needed
@@ -65,5 +73,16 @@ public static final String MOD_ID = "blue_skies_tcon";
 		AbstractMaterialSpriteProvider provider = new BlueMaterialSpriteProvider();
 		gen.addProvider(client, new BlueRenderInfo(packOutput, provider, fileHelper));
 		gen.addProvider(client, new MaterialPartTextureGenerator(packOutput, fileHelper, new TinkerPartSpriteProvider(), provider));
+	}
+
+	@SubscribeEvent
+	public static void register(RegisterEvent event) {
+		if (event.getRegistryKey() != Registries.RECIPE_SERIALIZER) return;
+		EntityVariable.LOADER.register(resource("speedster"), BlueVariables.ENTITY_SPEED.getLoader());
+	}
+
+	@SuppressWarnings("deprecation")
+	public static ResourceLocation resource(String s) {
+		return new ResourceLocation(BlueSkiesTcon.MOD_ID,  s);
 	}
 }
