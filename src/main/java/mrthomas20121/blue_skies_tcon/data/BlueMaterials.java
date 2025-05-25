@@ -56,12 +56,12 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
         @Override
         protected void addMaterialTraits() {
             // TODO: everything needs to be changed
-            addDefaultTraits(aquite, BlueModifiers.sky_breaker); // just give it the breaker trait only
-            addDefaultTraits(charoite, BlueModifiers.speedster, BlueModifiers.sky_breaker);
-            addDefaultTraits(diopside, BlueModifiers.sky_breaker);
+            addDefaultTraits(aquite, BlueModifiers.SKY_BREAKER); // just give it the breaker trait only
+            addDefaultTraits(charoite, BlueModifiers.speedster, BlueModifiers.SKY_BREAKER);
+            addDefaultTraits(diopside, BlueModifiers.SKY_BREAKER);
             addDefaultTraits(horizonite, TinkerModifiers.autosmelt, TinkerModifiers.fiery);
-            addDefaultTraits(horizonite, BlueModifiers.sky_breaker);
-            addDefaultTraits(pyrope, ModifierIds.lightweight, BlueModifiers.sky_breaker);
+            addDefaultTraits(horizonite, BlueModifiers.SKY_BREAKER);
+            addDefaultTraits(pyrope, ModifierIds.lightweight, BlueModifiers.SKY_BREAKER);
         }
 
         @Nonnull

@@ -21,6 +21,7 @@ public class BlueModifierProvider extends AbstractModifierProvider {
                         .customVariable("speed")
                         .build()
                 );
+        buildModifier(BlueModifiers.SKY_BREAKER);
     }
 
     @Override
