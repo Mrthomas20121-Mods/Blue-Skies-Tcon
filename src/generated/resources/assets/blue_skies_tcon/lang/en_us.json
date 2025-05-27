@@ -68,7 +68,10 @@
   "material.blue_skies_tcon.moonstone": "Moonstone",
   "material.blue_skies_tcon.pyrope": "Pyrope",
   "material.blue_skies_tcon.ventium": "Ventium",
-  "modifier.blue_skies_tcon.chemical_bonds": "Chemical Bonds",
-  "modifier.blue_skies_tcon.chemical_bonds.description": "Your tools damage feels off.",
-  "modifier.blue_skies_tcon.chemical_bonds.flavor": "Crystals have chemical bonds"
+  "modifier.blue_skies_tcon.ecstatic": "Ecstatic",
+  "modifier.blue_skies_tcon.ecstatic.description": "Get a speed boost for using your tools",
+  "modifier.blue_skies_tcon.ecstatic.flavor": "Now I'm motivated",
+  "modifier.blue_skies_tcon.sky_breaker": "Sky Breaker",
+  "modifier.blue_skies_tcon.sky_breaker.description": "Break through the limits of the Blue Skies",
+  "modifier.blue_skies_tcon.sky_breaker.flavor": "We Minecrafters have no limits!"
 }

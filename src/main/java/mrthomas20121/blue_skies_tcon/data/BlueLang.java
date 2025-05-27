@@ -4,11 +4,13 @@ import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
+import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 public class BlueLang extends LanguageProvider {
 
@@ -32,11 +34,12 @@ public class BlueLang extends LanguageProvider {
         addItem(BlueItems.diopside_nugget, "Diopside Nugget");
         addItem(BlueItems.moonstone_nugget, "Moonstone Nugget");
         addItem(BlueItems.pyrope_nugget, "Pyrope Nugget");
-        add("modifier.blue_skies_tcon.chemical_bonds", "Chemical Bonds");
-        add("modifier.blue_skies_tcon.chemical_bonds.description", "Your tools damage feels off.");
-        add("modifier.blue_skies_tcon.chemical_bonds.flavor", "Crystals have chemical bonds");
+
         addCast(BlueItems.midnight_sand);
         addCast(BlueItems.crystal_sand);
+
+        addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
+        addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break through the limits of the Blue Skies", "We Minecrafters have no limits!");
     }
 
     private void addFluid(FluidObject<ForgeFlowingFluid> fluid, String name) {
@@ -47,8 +50,14 @@ public class BlueLang extends LanguageProvider {
         add(String.format("material.%s.%s", BlueSkiesTcon.MOD_ID, materialName), capitalize(materialName));
     }
 
-    protected void addCast(ItemCast cast) {
+    private void addCast(ItemCast cast) {
         cast.getALL().forEach(itemCast -> addItem(itemCast, capitalize(itemCast.getId().getPath())));
+    }
+
+    private void addModifier(ModifierId id, String name, String desc, String flavor) {
+        add(String.format("modifier.blue_skies_tcon.%s", id.getPath()), name);
+        add(String.format("modifier.blue_skies_tcon.%s.description", id.getPath()), desc);
+        add(String.format("modifier.blue_skies_tcon.%s.flavor", id.getPath()), flavor);
     }
 
     public String capitalize(String input) {

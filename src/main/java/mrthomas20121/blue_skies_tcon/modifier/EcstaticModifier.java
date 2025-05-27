@@ -1,4 +1,4 @@
-package mrthomas20121.blue_skies_tcon;
+package mrthomas20121.blue_skies_tcon.modifier;
 
 import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
 import net.minecraft.world.damagesource.DamageSource;
