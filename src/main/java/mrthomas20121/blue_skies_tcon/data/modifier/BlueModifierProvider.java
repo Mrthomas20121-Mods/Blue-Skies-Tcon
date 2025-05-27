@@ -14,7 +14,7 @@ public class BlueModifierProvider extends AbstractModifierProvider {
 
     @Override
     protected void addModifiers() {
-        buildModifier(BlueModifiers.speedster)
+        buildModifier(BlueModifiers.SPEEDSTER)
                 .addModule(ConditionalMeleeDamageModule.builder()
                         .customVariable("speed", new EntityMeleeVariable(BlueVariables.ENTITY_SPEED, EntityMeleeVariable.WhichEntity.ATTACKER, 0))
                         .formula()

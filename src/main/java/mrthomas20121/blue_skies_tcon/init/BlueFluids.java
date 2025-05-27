@@ -12,16 +12,16 @@ import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.tconstruct.fluids.block.BurningLiquidBlock;
 
 public class BlueFluids {
-    public static FluidDeferredRegister FLUIDS = new FluidDeferredRegister(BlueSkiesTcon.MOD_ID);
+    public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(BlueSkiesTcon.MOD_ID);
 
-    public static FlowingFluidObject<ForgeFlowingFluid> aquite = register("molten_aquite", 800, MapColor.COLOR_CYAN);
-    public static FlowingFluidObject<ForgeFlowingFluid> charoite = register("molten_charoite", 1000, MapColor.COLOR_MAGENTA);
-    public static FlowingFluidObject<ForgeFlowingFluid> diopside = register("molten_diopside", 1000, MapColor.COLOR_GREEN);
-    public static FlowingFluidObject<ForgeFlowingFluid> horizonite = register("molten_horizonite", 1000, MapColor.TERRACOTTA_YELLOW);
-    public static FlowingFluidObject<ForgeFlowingFluid> pyrope = register("molten_pyrope", 800, MapColor.COLOR_PINK);
-    public static FlowingFluidObject<ForgeFlowingFluid> moonstone = register("molten_moonstone", 1000, MapColor.COLOR_LIGHT_BLUE);
-    public static FlowingFluidObject<ForgeFlowingFluid> falsite = register("molten_falsite", 800, MapColor.COLOR_PURPLE);
-    public static FlowingFluidObject<ForgeFlowingFluid> ventium = register("molten_ventium", 800, MapColor.COLOR_RED);
+    public static final FlowingFluidObject<ForgeFlowingFluid> aquite = register("molten_aquite", 800, MapColor.COLOR_CYAN);
+    public static final FlowingFluidObject<ForgeFlowingFluid> charoite = register("molten_charoite", 1000, MapColor.COLOR_MAGENTA);
+    public static final FlowingFluidObject<ForgeFlowingFluid> diopside = register("molten_diopside", 1000, MapColor.COLOR_GREEN);
+    public static final FlowingFluidObject<ForgeFlowingFluid> horizonite = register("molten_horizonite", 1000, MapColor.TERRACOTTA_YELLOW);
+    public static final FlowingFluidObject<ForgeFlowingFluid> pyrope = register("molten_pyrope", 800, MapColor.COLOR_PINK);
+    public static final FlowingFluidObject<ForgeFlowingFluid> moonstone = register("molten_moonstone", 1000, MapColor.COLOR_LIGHT_BLUE);
+    public static final FlowingFluidObject<ForgeFlowingFluid> falsite = register("molten_falsite", 800, MapColor.COLOR_PURPLE);
+    public static final FlowingFluidObject<ForgeFlowingFluid> ventium = register("molten_ventium", 800, MapColor.COLOR_RED);
 
     private static FlowingFluidObject<ForgeFlowingFluid> register(String name, int temp, MapColor color) {
         String key = String.format("fluid.%s.%s", BlueSkiesTcon.MOD_ID, name);

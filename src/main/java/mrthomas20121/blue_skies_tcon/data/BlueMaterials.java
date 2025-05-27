@@ -9,7 +9,6 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataPr
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.TinkerModifiers;
-import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
@@ -57,11 +56,10 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
         protected void addMaterialTraits() {
             // TODO: everything needs to be changed
             addDefaultTraits(aquite, BlueModifiers.SKY_BREAKER); // just give it the breaker trait only
-            addDefaultTraits(charoite, BlueModifiers.speedster, BlueModifiers.SKY_BREAKER);
+            addDefaultTraits(charoite, BlueModifiers.SPEEDSTER, BlueModifiers.SKY_BREAKER);
             addDefaultTraits(diopside, BlueModifiers.SKY_BREAKER);
-            addDefaultTraits(horizonite, TinkerModifiers.autosmelt, TinkerModifiers.fiery);
-            addDefaultTraits(horizonite, BlueModifiers.SKY_BREAKER);
-            addDefaultTraits(pyrope, ModifierIds.lightweight, BlueModifiers.SKY_BREAKER);
+            addDefaultTraits(horizonite, TinkerModifiers.autosmelt.getId(), TinkerModifiers.fiery.getId(), BlueModifiers.SKY_BREAKER);
+            addDefaultTraits(pyrope, BlueModifiers.ECSTATIC.getId(), BlueModifiers.SKY_BREAKER);
         }
 
         @Nonnull
@@ -125,7 +123,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             // gold? equivalent
             addMaterialStats(pyrope,
                     new HeadMaterialStats(300, 11f, Tiers.STONE, 1.55f),
-                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.25f).build(),
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.15f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(pyrope,
                     PlatingMaterialStats.builder().durabilityFactor(15).armor(1, 4, 5, 2),

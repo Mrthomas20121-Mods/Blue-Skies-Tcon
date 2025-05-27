@@ -13,7 +13,7 @@ import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 @Mixin(PlayerHooks.class)
 public class PlayerHooksMixin {
     @Inject(method = "isNerfableTool(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;)Z", at = @At("HEAD"), remap = false, cancellable = true)
-    void isNerfableTool(ItemStack stack, BlockState state, CallbackInfoReturnable<Boolean> cir) {
+    private static void isNerfableTool(ItemStack stack, BlockState state, CallbackInfoReturnable<Boolean> cir) {
         if (ModifierUtil.getModifierLevel(stack, BlueModifiers.SKY_BREAKER) >= 1) {
             cir.setReturnValue(false);
         }
