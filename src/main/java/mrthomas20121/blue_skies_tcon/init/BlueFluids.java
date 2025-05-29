@@ -26,23 +26,23 @@ public class BlueFluids {
     private static FlowingFluidObject<ForgeFlowingFluid> register(String name, int temp, MapColor color) {
         String key = String.format("fluid.%s.%s", BlueSkiesTcon.MOD_ID, name);
         return FLUIDS.register(name).type(
-                FluidType.Properties.create()
-                        .density(2000)
-                        .viscosity(10000)
-                        .temperature(temp)
-                        .descriptionId(key)
-                        .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
-                        .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
-                        .motionScale(0.0023333333333333335D)
-                        .canSwim(false)
-                        .canDrown(false)
-                        .pathType(BlockPathTypes.LAVA)
-                        .adjacentPathType(null)
-                        .lightLevel(15)
-        )
-        .block(BurningLiquidBlock.createBurning(color, 15, 10, 5f))
-        .bucket()
-        .commonTag()
-        .flowing();
+                        FluidType.Properties.create()
+                                .density(2000)
+                                .viscosity(10000)
+                                .temperature(temp)
+                                .descriptionId(key)
+                                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
+                                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
+                                .motionScale(0.0023333333333333335D)
+                                .canSwim(false)
+                                .canDrown(false)
+                                .pathType(BlockPathTypes.LAVA)
+                                .adjacentPathType(null)
+                                .lightLevel(15)
+                )
+                .block(BurningLiquidBlock.createBurning(color, 15, 10, 5f))
+                .bucket()
+                .commonTag()
+                .flowing();
     }
 }

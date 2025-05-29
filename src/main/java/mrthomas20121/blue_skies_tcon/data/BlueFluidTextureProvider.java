@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 
 import static slimeknights.tconstruct.fluids.TinkerFluids.withoutMolten;
 
-public class BlueFluidTextureProvider extends AbstractFluidTextureProvider  {
+public class BlueFluidTextureProvider extends AbstractFluidTextureProvider {
     public BlueFluidTextureProvider(PackOutput packOutput) {
         super(packOutput, BlueSkiesTcon.MOD_ID);
     }
@@ -38,7 +38,7 @@ public class BlueFluidTextureProvider extends AbstractFluidTextureProvider  {
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {
-        return texture(fluid).textures(new ResourceLocation(BlueSkiesTcon.MOD_ID, "fluid/"+name+"/"), false, false);
+        return texture(fluid).textures(BlueSkiesTcon.resource("fluid/" + name + "/"), false, false);
     }
 
     @Nonnull

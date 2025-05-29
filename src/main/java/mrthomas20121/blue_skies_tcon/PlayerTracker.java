@@ -5,7 +5,6 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.*;
 
-// TODO: figure out serverside player velocity tracking
 public class PlayerTracker {
     private static final int QUEUE_LIMIT = 6;
     private static final double SPEED_LIMIT = 100f;

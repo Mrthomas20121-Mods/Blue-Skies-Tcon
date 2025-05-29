@@ -2,8 +2,8 @@ package mrthomas20121.blue_skies_tcon.data;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
-import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
+import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -39,12 +39,11 @@ public class BlueItemModels extends ItemModelProvider {
     }
 
     public void castModel(ItemCast cast) {
-        cast.getALL().forEach(itemCast-> {
+        cast.getALL().forEach(itemCast -> {
             ResourceLocation reg = itemCast.getId();
-            if(reg.getPath().contains("midnight")) {
+            if (reg.getPath().contains("midnight")) {
                 itemCastModel(itemCast, "item/generated", "midnight_sand_cast");
-            }
-            else {
+            } else {
                 itemCastModel(itemCast, "item/generated", "crystal_sand_cast");
             }
         });
@@ -58,7 +57,7 @@ public class BlueItemModels extends ItemModelProvider {
 
     public void itemCastModel(RegistryObject<? extends Item> registryObject, String model, String cast) {
         ResourceLocation id = registryObject.getId();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/"+cast+"/" + id.getPath().replace("_crystal_sand_cast", "").replace("_midnight_sand_cast", ""));
+        ResourceLocation textureLocation = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + cast + "/" + id.getPath().replace("_crystal_sand_cast", "").replace("_midnight_sand_cast", ""));
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 

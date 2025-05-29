@@ -38,10 +38,11 @@ public class BlueFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> VENTIUM_ = modTag("molten_ventium");
 
     public static TagKey<Fluid> forgeTag(String name) {
-        return create(new ResourceLocation("forge", name));
+        return create(ResourceLocation.fromNamespaceAndPath("forge", name));
     }
+
     public static TagKey<Fluid> modTag(String name) {
-        return create(new ResourceLocation(BlueSkiesTcon.MOD_ID, name));
+        return create(BlueSkiesTcon.resource(name));
     }
 
     public static TagKey<Fluid> create(ResourceLocation name) {

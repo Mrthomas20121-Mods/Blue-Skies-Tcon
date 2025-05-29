@@ -20,6 +20,18 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 /* Increases player speed, scaling strength with tool usage */
 public class EcstaticModifier extends Modifier implements BlockBreakModifierHook, MeleeHitModifierHook, OnAttackedModifierHook {
+    private static void applyEffect(LivingEntity living, ModifierEntry modifier) {
+        int amp = modifier.getLevel() - 1;
+        if (amp < 0) return;
+        MobEffectInstance instance = living.getEffect(BlueModifiers.ECSTATIC_EFFECT.get());
+        if (instance != null) {
+            instance.applyEffect(living);
+        } else {
+            instance = new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), 60, amp);
+            living.addEffect(instance);
+        }
+    }
+
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.BLOCK_BREAK, ModifierHooks.MELEE_HIT, ModifierHooks.ON_ATTACKED);
@@ -51,19 +63,7 @@ public class EcstaticModifier extends Modifier implements BlockBreakModifierHook
             living.removeEffect(BlueModifiers.ECSTATIC_EFFECT.get());
         }
 
-        instance = new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(),  Math.min((instance != null ? instance.getDuration() : 0) + 20, duration_cap), amp);
+        instance = new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), Math.min((instance != null ? instance.getDuration() : 0) + 20, duration_cap), amp);
         living.addEffect(instance);
-    }
-
-    private static void applyEffect(LivingEntity living, ModifierEntry modifier) {
-        int amp = modifier.getLevel() - 1;
-        if (amp < 0) return;
-        MobEffectInstance instance = living.getEffect(BlueModifiers.ECSTATIC_EFFECT.get());
-        if (instance != null) {
-            instance.applyEffect(living);
-        } else {
-            instance = new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), 60, amp);
-            living.addEffect(instance);
-        }
     }
 }

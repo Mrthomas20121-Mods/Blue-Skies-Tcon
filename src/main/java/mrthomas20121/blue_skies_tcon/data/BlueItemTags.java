@@ -21,13 +21,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class BlueItemTags extends ItemTagsProvider {
 
-    TagKey<Item> nuggets = create("forge:nuggets");
     public static TagKey<Item> crystal_sand_casts = create("tconstruct:casts/crystal_sand");
     public static TagKey<Item> midnight_sand_casts = create("tconstruct:casts/midnight_sand");
+    TagKey<Item> nuggets = create("forge:nuggets");
     TagKey<Item> single_use = create("tconstruct:casts/single_use");
 
     public static TagKey<Item> create(String name) {
-        return ItemTags.create(new ResourceLocation(name));
+        return ItemTags.create(ResourceLocation.parse(name));
     }
 
     public BlueItemTags(PackOutput gen, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -36,7 +36,7 @@ public class BlueItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesItems.aquite,  BlueItems.aquite_nugget.get());
+        addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesItems.aquite, BlueItems.aquite_nugget.get());
         addGemTags("charoite", SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore, SkiesBlocks.charoite_block, SkiesItems.charoite, BlueItems.charoite_nugget.get());
         addGemTags("diopside", SkiesBlocks.everdawn_diopside_ore, SkiesBlocks.everbright_diopside_ore, SkiesBlocks.diopside_block, SkiesItems.diopside_gem, BlueItems.diopside_nugget.get());
         addTags("horizonite", SkiesBlocks.horizonite_ore, SkiesBlocks.horizonite_block, SkiesItems.horizonite_ingot, SkiesItems.horizonite_nugget);
@@ -55,12 +55,11 @@ public class BlueItemTags extends ItemTagsProvider {
         cast.getALL().forEach(itemCast -> {
             ResourceLocation registryName = itemCast.getId();
             Item item = itemCast.get();
-            TagKey<Item> castTag = create("tconstruct:casts/single_use/"+registryName.getPath().replace("_crystal_sand_cast", "").replace("_midnight_sand_cast", ""));
+            TagKey<Item> castTag = create("tconstruct:casts/single_use/" + registryName.getPath().replace("_crystal_sand_cast", "").replace("_midnight_sand_cast", ""));
             tag(castTag).add(item);
-            if(registryName.getPath().contains("midnight")) {
+            if (registryName.getPath().contains("midnight")) {
                 midnightSandProvider.add(itemCast.getKey());
-            }
-            else {
+            } else {
                 crystalSandProvider.add(itemCast.getKey());
             }
             singleUseProvider.add(itemCast.getKey());

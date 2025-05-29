@@ -54,7 +54,6 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialTraits() {
-            // TODO: everything needs to be changed
             addDefaultTraits(aquite, BlueModifiers.SKY_BREAKER); // just give it the breaker trait only
             addDefaultTraits(charoite, BlueModifiers.SPEEDSTER, BlueModifiers.SKY_BREAKER);
             addDefaultTraits(diopside, BlueModifiers.SKY_BREAKER);
@@ -89,7 +88,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             // melee, armor
             // diamond equivalent, faster weaker
             addMaterialStats(charoite,
-                    new HeadMaterialStats(1561, 8.0f, Tiers.DIAMOND, 2.5f),
+                    new HeadMaterialStats(1561, 8.0f, Tiers.DIAMOND, 2.75f),
                     HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.1f).attackSpeed(1.05f).attackDamage(1.05f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(charoite,

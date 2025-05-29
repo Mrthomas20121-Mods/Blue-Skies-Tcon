@@ -8,7 +8,10 @@ import com.legacy.blue_skies.util.EntityUtil;
 import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
@@ -16,6 +19,7 @@ import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 @Mixin(LivingEntityHooks.class)
 public class LivingEntityHooksMixin {
 //    @Inject(method = "getArmorValue", at = @At("HEAD"), remap = false)
+
     /**
      * @author paypur
      * @reason why u use instanceof :/

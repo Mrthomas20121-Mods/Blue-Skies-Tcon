@@ -2,8 +2,8 @@ package mrthomas20121.blue_skies_tcon.data;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
-import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
+import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -62,10 +62,10 @@ public class BlueLang extends LanguageProvider {
     }
 
     public String capitalize(String input) {
-        if(input.contains("_")) {
+        if (input.contains("_")) {
             String[] split = input.split("_");
             StringBuilder output = new StringBuilder();
-            for(String s : split) {
+            for (String s : split) {
                 output.append(StringUtils.capitalize(s));
                 output.append(" ");
             }
