@@ -40,6 +40,7 @@ public class BlueLang extends LanguageProvider {
 
         addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
         addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break through the limits of the Blue Skies", "We Minecrafters have no limits!");
+        addModifier(BlueModifiers.SPEEDSTER, "Speedster", "TODO", "TODO");
     }
 
     private void addFluid(FluidObject<ForgeFlowingFluid> fluid, String name) {

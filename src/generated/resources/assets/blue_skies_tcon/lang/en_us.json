@@ -73,5 +73,8 @@
   "modifier.blue_skies_tcon.ecstatic.flavor": "Now I'm motivated",
   "modifier.blue_skies_tcon.sky_breaker": "Sky Breaker",
   "modifier.blue_skies_tcon.sky_breaker.description": "Break through the limits of the Blue Skies",
-  "modifier.blue_skies_tcon.sky_breaker.flavor": "We Minecrafters have no limits!"
+  "modifier.blue_skies_tcon.sky_breaker.flavor": "We Minecrafters have no limits!",
+  "modifier.blue_skies_tcon.speedster": "Speedster",
+  "modifier.blue_skies_tcon.speedster.description": "TODO",
+  "modifier.blue_skies_tcon.speedster.flavor": "TODO"
 }

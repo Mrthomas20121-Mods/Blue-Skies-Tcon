@@ -10,13 +10,17 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
@@ -84,8 +88,7 @@ public static final String MOD_ID = "blue_skies_tcon";
 		EntityVariable.LOADER.register(resource("speedster"), BlueVariables.ENTITY_SPEED.getLoader());
 	}
 
-	@SuppressWarnings("deprecation")
 	public static ResourceLocation resource(String s) {
-		return new ResourceLocation(BlueSkiesTcon.MOD_ID,  s);
+		return ResourceLocation.fromNamespaceAndPath(BlueSkiesTcon.MOD_ID,  s);
 	}
 }

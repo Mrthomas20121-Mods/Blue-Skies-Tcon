@@ -90,7 +90,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             // diamond equivalent, faster weaker
             addMaterialStats(charoite,
                     new HeadMaterialStats(1561, 8.0f, Tiers.DIAMOND, 2.5f),
-                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.1f).attackSpeed(1.1f).attackDamage(1.0f).build(),
+                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.1f).attackSpeed(1.05f).attackDamage(1.05f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(charoite,
                     PlatingMaterialStats.builder().durabilityFactor(33).armor(2, 5, 7, 2).toughness(1f),

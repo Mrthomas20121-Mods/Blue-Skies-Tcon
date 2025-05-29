@@ -4,7 +4,13 @@
     {
       "type": "tconstruct:conditional_melee_damage",
       "formula": [
-        "$speed"
+        "$speed",
+        "$level",
+        "*",
+        4.0,
+        "/",
+        "$damage",
+        "+"
       ],
       "percent": false,
       "variables": {
