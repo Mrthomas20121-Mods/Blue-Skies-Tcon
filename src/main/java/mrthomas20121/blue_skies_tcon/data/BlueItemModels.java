@@ -51,19 +51,19 @@ public class BlueItemModels extends ItemModelProvider {
 
     // for buckets
     public void fluidWithModel(ResourceLocation id, String model) {
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath() + "_bucket");
-        singleTexture(id.getPath() + "_bucket", new ResourceLocation(model), "layer0", textureLocation);
+        ResourceLocation textureLocation = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath() + "_bucket");
+        singleTexture(id.getPath() + "_bucket", ResourceLocation.parse(model), "layer0", textureLocation);
     }
 
     public void itemCastModel(RegistryObject<? extends Item> registryObject, String model, String cast) {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + cast + "/" + id.getPath().replace("_crystal_sand_cast", "").replace("_midnight_sand_cast", ""));
-        singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
+        singleTexture(id.getPath(), ResourceLocation.parse(model), "layer0", textureLocation);
     }
 
     public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {
         ResourceLocation id = registryObject.getId();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
-        singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
+        ResourceLocation textureLocation = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath());
+        singleTexture(id.getPath(), ResourceLocation.parse(model), "layer0", textureLocation);
     }
 }

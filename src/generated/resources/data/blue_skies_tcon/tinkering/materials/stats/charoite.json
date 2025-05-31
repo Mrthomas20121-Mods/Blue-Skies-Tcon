@@ -8,7 +8,7 @@
       "mining_speed": 0.1
     },
     "tconstruct:head": {
-      "durability": 1561,
+      "durability": 1061,
       "melee_attack": 2.75,
       "mining_speed": 8.0,
       "mining_tier": "minecraft:diamond"

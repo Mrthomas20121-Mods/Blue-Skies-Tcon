@@ -38,6 +38,7 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        String toolFolder = "tools/materials/";
         String materialFolder = "materials/";
         String meltingFolder = "smeltery/melting/";
         String castingFolder = "smeltery/casting/";
@@ -70,11 +71,11 @@ public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IM
                 .save(consumer, BlueSkiesTcon.resource(bucketCastingFolder + "ventium_bucket"));
 
         // repair materials
-        materialRecipe(consumer, BlueMaterials.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, "tools/materials/" + "aquite");
-        materialRecipe(consumer, BlueMaterials.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, "tools/materials/" + "charoite");
-        materialRecipe(consumer, BlueMaterials.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, "tools/materials/" + "diopside");
-        materialRecipe(consumer, BlueMaterials.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, "tools/materials/" + "pyrope");
-        metalMaterialRecipe(consumer, BlueMaterials.horizonite, "tools/materials/", "horizonite", false);
+        materialRecipe(consumer, BlueMaterials.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, toolFolder + "aquite");
+        materialRecipe(consumer, BlueMaterials.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, toolFolder + "charoite");
+        materialRecipe(consumer, BlueMaterials.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, toolFolder + "diopside");
+        materialRecipe(consumer, BlueMaterials.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, toolFolder + "pyrope");
+        metalMaterialRecipe(consumer, BlueMaterials.horizonite, toolFolder, "horizonite", false);
 
         gemCasting(consumer, BlueFluids.aquite, SkiesItems.aquite, castingFolder + "aquite_gem");
         gemCasting(consumer, BlueFluids.charoite, SkiesItems.charoite, castingFolder + "charoite_gem");

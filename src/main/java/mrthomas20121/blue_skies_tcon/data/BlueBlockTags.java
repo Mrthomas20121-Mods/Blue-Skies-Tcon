@@ -35,7 +35,7 @@ public class BlueBlockTags extends BlockTagsProvider {
     public static final TagKey<Block> PYROPE_ORE = create("forge:ores/pyrope");
 
     public static TagKey<Block> create(String name) {
-        return BlockTags.create(new ResourceLocation(name));
+        return BlockTags.create(ResourceLocation.parse(name));
     }
 
     public BlueBlockTags(PackOutput gen, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {

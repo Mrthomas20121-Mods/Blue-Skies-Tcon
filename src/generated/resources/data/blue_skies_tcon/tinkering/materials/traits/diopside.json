@@ -1,8 +1,24 @@
 {
-  "default": [
-    {
-      "level": 1,
-      "name": "blue_skies_tcon:sky_breaker"
-    }
-  ]
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tconstruct:knockback_resistance"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tconstruct:knockback"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      }
+    ]
+  }
 }

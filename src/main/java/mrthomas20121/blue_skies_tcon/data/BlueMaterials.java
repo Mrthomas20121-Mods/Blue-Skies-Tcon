@@ -7,8 +7,10 @@ import net.minecraft.world.item.Tiers;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
@@ -34,11 +36,11 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(aquite, 2, ORDER_HARVEST, true);
-        addMaterial(charoite, 2, ORDER_WEAPON, true);
-        addMaterial(diopside, 2, ORDER_WEAPON, true);
-        addMaterial(horizonite, 2, ORDER_HARVEST, false);
-        addMaterial(pyrope, 2, ORDER_HARVEST, true);
+        addMaterial(aquite, 2, ORDER_COMPAT + ORDER_HARVEST, true);
+        addMaterial(charoite, 3, ORDER_COMPAT + ORDER_WEAPON, true);
+        addMaterial(diopside, 3, ORDER_COMPAT + ORDER_WEAPON, true);
+        addMaterial(horizonite, 2, ORDER_COMPAT + ORDER_HARVEST, false);
+        addMaterial(pyrope, 2, ORDER_COMPAT + ORDER_HARVEST, true);
     }
 
     @Nonnull
@@ -55,9 +57,15 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
         @Override
         protected void addMaterialTraits() {
             addDefaultTraits(aquite, BlueModifiers.SKY_BREAKER); // just give it the breaker trait only
+
             addDefaultTraits(charoite, BlueModifiers.SPEEDSTER, BlueModifiers.SKY_BREAKER);
-            addDefaultTraits(diopside, BlueModifiers.SKY_BREAKER);
-            addDefaultTraits(horizonite, TinkerModifiers.autosmelt.getId(), TinkerModifiers.fiery.getId(), BlueModifiers.SKY_BREAKER);
+
+            addTraits(diopside, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.knockback.getId(), BlueModifiers.SKY_BREAKER);
+            addTraits(diopside, MaterialRegistry.ARMOR, ModifierIds.knockbackResistance, BlueModifiers.SKY_BREAKER);
+
+            addDefaultTraits(horizonite, TinkerModifiers.fiery.getId(), BlueModifiers.SKY_BREAKER);
+            addTraits(horizonite, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId(), BlueModifiers.SKY_BREAKER);
+
             addDefaultTraits(pyrope, BlueModifiers.ECSTATIC.getId(), BlueModifiers.SKY_BREAKER);
         }
 
@@ -88,7 +96,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             // melee, armor
             // diamond equivalent, faster weaker
             addMaterialStats(charoite,
-                    new HeadMaterialStats(1561, 8.0f, Tiers.DIAMOND, 2.75f),
+                    new HeadMaterialStats(1061, 8.0f, Tiers.DIAMOND, 2.75f),
                     HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.1f).attackSpeed(1.05f).attackDamage(1.05f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(charoite,
@@ -98,11 +106,11 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             // melee, armor
             // diamond equivalent, slower stronger
             addMaterialStats(diopside,
-                    new HeadMaterialStats(1661, 6f, Tiers.DIAMOND, 3.25f),
+                    new HeadMaterialStats(1161, 6f, Tiers.DIAMOND, 3.25f),
                     HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(0.85f).attackSpeed(0.75f).attackDamage(1.25f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(diopside,
-                    PlatingMaterialStats.builder().durabilityFactor(36).armor(2, 4, 6, 2).toughness(4.5f),
+                    PlatingMaterialStats.builder().durabilityFactor(36).armor(2, 4, 6, 2).toughness(5f),
                     StatlessMaterialStats.MAILLE);
 
             // melee, armor
