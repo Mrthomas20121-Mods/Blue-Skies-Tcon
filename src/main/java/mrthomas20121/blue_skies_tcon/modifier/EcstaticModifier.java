@@ -25,12 +25,8 @@ public class EcstaticModifier extends Modifier implements BlockBreakModifierHook
     private static void applyEffect(LivingEntity living, ModifierEntry modifier) {
         int amp = modifier.getLevel() - 1;
         if (amp < 0) return;
-        MobEffectInstance instance = living.getEffect(BlueModifiers.ECSTATIC_EFFECT.get());
-        if (instance != null) {
-            instance.applyEffect(living);
-        } else {
-            living.addEffect(new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), 80, amp));
-        }
+        living.removeEffect(BlueModifiers.ECSTATIC_EFFECT.get());
+        living.addEffect(new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), 80, amp));
     }
 
     @Override
