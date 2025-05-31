@@ -58,7 +58,7 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
         protected void addMaterialTraits() {
             addDefaultTraits(aquite, BlueModifiers.SKY_BREAKER); // just give it the breaker trait only
 
-            addDefaultTraits(charoite, BlueModifiers.SPEEDSTER, BlueModifiers.SKY_BREAKER);
+            addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId(), BlueModifiers.SKY_BREAKER);
 
             addTraits(diopside, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.knockback.getId(), BlueModifiers.SKY_BREAKER);
             addTraits(diopside, MaterialRegistry.ARMOR, ModifierIds.knockbackResistance, BlueModifiers.SKY_BREAKER);

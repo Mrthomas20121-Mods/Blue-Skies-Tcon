@@ -39,7 +39,10 @@ public class BlueLang extends LanguageProvider {
         addCast(BlueItems.crystal_sand);
 
         addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
+        addModifier(BlueModifiers.ULTRAVIOLET.getId(), "Ultraviolet", "Make your targets glow briefly", "Known to the State of California to cause cancer");
+
         addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break through the limits of the Blue Skies", "We Minecrafters have no limits!");
+
         addModifier(BlueModifiers.SPEEDSTER, "Speedster", "TODO", "TODO");
     }
 

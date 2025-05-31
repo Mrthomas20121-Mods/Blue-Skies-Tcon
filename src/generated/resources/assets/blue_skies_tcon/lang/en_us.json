@@ -76,5 +76,8 @@
   "modifier.blue_skies_tcon.sky_breaker.flavor": "We Minecrafters have no limits!",
   "modifier.blue_skies_tcon.speedster": "Speedster",
   "modifier.blue_skies_tcon.speedster.description": "TODO",
-  "modifier.blue_skies_tcon.speedster.flavor": "TODO"
+  "modifier.blue_skies_tcon.speedster.flavor": "TODO",
+  "modifier.blue_skies_tcon.ultraviolet": "Ultraviolet",
+  "modifier.blue_skies_tcon.ultraviolet.description": "Make your targets glow briefly",
+  "modifier.blue_skies_tcon.ultraviolet.flavor": "Known to the State of California to cause cancer"
 }

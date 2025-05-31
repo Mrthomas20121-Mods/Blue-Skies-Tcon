@@ -29,8 +29,7 @@ public class EcstaticModifier extends Modifier implements BlockBreakModifierHook
         if (instance != null) {
             instance.applyEffect(living);
         } else {
-            instance = new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), 80, amp);
-            living.addEffect(instance);
+            living.addEffect(new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), 80, amp));
         }
     }
 
@@ -72,7 +71,6 @@ public class EcstaticModifier extends Modifier implements BlockBreakModifierHook
 
         // reset duration
         living.removeEffect(BlueModifiers.ECSTATIC_EFFECT.get());
-        instance = new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), duration, max_amplifier);
-        living.addEffect(instance);
+        living.addEffect(new MobEffectInstance(BlueModifiers.ECSTATIC_EFFECT.get(), duration, max_amplifier));
     }
 }

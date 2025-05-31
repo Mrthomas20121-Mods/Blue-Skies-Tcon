@@ -1,4 +1,4 @@
-package mrthomas20121.blue_skies_tcon.data;
+package mrthomas20121.blue_skies_tcon;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

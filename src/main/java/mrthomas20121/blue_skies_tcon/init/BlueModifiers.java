@@ -1,8 +1,9 @@
 package mrthomas20121.blue_skies_tcon.init;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.data.EcstaticEffect;
+import mrthomas20121.blue_skies_tcon.EcstaticEffect;
 import mrthomas20121.blue_skies_tcon.modifier.EcstaticModifier;
+import mrthomas20121.blue_skies_tcon.modifier.UltravioletModifier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,5 +20,7 @@ public class BlueModifiers {
     public static final ModifierId SPEEDSTER = new ModifierId(BlueSkiesTcon.MOD_ID, "speedster");
 
     public static final StaticModifier<EcstaticModifier> ECSTATIC = MODIFIERS.register("ecstatic", EcstaticModifier::new);
+    public static final StaticModifier<UltravioletModifier> ULTRAVIOLET = MODIFIERS.register("ultraviolet", UltravioletModifier::new);
+
     public static final RegistryObject<EcstaticEffect> ECSTATIC_EFFECT = MOB_EFFECTS.register("ecstatic", EcstaticEffect::new);
 }
