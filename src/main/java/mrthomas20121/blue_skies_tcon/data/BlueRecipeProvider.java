@@ -30,9 +30,9 @@ import slimeknights.tconstruct.smeltery.data.Byproduct;
 import javax.annotation.Nonnull;
 import java.util.function.Consumer;
 
-public class BlueRecipes extends RecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
+public class BlueRecipeProvider extends RecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
 
-    public BlueRecipes(PackOutput gen) {
+    public BlueRecipeProvider(PackOutput gen) {
         super(gen);
     }
 

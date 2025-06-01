@@ -62,12 +62,12 @@ public class BlueSkiesTcon {
         gen.addProvider(server, new BlueMaterials.BlueSkiesTraits(packOutput, materials));
 
         gen.addProvider(server, new BlueFluidTags(packOutput, lookupProvider, fileHelper));
-        gen.addProvider(server, new BlueRecipes(packOutput));
+        gen.addProvider(server, new BlueRecipeProvider(packOutput));
 
         gen.addProvider(server, new BlueModifierProvider(packOutput));
 
         boolean client = event.includeClient();
-        gen.addProvider(client, new BlueLang(packOutput));
+        gen.addProvider(client, new BlueLanguageProvider(packOutput));
         // TODO: why is this even needed
 //		gen.addProvider(client, new BlueBlockStates(packOutput, fileHelper));
         gen.addProvider(client, new BlueItemModels(packOutput, fileHelper));

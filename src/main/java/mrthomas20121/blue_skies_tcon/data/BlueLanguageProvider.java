@@ -10,24 +10,31 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 
-public class BlueLang extends LanguageProvider {
+public class BlueLanguageProvider extends LanguageProvider {
 
-    public BlueLang(PackOutput gen) {
+    public BlueLanguageProvider(PackOutput gen) {
         super(gen, BlueSkiesTcon.MOD_ID, "en_us");
     }
 
     @Override
     protected void addTranslations() {
-        addFluid(BlueFluids.aquite, "molten_aquite");
-        addFluid(BlueFluids.charoite, "molten_charoite");
-        addFluid(BlueFluids.diopside, "molten_diopside");
-        addFluid(BlueFluids.horizonite, "molten_horizonite");
-        addFluid(BlueFluids.pyrope, "molten_pyrope");
-        addFluid(BlueFluids.moonstone, "molten_moonstone");
-        addFluid(BlueFluids.falsite, "molten_falsite");
-        addFluid(BlueFluids.ventium, "molten_ventium");
+        addMaterial(BlueMaterials.aquite,"Iron at home:");
+        addMaterial(BlueMaterials.charoite, "Slightly radioactive");
+        addMaterial(BlueMaterials.diopside, "The cooler Emerald");
+        addMaterial(BlueMaterials.horizonite, "SUPERHOT");
+        addMaterial(BlueMaterials.pyrope, "Simply lovely");
+
+        addFluid(BlueFluids.aquite);
+        addFluid(BlueFluids.charoite);
+        addFluid(BlueFluids.diopside);
+        addFluid(BlueFluids.horizonite);
+        addFluid(BlueFluids.pyrope);
+        addFluid(BlueFluids.moonstone);
+        addFluid(BlueFluids.falsite);
+        addFluid(BlueFluids.ventium);
 
         addItem(BlueItems.aquite_nugget, "Aquite Nugget");
         addItem(BlueItems.charoite_nugget, "Charoite Nugget");
@@ -43,15 +50,18 @@ public class BlueLang extends LanguageProvider {
 
         addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break through the limits of the Blue Skies", "We Minecrafters have no limits!");
 
-        addModifier(BlueModifiers.SPEEDSTER, "Speedster", "TODO", "TODO");
+//        addModifier(BlueModifiers.SPEEDSTER, "Speedster", "TODO", "TODO");
     }
 
-    private void addFluid(FluidObject<ForgeFlowingFluid> fluid, String name) {
-        String capName = capitalize(name);
-        add(String.format("fluid.%s.%s", BlueSkiesTcon.MOD_ID, name), capName);
-        add(fluid.asItem(), capitalize(String.format("%s_bucket", name)));
-        String materialName = name.replace("molten_", "");
-        add(String.format("material.%s.%s", BlueSkiesTcon.MOD_ID, materialName), capitalize(materialName));
+    private void addMaterial(MaterialId material, String flavor) {
+        add(String.format("material.%s.%s", BlueSkiesTcon.MOD_ID, material.getPath()), capitalize(material.getPath()));
+        add(String.format("material.%s.%s.flavor", BlueSkiesTcon.MOD_ID, material.getPath()), flavor);
+    }
+
+    private void addFluid(FluidObject<ForgeFlowingFluid> fluid) {
+        String capName = capitalize(fluid.getId().getPath());
+        add(String.format("fluid.%s.%s", BlueSkiesTcon.MOD_ID, fluid.getId().getPath()), capName);
+        add(fluid.asItem(), capitalize(String.format("%s_bucket", fluid.getId().getPath())));
     }
 
     private void addCast(ItemCast cast) {

@@ -3,13 +3,13 @@
     "tconstruct:binding": {},
     "tconstruct:handle": {
       "durability": 0.05,
-      "melee_damage": -0.1,
-      "melee_speed": 0.1,
+      "melee_damage": 0.0,
+      "melee_speed": 0.0,
       "mining_speed": 0.1
     },
     "tconstruct:head": {
       "durability": 270,
-      "melee_attack": 2.25,
+      "melee_attack": 2.0,
       "mining_speed": 6.0,
       "mining_tier": "minecraft:iron"
     },

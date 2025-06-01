@@ -36,11 +36,11 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(aquite, 2, ORDER_COMPAT + ORDER_HARVEST, true);
-        addMaterial(charoite, 3, ORDER_COMPAT + ORDER_WEAPON, true);
-        addMaterial(diopside, 3, ORDER_COMPAT + ORDER_WEAPON, true);
+        addMaterial(aquite, 2, ORDER_COMPAT + ORDER_HARVEST, false);
+        addMaterial(charoite, 3, ORDER_COMPAT + ORDER_WEAPON, false);
+        addMaterial(diopside, 3, ORDER_COMPAT + ORDER_WEAPON, false);
         addMaterial(horizonite, 2, ORDER_COMPAT + ORDER_HARVEST, false);
-        addMaterial(pyrope, 2, ORDER_COMPAT + ORDER_HARVEST, true);
+        addMaterial(pyrope, 2, ORDER_COMPAT + ORDER_HARVEST, false);
     }
 
     @Nonnull
@@ -86,8 +86,8 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             // melee, armor
             // iron equivalent
             addMaterialStats(aquite,
-                    new HeadMaterialStats(270, 6f, Tiers.IRON, 2.25f),
-                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.1f).attackDamage(0.9f).build(),
+                    new HeadMaterialStats(270, 6f, Tiers.IRON, 2f),
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1f).attackDamage(1f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(aquite,
                     PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2),
