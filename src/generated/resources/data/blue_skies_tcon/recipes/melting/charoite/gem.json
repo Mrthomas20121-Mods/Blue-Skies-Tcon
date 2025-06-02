@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:gems/charoite"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "blue_skies_tcon:molten_charoite"
+  },
+  "temperature": 1100,
+  "time": 69
+}

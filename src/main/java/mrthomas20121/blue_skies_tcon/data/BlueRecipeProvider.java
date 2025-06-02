@@ -21,11 +21,11 @@ import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
+import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
-import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import javax.annotation.Nonnull;
 import java.util.function.Consumer;
@@ -40,8 +40,8 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         String toolFolder = "tools/materials/";
         String materialFolder = "materials/";
-        String meltingFolder = "smeltery/melting/";
         String castingFolder = "smeltery/casting/";
+        String meltingFolder = "smeltery/melting/";
         String bucketCastingFolder = "smeltery/casting/bucket/";
 
         // sand casts
@@ -77,31 +77,39 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
         materialRecipe(consumer, BlueMaterials.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, toolFolder + "pyrope");
         metalMaterialRecipe(consumer, BlueMaterials.horizonite, toolFolder, "horizonite", false);
 
-        gemCasting(consumer, BlueFluids.aquite, SkiesItems.aquite, castingFolder + "aquite_gem");
-        gemCasting(consumer, BlueFluids.charoite, SkiesItems.charoite, castingFolder + "charoite_gem");
-        gemCasting(consumer, BlueFluids.diopside, SkiesItems.diopside_gem, castingFolder + "diopside_gem");
-        gemCasting(consumer, BlueFluids.pyrope, SkiesItems.pyrope_gem, castingFolder + "pyrope_gem");
-        gemCasting(consumer, BlueFluids.moonstone, SkiesBlocks.moonstone.asItem(), castingFolder + "moonstone_gem");
-        ingotCasting(consumer, BlueFluids.horizonite, SkiesItems.horizonite_ingot, castingFolder + "horizonite_block");
-        blockBasin(consumer, BlueFluids.horizonite, SkiesBlocks.horizonite_block, castingFolder + "horizonite_block");
-        ingotCasting(consumer, BlueFluids.falsite, SkiesItems.falsite_ingot, castingFolder + "falsite_block");
-        blockBasin(consumer, BlueFluids.falsite, SkiesBlocks.falsite_block, castingFolder + "falsite_block");
-        ingotCasting(consumer, BlueFluids.ventium, SkiesItems.ventium_ingot, castingFolder + "ventium_block");
-        blockBasin(consumer, BlueFluids.ventium, SkiesBlocks.ventium_block, castingFolder + "ventium_block");
+//        gemCasting(consumer, BlueFluids.aquite, SkiesItems.aquite, castingFolder + "aquite_gem");
+//        gemCasting(consumer, BlueFluids.charoite, SkiesItems.charoite, castingFolder + "charoite_gem");
+//        gemCasting(consumer, BlueFluids.diopside, SkiesItems.diopside_gem, castingFolder + "diopside_gem");
+//        gemCasting(consumer, BlueFluids.pyrope, SkiesItems.pyrope_gem, castingFolder + "pyrope_gem");
+//        gemCasting(consumer, BlueFluids.moonstone, SkiesBlocks.moonstone.asItem(), castingFolder + "moonstone_gem");
+//        ingotCasting(consumer, BlueFluids.horizonite, SkiesItems.horizonite_ingot, castingFolder + "horizonite_block");
+//        blockBasin(consumer, BlueFluids.horizonite, SkiesBlocks.horizonite_block, castingFolder + "horizonite_block");
+//        ingotCasting(consumer, BlueFluids.falsite, SkiesItems.falsite_ingot, castingFolder + "falsite_block");
+//        blockBasin(consumer, BlueFluids.falsite, SkiesBlocks.falsite_block, castingFolder + "falsite_block");
+//        ingotCasting(consumer, BlueFluids.ventium, SkiesItems.ventium_ingot, castingFolder + "ventium_block");
+//        blockBasin(consumer, BlueFluids.ventium, SkiesBlocks.ventium_block, castingFolder + "ventium_block");
 
-        gemMelting(consumer, BlueFluids.aquite.get(), "aquite", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, BlueFluids.charoite.get(), "charoite", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, BlueFluids.diopside.get(), "diopside", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, BlueFluids.pyrope.get(), "pyrope", true, 9, meltingFolder, false, CustomByProduct.MOONSTONE);
-        metalMelting(consumer, BlueFluids.horizonite.get(), "horizonite", true, false, meltingFolder, false, Byproduct.IRON);
-        metalMelting(consumer, BlueFluids.falsite.get(), "falsite", true, false, meltingFolder, false, CustomByProduct.MOONSTONE);
-        metalMelting(consumer, BlueFluids.ventium.get(), "ventium", true, false, meltingFolder, false, CustomByProduct.MOONSTONE);
-        gemMelting(consumer, BlueFluids.moonstone.get(), "moonstone", true, 9, meltingFolder, false);
+        // material casting
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("aquite"), BlueFluids.aquite.get())
+                .gem(9);
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("charoite"), BlueFluids.charoite.get())
+                .gem(9);
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("diopside"), BlueFluids.diopside.get())
+                .gem(9);
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("pyrope"), BlueFluids.pyrope.get())
+                .gem(9);
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("horizonite"), BlueFluids.horizonite.get())
+                .metal();
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("falsite"), BlueFluids.falsite.get())
+                .metal();
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("ventium"), BlueFluids.ventium.get())
+                .metal();
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("moonstone"), BlueFluids.moonstone.get())
+                .gem(9);
 
         MoldingRecipeBuilder.moldingTable(BlueItems.midnight_sand.getBlank().get())
                 .setMaterial(BlueItemTags.midnight_sand_casts)
                 .save(consumer, BlueSkiesTcon.resource("smeltery/midnight_sand_cast_pickup"));
-
         MoldingRecipeBuilder.moldingTable(BlueItems.crystal_sand.getBlank().get())
                 .setMaterial(BlueItemTags.crystal_sand_casts)
                 .save(consumer, BlueSkiesTcon.resource("smeltery/crystal_sand_cast_pickup"));

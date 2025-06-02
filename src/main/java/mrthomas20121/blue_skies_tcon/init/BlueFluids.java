@@ -14,9 +14,10 @@ import slimeknights.tconstruct.fluids.block.BurningLiquidBlock;
 public class BlueFluids {
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(BlueSkiesTcon.MOD_ID);
 
-    public static final FlowingFluidObject<ForgeFlowingFluid> aquite = register("molten_aquite", 800, MapColor.COLOR_CYAN);
-    public static final FlowingFluidObject<ForgeFlowingFluid> charoite = register("molten_charoite", 1000, MapColor.COLOR_MAGENTA);
-    public static final FlowingFluidObject<ForgeFlowingFluid> diopside = register("molten_diopside", 1000, MapColor.COLOR_GREEN);
+    // melting temp = temp - 300
+    public static final FlowingFluidObject<ForgeFlowingFluid> aquite = register("molten_aquite", 1000, MapColor.COLOR_CYAN);
+    public static final FlowingFluidObject<ForgeFlowingFluid> charoite = register("molten_charoite", 1400, MapColor.COLOR_MAGENTA);
+    public static final FlowingFluidObject<ForgeFlowingFluid> diopside = register("molten_diopside", 1450, MapColor.COLOR_GREEN);
     public static final FlowingFluidObject<ForgeFlowingFluid> horizonite = register("molten_horizonite", 1000, MapColor.TERRACOTTA_YELLOW);
     public static final FlowingFluidObject<ForgeFlowingFluid> pyrope = register("molten_pyrope", 800, MapColor.COLOR_PINK);
     public static final FlowingFluidObject<ForgeFlowingFluid> moonstone = register("molten_moonstone", 1000, MapColor.COLOR_LIGHT_BLUE);
