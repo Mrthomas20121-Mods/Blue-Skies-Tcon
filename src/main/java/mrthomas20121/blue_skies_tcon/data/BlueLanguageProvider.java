@@ -45,6 +45,8 @@ public class BlueLanguageProvider extends LanguageProvider {
         addCast(BlueItems.midnight_sand);
         addCast(BlueItems.crystal_sand);
 
+        add(String.format("effect.%s.ecstatic", BlueSkiesTcon.MOD_ID), "Ecstatic");
+
         addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
         addModifier(BlueModifiers.ULTRAVIOLET.getId(), "Ultraviolet", "Make your targets glow briefly", "Known to the State of California to cause cancer");
 

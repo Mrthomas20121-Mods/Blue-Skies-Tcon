@@ -16,19 +16,20 @@ public class BlueModifierProvider extends AbstractModifierProvider {
 
     @Override
     protected void addModifiers() {
-        buildModifier(BlueModifiers.SPEEDSTER)
-                .addModule(ConditionalMeleeDamageModule.builder()
-                        .customVariable("speed", new EntityMeleeVariable(BlueVariables.ENTITY_SPEED, EntityMeleeVariable.WhichEntity.ATTACKER, 0))
-                        .formula()
-                        .customVariable("speed")
-                        .variable(ModifierFormula.LEVEL)
-                        .multiply()
-                        .constant(4)
-                        .divide()
-                        .variable(ModifierFormula.VALUE)
-                        .add()
-                        .build()
-                );
+//        buildModifier(BlueModifiers.SPEEDSTER)
+//                .addModule(ConditionalMeleeDamageModule.builder()
+//                        .customVariable("speed", new EntityMeleeVariable(BlueVariables.ENTITY_SPEED, EntityMeleeVariable.WhichEntity.ATTACKER, 0))
+//                        .formula()
+//                        .customVariable("speed")
+//                        .variable(ModifierFormula.LEVEL)
+//                        .multiply()
+//                        .constant(4)
+//                        .divide()
+//                        .variable(ModifierFormula.VALUE)
+//                        .add()
+//                        .build()
+//                );
+        // shouldn't be used on dynamic and static modifiers
         buildModifier(BlueModifiers.SKY_BREAKER)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
