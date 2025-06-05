@@ -9,6 +9,7 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataPr
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
@@ -19,7 +20,6 @@ import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 import javax.annotation.Nonnull;
 
 public class BlueMaterials extends AbstractMaterialDataProvider {
-
     public static final MaterialId aquite = createMaterial("aquite");
     public static final MaterialId charoite = createMaterial("charoite");
     public static final MaterialId diopside = createMaterial("diopside");
@@ -54,19 +54,36 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             super(packOutput, materials);
         }
 
+        private void addTraitsArmor(MaterialId id, ModifierId mod) {
+            addTraits(id, PlatingMaterialStats.HELMET.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, PlatingMaterialStats.CHESTPLATE.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, PlatingMaterialStats.LEGGINGS.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, PlatingMaterialStats.BOOTS.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, StatlessMaterialStats.MAILLE.getIdentifier(), mod);
+        }
+
         @Override
         protected void addMaterialTraits() {
-            addDefaultTraits(aquite, BlueModifiers.SKY_BREAKER); // just give it the breaker trait only
+            // TODO; add trait
+            addTraits(aquite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+//            addDefaultTraits(aquite,); // just give it the breaker trait only
 
-            addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId(), BlueModifiers.SKY_BREAKER);
+            // TODO: stat boost against glowing targets?, basically insatiable though
+            addTraits(charoite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+            addTraitsArmor(charoite, BlueModifiers.ULTRAVIOLET.getId());
+            addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());
 
-            addTraits(diopside, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.knockback.getId(), BlueModifiers.SKY_BREAKER);
-            addTraits(diopside, MaterialRegistry.ARMOR, ModifierIds.knockbackResistance, BlueModifiers.SKY_BREAKER);
+            addTraits(diopside, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+            addTraitsArmor(diopside, ModifierIds.knockbackResistance);
+            addTraits(diopside, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.knockback.getId());
 
-            addDefaultTraits(horizonite, TinkerModifiers.fiery.getId(), BlueModifiers.SKY_BREAKER);
-            addTraits(horizonite, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId(), BlueModifiers.SKY_BREAKER);
+            addTraits(horizonite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+            addTraitsArmor(horizonite, TinkerModifiers.fiery.getId());
+            addTraits(horizonite, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId());
 
-            addDefaultTraits(pyrope, BlueModifiers.ECSTATIC.getId(), BlueModifiers.SKY_BREAKER);
+            addTraits(pyrope, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+            addTraitsArmor(pyrope, BlueModifiers.ECSTATIC.getId());
+            addDefaultTraits(pyrope, BlueModifiers.ECSTATIC.getId());
         }
 
         @Nonnull
@@ -106,8 +123,8 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
             // melee, armor
             // diamond equivalent, slower stronger
             addMaterialStats(diopside,
-                    new HeadMaterialStats(1161, 6f, Tiers.DIAMOND, 3.25f),
-                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(0.85f).attackSpeed(0.75f).attackDamage(1.25f).build(),
+                    new HeadMaterialStats(1161, 6f, Tiers.DIAMOND, 3f),
+                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(0.85f).attackSpeed(0.75f).attackDamage(1.30f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(diopside,
                     PlatingMaterialStats.builder().durabilityFactor(36).armor(2, 4, 6, 2).toughness(5f),

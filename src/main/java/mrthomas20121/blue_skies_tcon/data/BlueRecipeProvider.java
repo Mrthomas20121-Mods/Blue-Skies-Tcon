@@ -3,7 +3,6 @@ package mrthomas20121.blue_skies_tcon.data;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import com.legacy.blue_skies.registries.SkiesItems;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.api.CustomByProduct;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import net.minecraft.data.PackOutput;
@@ -40,8 +39,6 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         String toolFolder = "tools/materials/";
         String materialFolder = "materials/";
-        String castingFolder = "smeltery/casting/";
-        String meltingFolder = "smeltery/melting/";
         String bucketCastingFolder = "smeltery/casting/bucket/";
 
         // sand casts
