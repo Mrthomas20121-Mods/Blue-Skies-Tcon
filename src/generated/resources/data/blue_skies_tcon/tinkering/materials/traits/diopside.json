@@ -1,57 +1,15 @@
 {
+  "default": [
+    {
+      "level": 1,
+      "name": "blue_skies_tcon:shattering"
+    }
+  ],
   "perStat": {
     "tconstruct:head": [
       {
         "level": 1,
-        "name": "blue_skies_tcon:sky_breaker"
-      }
-    ],
-    "tconstruct:maille": [
-      {
-        "level": 1,
-        "name": "tconstruct:knockback_resistance"
-      }
-    ],
-    "tconstruct:melee_harvest": [
-      {
-        "level": 1,
-        "name": "tconstruct:knockback"
-      }
-    ],
-    "tconstruct:plating_boots": [
-      {
-        "level": 1,
-        "name": "tconstruct:knockback_resistance"
-      },
-      {
-        "level": 1,
-        "name": "blue_skies_tcon:sky_breaker"
-      }
-    ],
-    "tconstruct:plating_chestplate": [
-      {
-        "level": 1,
-        "name": "tconstruct:knockback_resistance"
-      },
-      {
-        "level": 1,
-        "name": "blue_skies_tcon:sky_breaker"
-      }
-    ],
-    "tconstruct:plating_helmet": [
-      {
-        "level": 1,
-        "name": "tconstruct:knockback_resistance"
-      },
-      {
-        "level": 1,
-        "name": "blue_skies_tcon:sky_breaker"
-      }
-    ],
-    "tconstruct:plating_leggings": [
-      {
-        "level": 1,
-        "name": "tconstruct:knockback_resistance"
+        "name": "blue_skies_tcon:shattering"
       },
       {
         "level": 1,

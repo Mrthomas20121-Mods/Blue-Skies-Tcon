@@ -9,6 +9,10 @@
     "tconstruct:head": [
       {
         "level": 1,
+        "name": "blue_skies_tcon:ultraviolet"
+      },
+      {
+        "level": 1,
         "name": "blue_skies_tcon:sky_breaker"
       }
     ],

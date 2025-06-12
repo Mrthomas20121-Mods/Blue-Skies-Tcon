@@ -65,25 +65,24 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
         @Override
         protected void addMaterialTraits() {
             // TODO; add trait
+            addDefaultTraits(aquite, ModifierIds.hydraulic, BlueModifiers.SKY_BREAKER);
             addTraits(aquite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
-//            addDefaultTraits(aquite,); // just give it the breaker trait only
 
             // TODO: stat boost against glowing targets?, basically insatiable though
-            addTraits(charoite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
-            addTraitsArmor(charoite, BlueModifiers.ULTRAVIOLET.getId());
             addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());
+            addTraits(charoite, HeadMaterialStats.ID, BlueModifiers.ULTRAVIOLET.getId(), BlueModifiers.SKY_BREAKER);
+            addTraitsArmor(charoite, BlueModifiers.ULTRAVIOLET.getId());
 
-            addTraits(diopside, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
-            addTraitsArmor(diopside, ModifierIds.knockbackResistance);
-            addTraits(diopside, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.knockback.getId());
+            addTraits(diopside, HeadMaterialStats.ID, BlueModifiers.SHATTERING, BlueModifiers.SKY_BREAKER);
+//            addTraitsArmor(diopside, ModifierIds.knockbackResistance);
+            addDefaultTraits(diopside, BlueModifiers.SHATTERING);
 
             addTraits(horizonite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
-            addTraitsArmor(horizonite, TinkerModifiers.fiery.getId());
             addTraits(horizonite, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId());
+            addTraitsArmor(horizonite, TinkerModifiers.fiery.getId());
 
-            addTraits(pyrope, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
-            addTraitsArmor(pyrope, BlueModifiers.ECSTATIC.getId());
             addDefaultTraits(pyrope, BlueModifiers.ECSTATIC.getId());
+            addTraits(pyrope, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER, BlueModifiers.ECSTATIC.getId());
         }
 
         @Nonnull

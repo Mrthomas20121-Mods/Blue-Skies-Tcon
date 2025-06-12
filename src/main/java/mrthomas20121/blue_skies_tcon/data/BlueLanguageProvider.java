@@ -51,6 +51,7 @@ public class BlueLanguageProvider extends LanguageProvider {
         addModifier(BlueModifiers.ULTRAVIOLET.getId(), "Ultraviolet", "Make your targets glow briefly", "Known to the State of California to cause cancer");
 
         addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break through the limits of the Blue Skies", "We Minecrafters have no limits!");
+        addModifier(BlueModifiers.SHATTERING, "Shattering", "Multiplies durability loss of your target's armor", "Shatter Me");
 
 //        addModifier(BlueModifiers.SPEEDSTER, "Speedster", "TODO", "TODO");
     }

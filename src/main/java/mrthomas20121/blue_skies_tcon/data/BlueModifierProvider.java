@@ -32,6 +32,7 @@ public class BlueModifierProvider extends AbstractModifierProvider {
         // shouldn't be used on dynamic and static modifiers
         buildModifier(BlueModifiers.SKY_BREAKER)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(BlueModifiers.SHATTERING);
     }
 
     @Override

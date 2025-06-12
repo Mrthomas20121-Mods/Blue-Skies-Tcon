@@ -125,7 +125,7 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .setSwitchSlots()
                 .save(consumer, BlueSkiesTcon.resource(folder + block.getDescriptionId()));
     }
-
+    
     @Nonnull
     @Override
     public String getModId() {

@@ -23,6 +23,7 @@ public class UltravioletModifier extends Modifier implements MeleeHitModifierHoo
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.ON_ATTACKED);
     }
 
+    // TODO: what if enemies burned in sunlight
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         int amp = modifier.getLevel() - 1;
