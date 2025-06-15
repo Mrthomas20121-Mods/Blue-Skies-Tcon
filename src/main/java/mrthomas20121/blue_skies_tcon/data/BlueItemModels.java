@@ -1,7 +1,7 @@
 package mrthomas20121.blue_skies_tcon.data;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.api.ItemCast;
+import mrthomas20121.blue_skies_tcon.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import net.minecraft.data.PackOutput;
@@ -39,7 +39,7 @@ public class BlueItemModels extends ItemModelProvider {
     }
 
     public void castModel(ItemCast cast) {
-        cast.getALL().forEach(itemCast -> {
+        cast.getAll().forEach(itemCast -> {
             ResourceLocation reg = itemCast.getId();
             if (reg.getPath().contains("midnight")) {
                 itemCastModel(itemCast, "item/generated", "midnight_sand_cast");

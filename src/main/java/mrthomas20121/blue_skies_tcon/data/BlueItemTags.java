@@ -3,7 +3,7 @@ package mrthomas20121.blue_skies_tcon.data;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import com.legacy.blue_skies.registries.SkiesItems;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.api.ItemCast;
+import mrthomas20121.blue_skies_tcon.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -49,10 +49,11 @@ public class BlueItemTags extends ItemTagsProvider {
     }
 
     protected void addCastTag(ItemCast cast) {
+        // TODO: pick cast might be missing tag
         TagsProvider.TagAppender<Item> crystalSandProvider = tag(crystal_sand_casts);
         TagsProvider.TagAppender<Item> midnightSandProvider = tag(midnight_sand_casts);
         TagsProvider.TagAppender<Item> singleUseProvider = tag(single_use);
-        cast.getALL().forEach(itemCast -> {
+        cast.getAll().forEach(itemCast -> {
             ResourceLocation registryName = itemCast.getId();
             Item item = itemCast.get();
             TagKey<Item> castTag = create("tconstruct:casts/single_use/" + registryName.getPath().replace("_crystal_sand_cast", "").replace("_midnight_sand_cast", ""));

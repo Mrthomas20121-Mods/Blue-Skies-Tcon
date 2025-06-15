@@ -1,7 +1,7 @@
 package mrthomas20121.blue_skies_tcon.data;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.api.ItemCast;
+import mrthomas20121.blue_skies_tcon.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
@@ -65,7 +65,7 @@ public class BlueLanguageProvider extends LanguageProvider {
     }
 
     private void addCast(ItemCast cast) {
-        cast.getALL().forEach(itemCast -> addItem(itemCast, capitalize(itemCast.getId().getPath())));
+        cast.getAll().forEach(itemCast -> addItem(itemCast, capitalize(itemCast.getId().getPath())));
     }
 
     private void addModifier(ModifierId id, String name, String desc, String flavor) {
