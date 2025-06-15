@@ -1,7 +1,7 @@
 package mrthomas20121.blue_skies_tcon.data;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.ItemCast;
+import mrthomas20121.blue_skies_tcon.item.ItemCast;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
@@ -20,12 +20,17 @@ public class BlueLanguageProvider extends LanguageProvider {
     }
 
     @Override
+    public String getName() {
+        return "Blue Skies TCon Language Provider";
+    }
+
+    @Override
     protected void addTranslations() {
-        addMaterial(BlueMaterials.aquite,"Iron at home:");
-        addMaterial(BlueMaterials.charoite, "Slightly radioactive");
-        addMaterial(BlueMaterials.diopside, "The cooler Emerald");
-        addMaterial(BlueMaterials.horizonite, "SUPER HOT");
-        addMaterial(BlueMaterials.pyrope, "Simply lovely");
+        addMaterial(BlueMaterialsProvider.aquite, "Iron at home:");
+        addMaterial(BlueMaterialsProvider.charoite, "Slightly radioactive");
+        addMaterial(BlueMaterialsProvider.diopside, "The cooler Emerald");
+        addMaterial(BlueMaterialsProvider.horizonite, "SUPER HOT");
+        addMaterial(BlueMaterialsProvider.pyrope, "Simply lovely");
 
         addFluid(BlueFluids.aquite);
         addFluid(BlueFluids.charoite);

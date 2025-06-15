@@ -1,7 +1,7 @@
 package mrthomas20121.blue_skies_tcon.init;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
-import mrthomas20121.blue_skies_tcon.ItemCast;
+import mrthomas20121.blue_skies_tcon.item.ItemCast;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;

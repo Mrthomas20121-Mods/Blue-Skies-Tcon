@@ -10,15 +10,24 @@
     "blue_skies_tcon:gear_midnight_sand_cast",
     "blue_skies_tcon:coin_midnight_sand_cast",
     "blue_skies_tcon:wire_midnight_sand_cast",
-    "blue_skies_tcon:pickaxe_head_midnight_sand_cast",
+    "blue_skies_tcon:pick_head_midnight_sand_cast",
     "blue_skies_tcon:small_axe_head_midnight_sand_cast",
     "blue_skies_tcon:small_blade_midnight_sand_cast",
+    "blue_skies_tcon:adze_head_midnight_sand_cast",
     "blue_skies_tcon:hammer_head_midnight_sand_cast",
-    "blue_skies_tcon:broad_blade_midnight_sand_cast",
     "blue_skies_tcon:broad_axe_head_midnight_sand_cast",
-    "blue_skies_tcon:tool_binding_midnight_sand_cast",
+    "blue_skies_tcon:broad_blade_midnight_sand_cast",
     "blue_skies_tcon:large_plate_midnight_sand_cast",
     "blue_skies_tcon:tool_handle_midnight_sand_cast",
-    "blue_skies_tcon:tough_handle_midnight_sand_cast"
+    "blue_skies_tcon:tool_binding_midnight_sand_cast",
+    "blue_skies_tcon:tough_handle_midnight_sand_cast",
+    "blue_skies_tcon:tough_binding_midnight_sand_cast",
+    "blue_skies_tcon:bow_limb_midnight_sand_cast",
+    "blue_skies_tcon:bow_grip_midnight_sand_cast",
+    "blue_skies_tcon:helmet_plating_midnight_sand_cast",
+    "blue_skies_tcon:chest_plating_midnight_sand_cast",
+    "blue_skies_tcon:leg_plating_midnight_sand_cast",
+    "blue_skies_tcon:boot_plating_midnight_sand_cast",
+    "blue_skies_tcon:maille_midnight_sand_cast"
   ]
 }

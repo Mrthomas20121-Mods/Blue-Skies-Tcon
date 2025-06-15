@@ -1,0 +1,162 @@
+package mrthomas20121.blue_skies_tcon.data;
+
+import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
+import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Tiers;
+import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
+import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
+import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
+import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
+import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
+import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
+
+import javax.annotation.Nonnull;
+
+public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
+    public static final MaterialId aquite = createMaterial("aquite");
+    public static final MaterialId charoite = createMaterial("charoite");
+    public static final MaterialId diopside = createMaterial("diopside");
+    public static final MaterialId horizonite = createMaterial("horizonite");
+    public static final MaterialId pyrope = createMaterial("pyrope");
+
+    public BlueMaterialsProvider(PackOutput packOutput) {
+        super(packOutput);
+    }
+
+    private static MaterialId createMaterial(String name) {
+        return new MaterialId(BlueSkiesTcon.resource(name));
+    }
+
+    @Override
+    protected void addMaterials() {
+        addMaterial(aquite, 2, ORDER_COMPAT + ORDER_HARVEST, false);
+        addMaterial(charoite, 3, ORDER_COMPAT + ORDER_WEAPON, false);
+        addMaterial(diopside, 3, ORDER_COMPAT + ORDER_WEAPON, false);
+        addMaterial(horizonite, 2, ORDER_COMPAT + ORDER_HARVEST, false);
+        addMaterial(pyrope, 2, ORDER_COMPAT + ORDER_HARVEST, false);
+    }
+
+    @Nonnull
+    @Override
+    public String getName() {
+        return "Blue Skies TCon Material Data Provider";
+    }
+
+    public static class BlueSkiesTraits extends AbstractMaterialTraitDataProvider {
+        public BlueSkiesTraits(PackOutput packOutput, AbstractMaterialDataProvider materials) {
+            super(packOutput, materials);
+        }
+
+        private void addTraitsArmor(MaterialId id, ModifierId mod) {
+            addTraits(id, PlatingMaterialStats.HELMET.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, PlatingMaterialStats.CHESTPLATE.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, PlatingMaterialStats.LEGGINGS.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, PlatingMaterialStats.BOOTS.getId(), mod, BlueModifiers.SKY_BREAKER);
+            addTraits(id, StatlessMaterialStats.MAILLE.getIdentifier(), mod);
+        }
+
+        @Override
+        protected void addMaterialTraits() {
+            addDefaultTraits(aquite, ModifierIds.hydraulic);
+            addTraits(aquite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+
+            addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());
+            addTraits(charoite, HeadMaterialStats.ID, BlueModifiers.ULTRAVIOLET.getId(), BlueModifiers.SKY_BREAKER);
+            addTraitsArmor(charoite, BlueModifiers.ULTRAVIOLET.getId());
+
+            addTraits(diopside, HeadMaterialStats.ID, BlueModifiers.SHATTERING, BlueModifiers.SKY_BREAKER);
+//            addTraitsArmor(diopside, ModifierIds.knockbackResistance);
+            // TODO: armor does nothing, maybe do the same thing against attackers tools
+            addDefaultTraits(diopside, BlueModifiers.SHATTERING);
+
+            // TODO: shield plating is missing its trait
+            addTraits(horizonite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+            addTraits(horizonite, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId());
+            addTraitsArmor(horizonite, TinkerModifiers.fiery.getId());
+
+            addDefaultTraits(pyrope, BlueModifiers.ECSTATIC.getId());
+            addTraits(pyrope, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER, BlueModifiers.ECSTATIC.getId());
+        }
+
+        @Nonnull
+        @Override
+        public String getName() {
+            return "Blue Skies TCon Material Trait Data Provider";
+        }
+    }
+
+    public static class BlueSkiesMaterialStats extends AbstractMaterialStatsDataProvider {
+        public BlueSkiesMaterialStats(PackOutput packOutput, AbstractMaterialDataProvider materials) {
+            super(packOutput, materials);
+        }
+
+        @Override
+        protected void addMaterialStats() {
+            // melee, armor
+            // iron equivalent
+            addMaterialStats(aquite,
+                    new HeadMaterialStats(270, 6f, Tiers.IRON, 2f),
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1f).attackDamage(1f).build(),
+                    StatlessMaterialStats.BINDING);
+            addArmorShieldStats(aquite,
+                    PlatingMaterialStats.builder().durabilityFactor(15).armor(2, 5, 6, 2),
+                    StatlessMaterialStats.MAILLE);
+
+            // melee, armor
+            // diamond equivalent, faster weaker
+            addMaterialStats(charoite,
+                    new HeadMaterialStats(1061, 8.0f, Tiers.DIAMOND, 2.75f),
+                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.1f).attackSpeed(1.05f).attackDamage(1.05f).build(),
+                    StatlessMaterialStats.BINDING);
+            addArmorShieldStats(charoite,
+                    PlatingMaterialStats.builder().durabilityFactor(33).armor(2, 5, 7, 2).toughness(1f),
+                    StatlessMaterialStats.MAILLE);
+
+            // melee, armor
+            // diamond equivalent, slower stronger
+            addMaterialStats(diopside,
+                    new HeadMaterialStats(1161, 6f, Tiers.DIAMOND, 3f),
+                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(0.85f).attackSpeed(0.75f).attackDamage(1.30f).build(),
+                    StatlessMaterialStats.BINDING);
+            addArmorShieldStats(diopside,
+                    PlatingMaterialStats.builder().durabilityFactor(36).armor(2, 4, 6, 2).toughness(5f),
+                    StatlessMaterialStats.MAILLE);
+
+            // melee, armor
+            addMaterialStats(horizonite,
+                    new HeadMaterialStats(250, 8.0f, Tiers.DIAMOND, 1.75f),
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1f).attackDamage(1.1f).build(),
+                    StatlessMaterialStats.BINDING);
+            addArmorShieldStats(horizonite,
+                    PlatingMaterialStats.builder().durabilityFactor(15).armor(1, 4, 5, 2),
+                    StatlessMaterialStats.MAILLE);
+
+            // TODO: for shields, plating
+//            addMaterialStats(moonstone, PlatingMaterialStats.SHIELD.getDefaultStats());
+//            addArmorShieldStats();
+
+            // melee, armor
+            // gold? equivalent
+            addMaterialStats(pyrope,
+                    new HeadMaterialStats(300, 11f, Tiers.STONE, 1.55f),
+                    HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.15f).build(),
+                    StatlessMaterialStats.BINDING);
+            addArmorShieldStats(pyrope,
+                    PlatingMaterialStats.builder().durabilityFactor(15).armor(1, 4, 5, 2),
+                    StatlessMaterialStats.MAILLE);
+        }
+
+        @Nonnull
+        @Override
+        public String getName() {
+            return "Blue Skies TCon Material Stats Data Provider";
+        }
+    }
+}

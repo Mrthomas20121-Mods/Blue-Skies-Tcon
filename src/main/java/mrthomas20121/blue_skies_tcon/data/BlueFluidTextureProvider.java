@@ -3,14 +3,13 @@ package mrthomas20121.blue_skies_tcon.data;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
 import slimeknights.mantle.fluid.texture.FluidTexture;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 
 import javax.annotation.Nonnull;
 
-import static slimeknights.tconstruct.fluids.TinkerFluids.withoutMolten;
 
 public class BlueFluidTextureProvider extends AbstractFluidTextureProvider {
     public BlueFluidTextureProvider(PackOutput packOutput) {
@@ -34,7 +33,7 @@ public class BlueFluidTextureProvider extends AbstractFluidTextureProvider {
     }
 
     private FluidTexture.Builder moltenFolder(FluidObject<?> fluid, String folder) {
-        return named(fluid, "molten/" + folder + "/" + withoutMolten(fluid));
+        return named(fluid, "molten/" + folder + "/" + TinkerFluids.withoutMolten(fluid));
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {
@@ -44,6 +43,6 @@ public class BlueFluidTextureProvider extends AbstractFluidTextureProvider {
     @Nonnull
     @Override
     public String getName() {
-        return "Blue Skies Fluid Texture Provider";
+        return "Blue Skies TCon Fluid Texture Provider";
     }
 }

@@ -68,11 +68,11 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .save(consumer, BlueSkiesTcon.resource(bucketCastingFolder + "ventium_bucket"));
 
         // repair materials
-        materialRecipe(consumer, BlueMaterials.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, toolFolder + "aquite");
-        materialRecipe(consumer, BlueMaterials.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, toolFolder + "charoite");
-        materialRecipe(consumer, BlueMaterials.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, toolFolder + "diopside");
-        materialRecipe(consumer, BlueMaterials.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, toolFolder + "pyrope");
-        metalMaterialRecipe(consumer, BlueMaterials.horizonite, toolFolder, "horizonite", false);
+        materialRecipe(consumer, BlueMaterialsProvider.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, toolFolder + "aquite");
+        materialRecipe(consumer, BlueMaterialsProvider.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, toolFolder + "charoite");
+        materialRecipe(consumer, BlueMaterialsProvider.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, toolFolder + "diopside");
+        materialRecipe(consumer, BlueMaterialsProvider.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, toolFolder + "pyrope");
+        metalMaterialRecipe(consumer, BlueMaterialsProvider.horizonite, toolFolder, "horizonite", false);
 
 //        gemCasting(consumer, BlueFluids.aquite, SkiesItems.aquite, castingFolder + "aquite_gem");
 //        gemCasting(consumer, BlueFluids.charoite, SkiesItems.charoite, castingFolder + "charoite_gem");
@@ -105,18 +105,18 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .gem(9);
 
         MoldingRecipeBuilder.moldingTable(BlueItems.midnight_sand.getBlank().get())
-                .setMaterial(BlueItemTags.midnight_sand_casts)
+                .setMaterial(BlueItemTagsProvider.midnight_sand_casts)
                 .save(consumer, BlueSkiesTcon.resource("smeltery/midnight_sand_cast_pickup"));
         MoldingRecipeBuilder.moldingTable(BlueItems.crystal_sand.getBlank().get())
-                .setMaterial(BlueItemTags.crystal_sand_casts)
+                .setMaterial(BlueItemTagsProvider.crystal_sand_casts)
                 .save(consumer, BlueSkiesTcon.resource("smeltery/crystal_sand_cast_pickup"));
 
         // material melting
-        materialMeltingCasting(consumer, BlueMaterials.aquite, BlueFluids.aquite, materialFolder + "aquite");
-        materialMeltingCasting(consumer, BlueMaterials.charoite, BlueFluids.charoite, materialFolder + "charoite");
-        materialMeltingCasting(consumer, BlueMaterials.diopside, BlueFluids.diopside, materialFolder + "diopside");
-        materialMeltingCasting(consumer, BlueMaterials.horizonite, BlueFluids.horizonite, materialFolder + "horizonite");
-        materialMeltingCasting(consumer, BlueMaterials.pyrope, BlueFluids.pyrope, materialFolder + "pyrope");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.aquite, BlueFluids.aquite, materialFolder + "aquite");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.charoite, BlueFluids.charoite, materialFolder + "charoite");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.diopside, BlueFluids.diopside, materialFolder + "diopside");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.horizonite, BlueFluids.horizonite, materialFolder + "horizonite");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.pyrope, BlueFluids.pyrope, materialFolder + "pyrope");
     }
 
     protected void blockBasin(Consumer<FinishedRecipe> consumer, FluidObject<ForgeFlowingFluid> object, Block block, String folder) {

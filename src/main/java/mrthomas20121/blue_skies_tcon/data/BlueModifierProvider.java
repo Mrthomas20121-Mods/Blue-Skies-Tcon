@@ -1,12 +1,8 @@
 package mrthomas20121.blue_skies_tcon.data;
 
 import mrthomas20121.blue_skies_tcon.init.BlueModifiers;
-import mrthomas20121.blue_skies_tcon.init.BlueVariables;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
-import slimeknights.tconstruct.library.json.math.ModifierFormula;
-import slimeknights.tconstruct.library.json.variable.melee.EntityMeleeVariable;
-import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 
 public class BlueModifierProvider extends AbstractModifierProvider {
@@ -37,6 +33,6 @@ public class BlueModifierProvider extends AbstractModifierProvider {
 
     @Override
     public String getName() {
-        return "Blue Skies Modifiers";
+        return "Blue Skies TCon Modifier Provider";
     }
 }

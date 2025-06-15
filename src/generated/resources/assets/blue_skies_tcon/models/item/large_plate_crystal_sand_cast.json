@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "blue_skies_tcon:item/crystal_sand_cast/large_plate"
+    "layer0": "blue_skies_tcon:item/crystal_sand_casts/large_plate"
   }
 }
