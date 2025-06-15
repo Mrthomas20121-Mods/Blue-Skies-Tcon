@@ -4,12 +4,17 @@ import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.api.ItemCast;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BlueItems {
@@ -21,24 +26,23 @@ public class BlueItems {
     public static final RegistryObject<Item> diopside_nugget = ITEMS.register("diopside_nugget", BlueItems::register);
     public static final RegistryObject<Item> pyrope_nugget = ITEMS.register("pyrope_nugget", BlueItems::register);
     public static final RegistryObject<Item> moonstone_nugget = ITEMS.register("moonstone_nugget", BlueItems::register);
-    public static ItemCast midnight_sand = registerCast("midnight_sand");
-    public static ItemCast crystal_sand = registerCast("crystal_sand");
 
-    public static ArrayList<ItemStack> items = new ArrayList<>();
+    public static final ItemCast midnight_sand = registerCast("midnight_sand");
+    public static final ItemCast crystal_sand = registerCast("crystal_sand");
+
+    private static final Item.Properties DEFAULT_PROPERTIES = new Item.Properties();
 
     public static Item register() {
-        // TODO: BuildCreativeModeTabContentsEvent
-        Item item = new Item(new Item.Properties());
-//        items.add(item.getDefaultInstance());
-        return item;
+        return new Item(DEFAULT_PROPERTIES);
     }
 
-//    @SubscribeEvent
-//    void creativeTab(BuildCreativeModeTabContentsEvent event) {
-//        if (event.getTab() == TinkerToolParts.tabToolParts.get()) {
-//            event.acceptAll(items);
-//        }
-//    }
+    @SubscribeEvent
+    public static void creativeTab(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == TinkerSmeltery.tabSmeltery.getKey()) {
+            event.acceptAll(midnight_sand.getALL().stream().map(r -> new ItemStack(r.get())).toList());
+            event.acceptAll(crystal_sand.getALL().stream().map(r -> new ItemStack(r.get())).toList());
+        }
+    }
 
     public static ItemCast registerCast(String sand) {
         String castBase = String.format("%s_cast", sand);

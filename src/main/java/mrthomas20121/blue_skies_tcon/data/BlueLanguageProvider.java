@@ -24,7 +24,7 @@ public class BlueLanguageProvider extends LanguageProvider {
         addMaterial(BlueMaterials.aquite,"Iron at home:");
         addMaterial(BlueMaterials.charoite, "Slightly radioactive");
         addMaterial(BlueMaterials.diopside, "The cooler Emerald");
-        addMaterial(BlueMaterials.horizonite, "SUPERHOT");
+        addMaterial(BlueMaterials.horizonite, "SUPER HOT");
         addMaterial(BlueMaterials.pyrope, "Simply lovely");
 
         addFluid(BlueFluids.aquite);
@@ -47,13 +47,10 @@ public class BlueLanguageProvider extends LanguageProvider {
 
         add(String.format("effect.%s.ecstatic", BlueSkiesTcon.MOD_ID), "Ecstatic");
 
-        addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
+        addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break the limits of the Blue Skies", "We Minecrafters have no limits!");
         addModifier(BlueModifiers.ULTRAVIOLET.getId(), "Ultraviolet", "Make your targets glow briefly", "Known to the State of California to cause cancer");
-
-        addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break through the limits of the Blue Skies", "We Minecrafters have no limits!");
-        addModifier(BlueModifiers.SHATTERING, "Shattering", "Multiplies durability loss of your target's armor", "Shatter Me");
-
-//        addModifier(BlueModifiers.SPEEDSTER, "Speedster", "TODO", "TODO");
+        addModifier(BlueModifiers.SHATTERING, "Shattering", "Multiplies the damage dealt to your target's armor", "Shatter Me");
+        addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
     }
 
     private void addMaterial(MaterialId material, String flavor) {

@@ -64,19 +64,19 @@ public class BlueMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialTraits() {
-            // TODO; add trait
-            addDefaultTraits(aquite, ModifierIds.hydraulic, BlueModifiers.SKY_BREAKER);
+            addDefaultTraits(aquite, ModifierIds.hydraulic);
             addTraits(aquite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
 
-            // TODO: stat boost against glowing targets?, basically insatiable though
             addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());
             addTraits(charoite, HeadMaterialStats.ID, BlueModifiers.ULTRAVIOLET.getId(), BlueModifiers.SKY_BREAKER);
             addTraitsArmor(charoite, BlueModifiers.ULTRAVIOLET.getId());
 
             addTraits(diopside, HeadMaterialStats.ID, BlueModifiers.SHATTERING, BlueModifiers.SKY_BREAKER);
 //            addTraitsArmor(diopside, ModifierIds.knockbackResistance);
+            // TODO: armor does nothing, maybe do the same thing against attackers tools
             addDefaultTraits(diopside, BlueModifiers.SHATTERING);
 
+            // TODO: shield plating is missing its trait
             addTraits(horizonite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
             addTraits(horizonite, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId());
             addTraitsArmor(horizonite, TinkerModifiers.fiery.getId());

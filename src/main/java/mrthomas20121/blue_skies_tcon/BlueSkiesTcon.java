@@ -10,10 +10,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +26,7 @@ import org.apache.logging.log4j.Logger;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.json.variable.entity.EntityVariable;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -77,11 +80,11 @@ public class BlueSkiesTcon {
         gen.addProvider(client, new MaterialPartTextureGenerator(packOutput, fileHelper, new TinkerPartSpriteProvider(), provider));
     }
 
-    @SubscribeEvent
-    public static void register(RegisterEvent event) {
-        if (event.getRegistryKey() != Registries.RECIPE_SERIALIZER) return;
-        EntityVariable.LOADER.register(resource("speedster"), BlueVariables.ENTITY_SPEED.getLoader());
-    }
+//    @SubscribeEvent
+//    public static void register(RegisterEvent event) {
+//        if (event.getRegistryKey() != Registries.RECIPE_SERIALIZER) return;
+//        EntityVariable.LOADER.register(resource("speedster"), BlueVariables.ENTITY_SPEED.getLoader());
+//    }
 
     public static ResourceLocation resource(String s) {
         return ResourceLocation.fromNamespaceAndPath(BlueSkiesTcon.MOD_ID, s);
