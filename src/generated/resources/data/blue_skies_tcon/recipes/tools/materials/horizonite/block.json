@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/horizonite"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/horizonite"
+  },
+  "material": "blue_skies_tcon:horizonite",
+  "needed": 1,
+  "value": 9
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/falsite"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "blue_skies_tcon:molten_falsite"
+  },
+  "temperature": 500,
+  "time": 50
+}

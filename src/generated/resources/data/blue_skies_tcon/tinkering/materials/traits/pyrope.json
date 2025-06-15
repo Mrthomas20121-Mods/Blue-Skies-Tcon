@@ -1,0 +1,20 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "blue_skies_tcon:ecstatic"
+    }
+  ],
+  "perStat": {
+    "tconstruct:head": [
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:ecstatic"
+      }
+    ]
+  }
+}

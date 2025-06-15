@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gem"
+  },
+  "cast_consumed": true,
+  "cooling_time": 73,
+  "fluid": {
+    "amount": 100,
+    "fluid": "blue_skies_tcon:molten_charoite"
+  },
+  "result": {
+    "tag": "forge:gems/charoite"
+  }
+}

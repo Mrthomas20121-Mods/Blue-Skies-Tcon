@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_casting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tconstruct:seared_table"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blue_skies_tcon:smeltery/midnight_sand_cast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_casting",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blue_skies_tcon:smeltery/midnight_sand_cast"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:nuggets/horizonite"
+  },
+  "material": "blue_skies_tcon:horizonite",
+  "needed": 9,
+  "value": 1
+}

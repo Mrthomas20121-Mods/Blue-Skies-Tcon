@@ -1,0 +1,20 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "blue_skies_tcon:shattering"
+    }
+  ],
+  "perStat": {
+    "tconstruct:head": [
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:shattering"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      }
+    ]
+  }
+}

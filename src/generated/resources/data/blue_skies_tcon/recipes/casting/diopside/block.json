@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 224,
+  "fluid": {
+    "amount": 900,
+    "fluid": "blue_skies_tcon:molten_diopside"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/diopside"
+  }
+}

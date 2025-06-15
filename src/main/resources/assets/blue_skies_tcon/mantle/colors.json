@@ -1,0 +1,15 @@
+{
+    "material.blue_skies_tcon": {
+        "aquite": "#93DCF9",
+        "charoite": "#B587D6",
+        "diopside": "#049E0C",
+        "horizonite": "#FF7830",
+        "moonstone": "#D0EAF8",
+        "pyrope": "#F2475D"
+    },
+    "modifier.blue_skies_tcon": {
+        "ecstatic": "#F2475D",
+        "ultraviolet": "#861EE8",
+        "sky_breaker": "#0000FF"
+    }
+}

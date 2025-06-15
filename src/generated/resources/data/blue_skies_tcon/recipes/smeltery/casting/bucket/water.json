@@ -4,10 +4,10 @@
     "item": "blue_skies:ventium_bucket"
   },
   "cast_consumed": true,
+  "cooling_time": 94,
   "fluid": {
-    "name": "minecraft:water",
-    "amount": 1000
+    "amount": 1000,
+    "fluid": "minecraft:water"
   },
-  "result": "blue_skies:ventium_water_bucket",
-  "cooling_time": 74
+  "result": "blue_skies:ventium_water_bucket"
 }
