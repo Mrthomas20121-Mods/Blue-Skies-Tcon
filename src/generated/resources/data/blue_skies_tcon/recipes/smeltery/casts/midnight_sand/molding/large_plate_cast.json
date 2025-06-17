@@ -4,6 +4,7 @@
     "tag": "blue_skies_tcon:casts/midnight_sand"
   },
   "pattern": {
+    "type": "tconstruct:material",
     "item": "tconstruct:large_plate"
   },
   "result": "blue_skies_tcon:large_plate_midnight_sand_cast"

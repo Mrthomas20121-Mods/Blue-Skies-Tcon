@@ -4,6 +4,7 @@
     "tag": "blue_skies_tcon:casts/midnight_sand"
   },
   "pattern": {
+    "type": "tconstruct:material",
     "item": "tconstruct:small_axe_head"
   },
   "result": "blue_skies_tcon:small_axe_head_midnight_sand_cast"

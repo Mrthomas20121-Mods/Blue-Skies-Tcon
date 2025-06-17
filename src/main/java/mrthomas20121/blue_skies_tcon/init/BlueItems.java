@@ -23,8 +23,8 @@ public class BlueItems {
     public static final RegistryObject<Item> pyrope_nugget = ITEMS.register("pyrope_nugget", BlueItems::register);
     public static final RegistryObject<Item> moonstone_nugget = ITEMS.register("moonstone_nugget", BlueItems::register);
 
-    public static final ItemCast MIDNIGHT_SAND = new ItemCast("midnight_sand");
     public static final ItemCast CRYSTAL_SAND = new ItemCast("crystal_sand");
+    public static final ItemCast MIDNIGHT_SAND = new ItemCast("midnight_sand");
 
     public static final Item.Properties DEFAULT_PROPERTIES = new Item.Properties();
 
@@ -35,8 +35,8 @@ public class BlueItems {
     @SubscribeEvent
     public static void creativeTab(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == TinkerSmeltery.tabSmeltery.getKey()) {
-            event.acceptAll(MIDNIGHT_SAND.getAll().stream().map(r -> new ItemStack(r.get())).toList());
             event.acceptAll(CRYSTAL_SAND.getAll().stream().map(r -> new ItemStack(r.get())).toList());
+            event.acceptAll(MIDNIGHT_SAND.getAll().stream().map(r -> new ItemStack(r.get())).toList());
         }
     }
 }

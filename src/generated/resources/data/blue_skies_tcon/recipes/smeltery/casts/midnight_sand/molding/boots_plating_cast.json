@@ -4,6 +4,7 @@
     "tag": "blue_skies_tcon:casts/midnight_sand"
   },
   "pattern": {
+    "type": "tconstruct:material",
     "item": "tconstruct:leggings_plating"
   },
   "result": "blue_skies_tcon:boot_plating_midnight_sand_cast"

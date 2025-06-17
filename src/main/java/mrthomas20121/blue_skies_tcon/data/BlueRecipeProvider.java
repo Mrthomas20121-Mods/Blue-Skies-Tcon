@@ -141,7 +141,7 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .save(consumer, BlueSkiesTcon.resource(folder + "crystal_sand/molding/" + name));
         MoldingRecipeBuilder.moldingTable(midnight_cast)
                 .setMaterial(BlueItemTagsProvider.MIDNIGHT_SAND_CASTS)
-                .setPattern(pattern, false)
+                .setPattern(MaterialIngredient.of(pattern), false)
                 .save(consumer, BlueSkiesTcon.resource(folder + "midnight_sand/molding/" + name));
 
         ResourceLocation castName = cast.getName();

@@ -4,6 +4,7 @@
     "tag": "blue_skies_tcon:casts/midnight_sand"
   },
   "pattern": {
+    "type": "tconstruct:material",
     "item": "tconstruct:tool_binding"
   },
   "result": "blue_skies_tcon:tool_binding_midnight_sand_cast"
