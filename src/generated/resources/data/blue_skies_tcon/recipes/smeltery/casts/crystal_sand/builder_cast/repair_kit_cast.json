@@ -1,0 +1,8 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:repair_kit",
+  "pattern_item": {
+    "tag": "blue_skies_tcon:casts/crystal_sand"
+  },
+  "result": "blue_skies_tcon:repair_kit_crystal_sand_cast"
+}

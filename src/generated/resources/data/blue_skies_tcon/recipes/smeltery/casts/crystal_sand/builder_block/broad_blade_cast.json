@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:broad_blade",
+  "pattern_item": {
+    "item": "blue_skies:crystal_sand"
+  },
+  "result": {
+    "count": 4,
+    "item": "blue_skies_tcon:broad_blade_crystal_sand_cast"
+  }
+}

@@ -23,8 +23,8 @@ import java.util.concurrent.CompletableFuture;
 
 public class BlueItemTagsProvider extends ItemTagsProvider {
 
-    public static TagKey<Item> crystal_sand_casts = create("tconstruct:casts/crystal_sand");
-    public static TagKey<Item> midnight_sand_casts = create("tconstruct:casts/midnight_sand");
+    public static final TagKey<Item> CRYSTAL_SAND_CASTS = ItemTags.create(BlueSkiesTcon.resource("casts/crystal_sand"));
+    public static final TagKey<Item> MIDNIGHT_SAND_CASTS = ItemTags.create(BlueSkiesTcon.resource("casts/midnight_sand"));
     TagKey<Item> nuggets = create("forge:nuggets");
     TagKey<Item> single_use = create("tconstruct:casts/single_use");
 
@@ -51,13 +51,13 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
         addTags("ventium", SkiesBlocks.ventium_ore, SkiesBlocks.ventium_block, SkiesItems.ventium_ingot, SkiesItems.ventium_nugget);
         addGemTags("moonstone", SkiesBlocks.everbright_moonstone_ore, SkiesBlocks.everdawn_moonstone_ore, SkiesBlocks.moonstone_block, SkiesBlocks.moonstone.asItem(), BlueItems.moonstone_nugget.get());
         addGemTags("pyrope", SkiesBlocks.everdawn_pyrope_ore, SkiesBlocks.everbright_pyrope_ore, SkiesBlocks.pyrope_block, SkiesItems.pyrope_gem, BlueItems.pyrope_nugget.get());
-        addCastTag(BlueItems.midnight_sand);
-        addCastTag(BlueItems.crystal_sand);
+        addCastTag(BlueItems.MIDNIGHT_SAND);
+        addCastTag(BlueItems.CRYSTAL_SAND);
     }
 
     protected void addCastTag(ItemCast cast) {
-        TagsProvider.TagAppender<Item> crystalSandAppender = tag(crystal_sand_casts);
-        TagsProvider.TagAppender<Item> midnightSandAppender = tag(midnight_sand_casts);
+        TagsProvider.TagAppender<Item> crystalSandAppender = tag(CRYSTAL_SAND_CASTS);
+        TagsProvider.TagAppender<Item> midnightSandAppender = tag(MIDNIGHT_SAND_CASTS);
         TagsProvider.TagAppender<Item> singleUseAppender = tag(single_use);
         TagsProvider.TagAppender<Item> castsProvider = tag(TinkerTags.Items.CASTS);
         TagsProvider.TagAppender<Item> patternsProvider = tag(TinkerTags.Items.PATTERNS);

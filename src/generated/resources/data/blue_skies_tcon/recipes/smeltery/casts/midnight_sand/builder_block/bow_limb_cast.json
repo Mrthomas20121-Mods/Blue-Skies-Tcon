@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:bow_limb",
+  "pattern_item": {
+    "item": "blue_skies:midnight_sand"
+  },
+  "result": {
+    "count": 4,
+    "item": "blue_skies_tcon:bow_limb_midnight_sand_cast"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "tag": "blue_skies_tcon:casts/crystal_sand"
+  },
+  "pattern": {
+    "type": "tconstruct:material",
+    "item": "tconstruct:repair_kit"
+  },
+  "result": "blue_skies_tcon:repair_kit_crystal_sand_cast"
+}

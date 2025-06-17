@@ -1,0 +1,8 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:chestplate_plating",
+  "pattern_item": {
+    "tag": "blue_skies_tcon:casts/crystal_sand"
+  },
+  "result": "blue_skies_tcon:chest_plating_crystal_sand_cast"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "tag": "blue_skies_tcon:casts/midnight_sand"
+  },
+  "pattern": {
+    "item": "tconstruct:tough_binding"
+  },
+  "result": "blue_skies_tcon:tough_binding_midnight_sand_cast"
+}

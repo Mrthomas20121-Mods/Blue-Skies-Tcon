@@ -1,0 +1,8 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:small_blade",
+  "pattern_item": {
+    "tag": "blue_skies_tcon:casts/crystal_sand"
+  },
+  "result": "blue_skies_tcon:small_blade_crystal_sand_cast"
+}

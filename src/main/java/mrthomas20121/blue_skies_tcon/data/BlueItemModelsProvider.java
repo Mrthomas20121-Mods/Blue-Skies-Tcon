@@ -40,8 +40,8 @@ public class BlueItemModelsProvider extends ItemModelProvider {
         itemWithModel(BlueItems.moonstone_nugget, "item/generated");
         itemWithModel(BlueItems.pyrope_nugget, "item/generated");
 
-        castModel(BlueItems.midnight_sand);
-        castModel(BlueItems.crystal_sand);
+        castModel(BlueItems.MIDNIGHT_SAND);
+        castModel(BlueItems.CRYSTAL_SAND);
     }
 
     public void castModel(ItemCast cast) {

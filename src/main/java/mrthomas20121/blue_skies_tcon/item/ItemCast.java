@@ -33,13 +33,124 @@ public class ItemCast {
     private final RegistryObject<Item> tough_collar;
     private final RegistryObject<Item> bow_limb;
     private final RegistryObject<Item> bow_grip;
+    private final RegistryObject<Item> bow_string = null; // TODO
     private final RegistryObject<Item> helmet_plating;
     private final RegistryObject<Item> chest_plating;
     private final RegistryObject<Item> leg_plating;
     private final RegistryObject<Item> boot_plating;
     private final RegistryObject<Item> maille;
 
-    // TODO: missing casting recipes and textures
+    public RegistryObject<Item> getIngot() {
+        return ingot;
+    }
+
+    public RegistryObject<Item> getNugget() {
+        return nugget;
+    }
+
+    public RegistryObject<Item> getGem() {
+        return gem;
+    }
+
+    public RegistryObject<Item> getRod() {
+        return rod;
+    }
+
+    public RegistryObject<Item> getRepairKit() {
+        return repair_kit;
+    }
+
+    public RegistryObject<Item> getPlate() {
+        return plate;
+    }
+
+    public RegistryObject<Item> getGear() {
+        return gear;
+    }
+
+    public RegistryObject<Item> getCoin() {
+        return coin;
+    }
+
+    public RegistryObject<Item> getWire() {
+        return wire;
+    }
+
+    public RegistryObject<Item> getPickHead() {
+        return pick_head;
+    }
+
+    public RegistryObject<Item> getSmallAxeHead() {
+        return small_axe_head;
+    }
+
+    public RegistryObject<Item> getSmallBlade() {
+        return small_blade;
+    }
+
+    public RegistryObject<Item> getAdzeHead() {
+        return adze_head;
+    }
+
+    public RegistryObject<Item> getHammerHead() {
+        return hammer_head;
+    }
+
+    public RegistryObject<Item> getBroadAxeHead() {
+        return broad_axe_head;
+    }
+
+    public RegistryObject<Item> getBroadBlade() {
+        return broad_blade;
+    }
+
+    public RegistryObject<Item> getLargePlate() {
+        return large_plate;
+    }
+
+    public RegistryObject<Item> getToolHandle() {
+        return tool_handle;
+    }
+
+    public RegistryObject<Item> getToolBinding() {
+        return tool_binding;
+    }
+
+    public RegistryObject<Item> getToughHandle() {
+        return tough_handle;
+    }
+
+    public RegistryObject<Item> getToughCollar() {
+        return tough_collar;
+    }
+
+    public RegistryObject<Item> getBowLimb() {
+        return bow_limb;
+    }
+
+    public RegistryObject<Item> getBowGrip() {
+        return bow_grip;
+    }
+
+    public RegistryObject<Item> getHelmetPlating() {
+        return helmet_plating;
+    }
+
+    public RegistryObject<Item> getChestPlating() {
+        return chest_plating;
+    }
+
+    public RegistryObject<Item> getLegPlating() {
+        return leg_plating;
+    }
+
+    public RegistryObject<Item> getBootPlating() {
+        return boot_plating;
+    }
+
+    public RegistryObject<Item> getMaille() {
+        return maille;
+    }
 
     public ItemCast(String sand) {
         String castBase = String.format("%s_cast", sand);

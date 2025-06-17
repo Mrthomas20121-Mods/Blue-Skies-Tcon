@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "tag": "blue_skies_tcon:casts/midnight_sand"
+  },
+  "pattern": {
+    "item": "tconstruct:bow_grip"
+  },
+  "result": "blue_skies_tcon:bow_grip_midnight_sand_cast"
+}

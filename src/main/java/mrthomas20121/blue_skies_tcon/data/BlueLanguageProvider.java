@@ -47,8 +47,8 @@ public class BlueLanguageProvider extends LanguageProvider {
         addItem(BlueItems.moonstone_nugget, "Moonstone Nugget");
         addItem(BlueItems.pyrope_nugget, "Pyrope Nugget");
 
-        addCast(BlueItems.midnight_sand);
-        addCast(BlueItems.crystal_sand);
+        addCast(BlueItems.MIDNIGHT_SAND);
+        addCast(BlueItems.CRYSTAL_SAND);
 
         add(String.format("effect.%s.ecstatic", BlueSkiesTcon.MOD_ID), "Ecstatic");
 

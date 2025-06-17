@@ -1,0 +1,8 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:bow_grip",
+  "pattern_item": {
+    "tag": "blue_skies_tcon:casts/midnight_sand"
+  },
+  "result": "blue_skies_tcon:bow_grip_midnight_sand_cast"
+}
