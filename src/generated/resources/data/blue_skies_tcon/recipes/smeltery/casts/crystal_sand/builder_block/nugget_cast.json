@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:nugget",
+  "pattern_item": {
+    "item": "blue_skies:crystal_sand"
+  },
+  "result": {
+    "count": 4,
+    "item": "blue_skies_tcon:nugget_crystal_sand_cast"
+  }
+}

@@ -13,10 +13,13 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fluids.FluidStack;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
@@ -35,6 +38,7 @@ import javax.annotation.Nonnull;
 import java.util.function.Consumer;
 
 public class BlueRecipeProvider extends RecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
+    static final String SMELTERY_FOLDER = "smeltery/casts/";
 
     public BlueRecipeProvider(PackOutput gen) {
         super(gen);
@@ -56,27 +60,36 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy("has_casting", has(TinkerSmeltery.searedTable))
                 .save(consumer, BlueSkiesTcon.resource("smeltery/midnight_sand_cast"));
 
-        // TODO: missing moulding for ingot, nugget, gem, rod, plate, gear, coin, wire
-        castMoulding(consumer, TinkerToolParts.repairKit, TinkerSmeltery.repairKitCast, ItemCast::getRepairKit);
-        castMoulding(consumer, TinkerToolParts.pickHead, TinkerSmeltery.pickHeadCast, ItemCast::getPickHead);
-        castMoulding(consumer, TinkerToolParts.hammerHead, TinkerSmeltery.hammerHeadCast, ItemCast::getHammerHead);
-        castMoulding(consumer, TinkerToolParts.smallAxeHead, TinkerSmeltery.smallAxeHeadCast, ItemCast::getSmallAxeHead);
-        castMoulding(consumer, TinkerToolParts.broadAxeHead, TinkerSmeltery.broadAxeHeadCast, ItemCast::getBroadAxeHead);
-        castMoulding(consumer, TinkerToolParts.smallBlade, TinkerSmeltery.smallBladeCast, ItemCast::getSmallBlade);
-        castMoulding(consumer, TinkerToolParts.broadBlade, TinkerSmeltery.broadBladeCast, ItemCast::getBroadBlade);
-        castMoulding(consumer, TinkerToolParts.adzeHead, TinkerSmeltery.adzeHeadCast, ItemCast::getAdzeHead);
-        castMoulding(consumer, TinkerToolParts.largePlate, TinkerSmeltery.largePlateCast, ItemCast::getLargePlate);
-        castMoulding(consumer, TinkerToolParts.bowLimb, TinkerSmeltery.bowLimbCast, ItemCast::getBowLimb);
-        castMoulding(consumer, TinkerToolParts.bowGrip, TinkerSmeltery.bowGripCast, ItemCast::getBowGrip);
-        castMoulding(consumer, TinkerToolParts.toolBinding, TinkerSmeltery.toolBindingCast, ItemCast::getToolBinding);
-        castMoulding(consumer, TinkerToolParts.toughBinding, TinkerSmeltery.toughBindingCast, ItemCast::getToughCollar);
-        castMoulding(consumer, TinkerToolParts.toolHandle, TinkerSmeltery.toolHandleCast, ItemCast::getToolHandle);
-        castMoulding(consumer, TinkerToolParts.toughHandle, TinkerSmeltery.toughHandleCast, ItemCast::getToughHandle);
-        castMoulding(consumer, TinkerToolParts.maille, TinkerSmeltery.mailleCast, ItemCast::getMaille);
-        castMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.HELMET), TinkerSmeltery.helmetPlatingCast, ItemCast::getHelmetPlating);
-        castMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE), TinkerSmeltery.chestplatePlatingCast, ItemCast::getChestPlating);
-        castMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS), TinkerSmeltery.leggingsPlatingCast, ItemCast::getLegPlating);
-        castMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS), TinkerSmeltery.bootsPlatingCast, ItemCast::getBootPlating);
+        castBuildingMoulding(consumer, TinkerToolParts.repairKit, TinkerSmeltery.repairKitCast, ItemCast::getRepairKit);
+        castBuildingMoulding(consumer, TinkerToolParts.pickHead, TinkerSmeltery.pickHeadCast, ItemCast::getPickHead);
+        castBuildingMoulding(consumer, TinkerToolParts.hammerHead, TinkerSmeltery.hammerHeadCast, ItemCast::getHammerHead);
+        castBuildingMoulding(consumer, TinkerToolParts.smallAxeHead, TinkerSmeltery.smallAxeHeadCast, ItemCast::getSmallAxeHead);
+        castBuildingMoulding(consumer, TinkerToolParts.broadAxeHead, TinkerSmeltery.broadAxeHeadCast, ItemCast::getBroadAxeHead);
+        castBuildingMoulding(consumer, TinkerToolParts.smallBlade, TinkerSmeltery.smallBladeCast, ItemCast::getSmallBlade);
+        castBuildingMoulding(consumer, TinkerToolParts.broadBlade, TinkerSmeltery.broadBladeCast, ItemCast::getBroadBlade);
+        castBuildingMoulding(consumer, TinkerToolParts.adzeHead, TinkerSmeltery.adzeHeadCast, ItemCast::getAdzeHead);
+        castBuildingMoulding(consumer, TinkerToolParts.largePlate, TinkerSmeltery.largePlateCast, ItemCast::getLargePlate);
+        castBuildingMoulding(consumer, TinkerToolParts.bowLimb, TinkerSmeltery.bowLimbCast, ItemCast::getBowLimb);
+        castBuildingMoulding(consumer, TinkerToolParts.bowGrip, TinkerSmeltery.bowGripCast, ItemCast::getBowGrip);
+        castBuildingMoulding(consumer, TinkerToolParts.toolBinding, TinkerSmeltery.toolBindingCast, ItemCast::getToolBinding);
+        castBuildingMoulding(consumer, TinkerToolParts.toughBinding, TinkerSmeltery.toughBindingCast, ItemCast::getToughCollar);
+        castBuildingMoulding(consumer, TinkerToolParts.toolHandle, TinkerSmeltery.toolHandleCast, ItemCast::getToolHandle);
+        castBuildingMoulding(consumer, TinkerToolParts.toughHandle, TinkerSmeltery.toughHandleCast, ItemCast::getToughHandle);
+        castBuildingMoulding(consumer, TinkerToolParts.maille, TinkerSmeltery.mailleCast, ItemCast::getMaille);
+        castBuildingMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.HELMET), TinkerSmeltery.helmetPlatingCast, ItemCast::getHelmetPlating);
+        castBuildingMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE), TinkerSmeltery.chestplatePlatingCast, ItemCast::getChestPlating);
+        castBuildingMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS), TinkerSmeltery.leggingsPlatingCast, ItemCast::getLegPlating);
+        castBuildingMoulding(consumer, TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS), TinkerSmeltery.bootsPlatingCast, ItemCast::getBootPlating);
+
+        castBuildingMoulding(consumer, Tags.Items.INGOTS, TinkerSmeltery.ingotCast, ItemCast::getIngot);
+        castBuildingMoulding(consumer, Tags.Items.NUGGETS, TinkerSmeltery.nuggetCast, ItemCast::getNugget);
+        castBuildingMoulding(consumer, Tags.Items.GEMS, TinkerSmeltery.gemCast, ItemCast::getGem);
+        castBuildingMoulding(consumer, Tags.Items.RODS, TinkerSmeltery.rodCast, ItemCast::getRod);
+
+        castBuildingMoulding(consumer, ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "plate")), TinkerSmeltery.plateCast, ItemCast::getPlate);
+        castBuildingMoulding(consumer, ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "gear")), TinkerSmeltery.gearCast, ItemCast::getGear);
+        castBuildingMoulding(consumer, ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "coin")), TinkerSmeltery.coinCast, ItemCast::getCoin);
+        castBuildingMoulding(consumer, ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "wire")), TinkerSmeltery.wireCast, ItemCast::getWire);
 
         // bucket recipes
         ItemCastingRecipeBuilder
@@ -127,9 +140,7 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
         materialMeltingCasting(consumer, BlueMaterialsProvider.pyrope, BlueFluids.pyrope, materialFolder + "pyrope");
     }
 
-    protected void castMoulding(Consumer<FinishedRecipe> consumer, ItemLike pattern, CastItemObject cast, IItemCast itemCast) {
-        final String folder = "smeltery/casts/";
-
+    protected void castMoulding(Consumer<FinishedRecipe> consumer, Ingredient ingredient, CastItemObject cast, IItemCast itemCast) {
         Item crystal_cast = itemCast.itemOf(BlueItems.CRYSTAL_SAND).get();
         Item midnight_cast = itemCast.itemOf(BlueItems.MIDNIGHT_SAND).get();
         String name = cast.getId().getPath();
@@ -137,29 +148,45 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
         // make sand casts via molding in the casting table
         MoldingRecipeBuilder.moldingTable(crystal_cast)
                 .setMaterial(BlueItemTagsProvider.CRYSTAL_SAND_CASTS)
-                .setPattern(MaterialIngredient.of(pattern), false)
-                .save(consumer, BlueSkiesTcon.resource(folder + "crystal_sand/molding/" + name));
+                .setPattern(ingredient, false)
+                .save(consumer, BlueSkiesTcon.resource(SMELTERY_FOLDER + "crystal_sand/molding/" + name));
         MoldingRecipeBuilder.moldingTable(midnight_cast)
                 .setMaterial(BlueItemTagsProvider.MIDNIGHT_SAND_CASTS)
-                .setPattern(MaterialIngredient.of(pattern), false)
-                .save(consumer, BlueSkiesTcon.resource(folder + "midnight_sand/molding/" + name));
+                .setPattern(ingredient, false)
+                .save(consumer, BlueSkiesTcon.resource(SMELTERY_FOLDER + "midnight_sand/molding/" + name));
+    }
+
+    protected void castBuilding(Consumer<FinishedRecipe> consumer, CastItemObject cast, IItemCast itemCast) {
+        Item crystal_cast = itemCast.itemOf(BlueItems.CRYSTAL_SAND).get();
+        Item midnight_cast = itemCast.itemOf(BlueItems.MIDNIGHT_SAND).get();
+        String name = cast.getId().getPath();
 
         ResourceLocation castName = cast.getName();
         // make sand casts in the pattern builder
         ItemPartRecipeBuilder.item(castName, ItemOutput.fromItem(crystal_cast))
                 .setPatternItem(Ingredient.of(BlueItemTagsProvider.CRYSTAL_SAND_CASTS))
-                .save(consumer, BlueSkiesTcon.resource(folder + "crystal_sand/builder_cast/" + name));
+                .save(consumer, BlueSkiesTcon.resource(SMELTERY_FOLDER + "crystal_sand/builder_cast/" + name));
         ItemPartRecipeBuilder.item(castName, ItemOutput.fromItem(midnight_cast))
                 .setPatternItem(Ingredient.of(BlueItemTagsProvider.MIDNIGHT_SAND_CASTS))
-                .save(consumer, BlueSkiesTcon.resource(folder + "midnight_sand/builder_cast/" + name));
+                .save(consumer, BlueSkiesTcon.resource(SMELTERY_FOLDER + "midnight_sand/builder_cast/" + name));
 
         // blank sand casts
         ItemPartRecipeBuilder.item(castName, ItemOutput.fromItem(crystal_cast, 4))
                 .setPatternItem(Ingredient.of(SkiesBlocks.crystal_sand))
-                .save(consumer, BlueSkiesTcon.resource(folder + "crystal_sand/builder_block/" + name));
+                .save(consumer, BlueSkiesTcon.resource(SMELTERY_FOLDER + "crystal_sand/builder_block/" + name));
         ItemPartRecipeBuilder.item(castName, ItemOutput.fromItem(midnight_cast, 4))
                 .setPatternItem(Ingredient.of(SkiesBlocks.midnight_sand))
-                .save(consumer, BlueSkiesTcon.resource(folder + "midnight_sand/builder_block/" + name));
+                .save(consumer, BlueSkiesTcon.resource(SMELTERY_FOLDER + "midnight_sand/builder_block/" + name));
+    }
+
+    protected void castBuildingMoulding(Consumer<FinishedRecipe> consumer, ItemLike pattern, CastItemObject cast, IItemCast itemCast) {
+        castMoulding(consumer, MaterialIngredient.of(pattern), cast, itemCast);
+        castBuilding(consumer, cast, itemCast);
+    }
+
+    protected void castBuildingMoulding(Consumer<FinishedRecipe> consumer, TagKey<Item> tag, CastItemObject cast, IItemCast itemCast) {
+        castMoulding(consumer, Ingredient.of(tag), cast, itemCast);
+        castBuilding(consumer, cast, itemCast);
     }
 
     @Nonnull

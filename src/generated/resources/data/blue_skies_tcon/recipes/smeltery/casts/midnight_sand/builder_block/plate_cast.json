@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:plate",
+  "pattern_item": {
+    "item": "blue_skies:midnight_sand"
+  },
+  "result": {
+    "count": 4,
+    "item": "blue_skies_tcon:plate_midnight_sand_cast"
+  }
+}

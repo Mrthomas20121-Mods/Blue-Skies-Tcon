@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "tag": "blue_skies_tcon:casts/midnight_sand"
+  },
+  "pattern": {
+    "tag": "forge:gems"
+  },
+  "result": "blue_skies_tcon:gem_midnight_sand_cast"
+}

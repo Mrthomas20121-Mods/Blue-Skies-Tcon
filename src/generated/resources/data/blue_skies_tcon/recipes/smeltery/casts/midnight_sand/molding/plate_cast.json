@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "tag": "blue_skies_tcon:casts/midnight_sand"
+  },
+  "pattern": {
+    "tag": "forge:plate"
+  },
+  "result": "blue_skies_tcon:plate_midnight_sand_cast"
+}
