@@ -5,10 +5,10 @@ issueTrackerURL = "https://github.com/Mrthomas20121/Blue-Skies-Tcon/issues"
 
 [[mods]]
 modId = "blue_skies_tcon"
-version = "0.0.3"
+version = "0.1.0"
 displayName = "Blue Skies Tinkers Compat"
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/blue_skies_tcon"
-authors = "Mrthomas20121"
+authors = "Mrthomas20121, paypur"
 description = '''
 Add Tinkers Compat to Blue Skies
 '''

@@ -71,6 +71,7 @@ minecraft {
 }
 
 mixin {
+    add sourceSets.main, "blue_skies_tcon.refmap.json"
     config "blue_skies_tcon.mixin.json"
 }
 
