@@ -15,6 +15,52 @@
         "level": 1,
         "name": "blue_skies_tcon:sky_breaker"
       }
+    ],
+    "tconstruct:maille": [
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:shattering"
+      }
+    ],
+    "tconstruct:plating_boots": [
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:shattering"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      }
+    ],
+    "tconstruct:plating_chestplate": [
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:shattering"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      }
+    ],
+    "tconstruct:plating_helmet": [
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:shattering"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      }
+    ],
+    "tconstruct:plating_leggings": [
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:shattering"
+      },
+      {
+        "level": 1,
+        "name": "blue_skies_tcon:sky_breaker"
+      }
     ]
   }
 }

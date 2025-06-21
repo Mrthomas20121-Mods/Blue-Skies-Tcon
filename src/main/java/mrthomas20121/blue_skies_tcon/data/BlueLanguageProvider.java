@@ -41,20 +41,20 @@ public class BlueLanguageProvider extends LanguageProvider {
         addFluid(BlueFluids.falsite);
         addFluid(BlueFluids.ventium);
 
-        addItem(BlueItems.aquite_nugget, "Aquite Nugget");
-        addItem(BlueItems.charoite_nugget, "Charoite Nugget");
-        addItem(BlueItems.diopside_nugget, "Diopside Nugget");
-        addItem(BlueItems.moonstone_nugget, "Moonstone Nugget");
-        addItem(BlueItems.pyrope_nugget, "Pyrope Nugget");
+//        addItem(BlueItems.aquite_nugget, "Aquite Nugget");
+//        addItem(BlueItems.charoite_nugget, "Charoite Nugget");
+//        addItem(BlueItems.diopside_nugget, "Diopside Nugget");
+//        addItem(BlueItems.moonstone_nugget, "Moonstone Nugget");
+//        addItem(BlueItems.pyrope_nugget, "Pyrope Nugget");
 
         addCast(BlueItems.MIDNIGHT_SAND);
         addCast(BlueItems.CRYSTAL_SAND);
 
         add(String.format("effect.%s.ecstatic", BlueSkiesTcon.MOD_ID), "Ecstatic");
 
+        addModifier(BlueModifiers.SHATTERING, "Shattering", "Multiplies the damage dealt to your target's armor", "Shatter Me");
         addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break the limits of the Blue Skies", "We Minecrafters have no limits!");
         addModifier(BlueModifiers.ULTRAVIOLET.getId(), "Ultraviolet", "Make your targets glow briefly", "Known to the State of California to cause cancer");
-        addModifier(BlueModifiers.SHATTERING, "Shattering", "Multiplies the damage dealt to your target's armor", "Shatter Me");
         addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
     }
 

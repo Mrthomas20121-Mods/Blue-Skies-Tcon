@@ -65,24 +65,26 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
         @Override
         protected void addMaterialTraits() {
             addDefaultTraits(aquite, ModifierIds.hydraulic);
-            addTraits(aquite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
+            addTraits(aquite, HeadMaterialStats.ID, ModifierIds.hydraulic, BlueModifiers.SKY_BREAKER);
+            // TODO: not sure if this does anything
+            addTraitsArmor(aquite, ModifierIds.hydraulic);
 
             addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());
             addTraits(charoite, HeadMaterialStats.ID, BlueModifiers.ULTRAVIOLET.getId(), BlueModifiers.SKY_BREAKER);
             addTraitsArmor(charoite, BlueModifiers.ULTRAVIOLET.getId());
 
             addTraits(diopside, HeadMaterialStats.ID, BlueModifiers.SHATTERING, BlueModifiers.SKY_BREAKER);
-//            addTraitsArmor(diopside, ModifierIds.knockbackResistance);
-            // TODO: armor does nothing, maybe do the same thing against attackers tools
             addDefaultTraits(diopside, BlueModifiers.SHATTERING);
+            // TODO: armor does nothing, maybe do the same thing against attackers tools
+            addTraitsArmor(diopside, BlueModifiers.SHATTERING);
 
-            // TODO: shield plating is missing its trait
-            addTraits(horizonite, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER);
-            addTraits(horizonite, MaterialRegistry.MELEE_HARVEST, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId());
+            addDefaultTraits(horizonite, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId());
+            addTraits(horizonite, HeadMaterialStats.ID, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId(), BlueModifiers.SKY_BREAKER);
             addTraitsArmor(horizonite, TinkerModifiers.fiery.getId());
 
             addDefaultTraits(pyrope, BlueModifiers.ECSTATIC.getId());
-            addTraits(pyrope, HeadMaterialStats.ID, BlueModifiers.SKY_BREAKER, BlueModifiers.ECSTATIC.getId());
+            addTraits(pyrope, HeadMaterialStats.ID, BlueModifiers.ECSTATIC.getId(), BlueModifiers.SKY_BREAKER);
+            addTraitsArmor(pyrope, BlueModifiers.ECSTATIC.getId());
         }
 
         @Nonnull
