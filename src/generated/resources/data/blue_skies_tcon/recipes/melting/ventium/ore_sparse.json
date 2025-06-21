@@ -1,0 +1,30 @@
+{
+  "type": "tconstruct:ore_melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_combination_filled",
+      "match": [
+        "forge:ores/ventium",
+        "forge:ore_rates/sparse"
+      ]
+    }
+  ],
+  "ingredient": {
+    "type": "forge:intersection",
+    "children": [
+      {
+        "tag": "forge:ores/ventium"
+      },
+      {
+        "tag": "forge:ore_rates/sparse"
+      }
+    ]
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 90,
+    "fluid": "blue_skies_tcon:molten_ventium"
+  },
+  "temperature": 500,
+  "time": 75
+}

@@ -2,7 +2,7 @@
   "type": "tconstruct:material_melting",
   "input": "blue_skies_tcon:diopside",
   "result": {
-    "amount": 90,
+    "amount": 100,
     "tag": "forge:molten_diopside"
   },
   "temperature": 1150

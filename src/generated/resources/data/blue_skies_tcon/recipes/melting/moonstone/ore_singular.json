@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:ore_melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_combination_filled",
+      "ignore": "tconstruct:non_singular_ore_rates",
+      "match": "forge:ores/moonstone"
+    }
+  ],
+  "ingredient": {
+    "type": "forge:difference",
+    "base": {
+      "tag": "forge:ores/moonstone"
+    },
+    "subtracted": {
+      "tag": "tconstruct:non_singular_ore_rates"
+    }
+  },
+  "rate": "gem",
+  "result": {
+    "amount": 100,
+    "fluid": "blue_skies_tcon:molten_moonstone"
+  },
+  "temperature": 700,
+  "time": 142
+}

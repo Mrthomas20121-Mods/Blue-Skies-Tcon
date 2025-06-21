@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:ore_melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/raw_aquite"
+  },
+  "rate": "gem",
+  "result": {
+    "amount": 900,
+    "fluid": "blue_skies_tcon:molten_aquite"
+  },
+  "temperature": 700,
+  "time": 341
+}

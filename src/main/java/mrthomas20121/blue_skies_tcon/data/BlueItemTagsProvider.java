@@ -43,19 +43,20 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesItems.aquite);
-        addGemTags("charoite", SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore, SkiesBlocks.charoite_block, SkiesItems.charoite);
+        addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesBlocks.raw_aquite_block, SkiesItems.aquite, SkiesItems.raw_aquite);
+        addGemTags("charoite", SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore, SkiesBlocks.charoite_block, SkiesBlocks.raw_charoite_block, SkiesItems.charoite, SkiesItems.raw_charoite);
         addGemTags("diopside", SkiesBlocks.everdawn_diopside_ore, SkiesBlocks.everbright_diopside_ore, SkiesBlocks.diopside_block, SkiesItems.diopside_gem);
-        addTags("horizonite", SkiesBlocks.horizonite_ore, SkiesBlocks.horizonite_block, SkiesItems.horizonite_ingot, SkiesItems.horizonite_nugget);
-        addTags("falsite", SkiesBlocks.falsite_ore, SkiesBlocks.falsite_block, SkiesItems.falsite_ingot, SkiesItems.falsite_nugget);
-        addTags("ventium", SkiesBlocks.ventium_ore, SkiesBlocks.ventium_block, SkiesItems.ventium_ingot, SkiesItems.ventium_nugget);
+        addTags("horizonite", SkiesBlocks.horizonite_ore, SkiesBlocks.horizonite_block, SkiesBlocks.raw_horizonite_block, SkiesItems.horizonite_ingot, SkiesItems.horizonite_nugget, SkiesItems.raw_horizonite);
+        addTags("falsite", SkiesBlocks.falsite_ore, SkiesBlocks.falsite_block, SkiesBlocks.raw_falsite_block, SkiesItems.falsite_ingot, SkiesItems.falsite_nugget, SkiesItems.raw_falsite);
+        addTags("ventium", SkiesBlocks.ventium_ore, SkiesBlocks.ventium_block, SkiesBlocks.raw_ventium_block, SkiesItems.ventium_ingot, SkiesItems.ventium_nugget, SkiesItems.raw_ventium);
         addGemTags("moonstone", SkiesBlocks.everbright_moonstone_ore, SkiesBlocks.everdawn_moonstone_ore, SkiesBlocks.moonstone_block, SkiesBlocks.moonstone.asItem());
         addGemTags("pyrope", SkiesBlocks.everdawn_pyrope_ore, SkiesBlocks.everbright_pyrope_ore, SkiesBlocks.pyrope_block, SkiesItems.pyrope_gem);
-        addCastTag(BlueItems.MIDNIGHT_SAND);
-        addCastTag(BlueItems.CRYSTAL_SAND);
+
+        addCastTags(BlueItems.MIDNIGHT_SAND);
+        addCastTags(BlueItems.CRYSTAL_SAND);
     }
 
-    protected void addCastTag(ItemCast cast) {
+    protected void addCastTags(ItemCast cast) {
         TagsProvider.TagAppender<Item> crystalSandAppender = tag(CRYSTAL_SAND_CASTS);
         TagsProvider.TagAppender<Item> midnightSandAppender = tag(MIDNIGHT_SAND_CASTS);
         TagsProvider.TagAppender<Item> singleUseAppender = tag(single_use);
@@ -77,7 +78,17 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
         }
     }
 
+    protected void addGemTags(String name, Block ore, Block ore2, Block block, Block rawBlock, Item gem, Item raw) {
+        TagKey<Item> rawTag = create(String.format("forge:raw_materials/%s", name));
+        TagKey<Item> rawBlockTag = create(String.format("forge:storage_blocks/raw_%s", name));
+        tag(rawTag).add(raw);
+        tag(rawBlockTag).add(rawBlock.asItem());
+
+        addGemTags(name, ore, ore2, block, gem);
+    }
+
     protected void addGemTags(String name, Block ore, Block ore2, Block block, Item gem) {
+        // don't ask why gems also have raw ores
         TagKey<Item> gemTag = create(String.format("forge:gems/%s", name));
         TagKey<Item> oreTag = create(String.format("forge:ores/%s", name));
         TagKey<Item> blockTag = create(String.format("forge:storage_blocks/%s", name));
@@ -85,6 +96,15 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
         tag(gemTag).add(gem);
         tag(oreTag).add(ore.asItem(), ore2.asItem());
         tag(blockTag).add(block.asItem());
+    }
+
+    protected void addTags(String name, Block ore, Block block, Block rawBlock, Item ingot, Item nugget, Item raw) {
+        TagKey<Item> rawTag = create(String.format("forge:raw_materials/%s", name));
+        TagKey<Item> rawBlockTag = create(String.format("forge:storage_blocks/raw_%s", name));
+        tag(rawTag).add(raw);
+        tag(rawBlockTag).add(rawBlock.asItem());
+
+        addTags(name, ore, block, ingot, nugget);
     }
 
     protected void addTags(String name, Block ore, Block block, Item ingot, Item nugget) {

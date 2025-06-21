@@ -29,6 +29,7 @@ import slimeknights.tconstruct.library.data.recipe.*;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
+import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.partbuilder.ItemPartRecipeBuilder;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
@@ -116,28 +117,38 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
 
         // material casting
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("aquite"), BlueFluids.aquite.get())
-                .gem(9);
+                .ore()
+                .largeGem()
+                .rawOre();
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("charoite"), BlueFluids.charoite.get())
-                .gem(9);
+                .ore()
+                .largeGem()
+                .rawOre();
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("diopside"), BlueFluids.diopside.get())
-                .gem(9);
+                .ore()
+                .largeGem();
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("pyrope"), BlueFluids.pyrope.get())
-                .gem(9);
-        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("horizonite"), BlueFluids.horizonite.get())
-                .metal();
+                .ore()
+                .largeGem();
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("falsite"), BlueFluids.falsite.get())
+                .ore()
+                .metal();
+        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("horizonite"), BlueFluids.horizonite.get())
+                .ore()
                 .metal();
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("ventium"), BlueFluids.ventium.get())
+                .ore()
                 .metal();
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("moonstone"), BlueFluids.moonstone.get())
-                .gem(9);
+                .ore()
+                .largeGem();
 
         // material melting
-        materialMeltingCasting(consumer, BlueMaterialsProvider.aquite, BlueFluids.aquite, materialFolder + "aquite");
-        materialMeltingCasting(consumer, BlueMaterialsProvider.charoite, BlueFluids.charoite, materialFolder + "charoite");
-        materialMeltingCasting(consumer, BlueMaterialsProvider.diopside, BlueFluids.diopside, materialFolder + "diopside");
-        materialMeltingCasting(consumer, BlueMaterialsProvider.horizonite, BlueFluids.horizonite, materialFolder + "horizonite");
-        materialMeltingCasting(consumer, BlueMaterialsProvider.pyrope, BlueFluids.pyrope, materialFolder + "pyrope");
+        materialMelting(consumer, BlueMaterialsProvider.aquite, BlueFluids.aquite, 100,materialFolder + "aquite");
+        materialMelting(consumer, BlueMaterialsProvider.charoite, BlueFluids.charoite, 100, materialFolder + "charoite");
+        materialMelting(consumer, BlueMaterialsProvider.diopside, BlueFluids.diopside, 100, materialFolder + "diopside");
+        materialMelting(consumer, BlueMaterialsProvider.horizonite, BlueFluids.horizonite, 90, materialFolder + "horizonite");
+        materialMelting(consumer, BlueMaterialsProvider.pyrope, BlueFluids.pyrope, 100, materialFolder + "pyrope");
     }
 
     protected void castMoulding(Consumer<FinishedRecipe> consumer, Ingredient ingredient, CastItemObject cast, IItemCast itemCast) {

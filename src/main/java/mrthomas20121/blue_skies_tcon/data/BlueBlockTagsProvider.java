@@ -1,5 +1,6 @@
 package mrthomas20121.blue_skies_tcon.data;
 
+import com.legacy.blue_skies.data.objects.tags.SkiesBlockTags;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import net.minecraft.core.HolderLookup;
@@ -16,15 +17,6 @@ import java.util.concurrent.CompletableFuture;
 
 public class BlueBlockTagsProvider extends BlockTagsProvider {
 
-    public static final TagKey<Block> AQUITE_BLOCK = create("forge:storage_blocks/aquite");
-    public static final TagKey<Block> CHAROITE_BLOCK = create("forge:storage_blocks/charoite");
-    public static final TagKey<Block> DIOPSIDE_BLOCK = create("forge:storage_blocks/diopside");
-    public static final TagKey<Block> HORIZONITE_BLOCK = create("forge:storage_blocks/horizonite");
-    public static final TagKey<Block> FALSITE_BLOCK = create("forge:storage_blocks/falsite");
-    public static final TagKey<Block> VENTIUM_BLOCK = create("forge:storage_blocks/ventium");
-    public static final TagKey<Block> MOONSTONE_BLOCK = create("forge:storage_blocks/moonstone");
-    public static final TagKey<Block> PYROPE_BLOCK = create("forge:storage_blocks/pyrope");
-
     public static final TagKey<Block> AQUITE_ORE = create("forge:ores/aquite");
     public static final TagKey<Block> CHAROITE_ORE = create("forge:ores/charoite");
     public static final TagKey<Block> DIOPSIDE_ORE = create("forge:ores/diopside");
@@ -34,17 +26,21 @@ public class BlueBlockTagsProvider extends BlockTagsProvider {
     public static final TagKey<Block> MOONSTONE_ORE = create("forge:ores/moonstone");
     public static final TagKey<Block> PYROPE_ORE = create("forge:ores/pyrope");
 
+    public static final TagKey<Block> AQUITE_BLOCK = create("forge:storage_blocks/aquite");
+    public static final TagKey<Block> CHAROITE_BLOCK = create("forge:storage_blocks/charoite");
+    public static final TagKey<Block> DIOPSIDE_BLOCK = create("forge:storage_blocks/diopside");
+    public static final TagKey<Block> HORIZONITE_BLOCK = create("forge:storage_blocks/horizonite");
+    public static final TagKey<Block> FALSITE_BLOCK = create("forge:storage_blocks/falsite");
+    public static final TagKey<Block> VENTIUM_BLOCK = create("forge:storage_blocks/ventium");
+    public static final TagKey<Block> MOONSTONE_BLOCK = create("forge:storage_blocks/moonstone");
+    public static final TagKey<Block> PYROPE_BLOCK = create("forge:storage_blocks/pyrope");
+
     public static TagKey<Block> create(String name) {
         return BlockTags.create(ResourceLocation.parse(name));
     }
 
     public BlueBlockTagsProvider(PackOutput gen, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(gen, lookupProvider, BlueSkiesTcon.MOD_ID, existingFileHelper);
-    }
-
-    @Override
-    public String getName() {
-        return "Blue Skies TCon Block Tags Provider";
     }
 
     @Override
@@ -66,5 +62,10 @@ public class BlueBlockTagsProvider extends BlockTagsProvider {
         tag(VENTIUM_BLOCK).add(SkiesBlocks.ventium_block);
         tag(MOONSTONE_BLOCK).add(SkiesBlocks.moonstone);
         tag(PYROPE_BLOCK).add(SkiesBlocks.pyrope_block);
+    }
+
+    @Override
+    public String getName() {
+        return "Blue Skies TCon Block Tags Provider";
     }
 }
