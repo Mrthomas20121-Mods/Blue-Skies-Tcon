@@ -34,12 +34,6 @@ public class BlueItemModelsProvider extends ItemModelProvider {
         fluidWithModel(BlueFluids.falsite.getId(), "item/generated");
         fluidWithModel(BlueFluids.ventium.getId(), "item/generated");
 
-        itemWithModel(BlueItems.aquite_nugget, "item/generated");
-        itemWithModel(BlueItems.charoite_nugget, "item/generated");
-        itemWithModel(BlueItems.diopside_nugget, "item/generated");
-        itemWithModel(BlueItems.moonstone_nugget, "item/generated");
-        itemWithModel(BlueItems.pyrope_nugget, "item/generated");
-
         castModel(BlueItems.MIDNIGHT_SAND);
         castModel(BlueItems.CRYSTAL_SAND);
     }

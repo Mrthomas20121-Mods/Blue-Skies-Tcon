@@ -33,7 +33,6 @@ public class ItemCast {
     private final RegistryObject<Item> tough_collar;
     private final RegistryObject<Item> bow_limb;
     private final RegistryObject<Item> bow_grip;
-    private final RegistryObject<Item> bow_string = null; // TODO
     private final RegistryObject<Item> helmet_plating;
     private final RegistryObject<Item> chest_plating;
     private final RegistryObject<Item> leg_plating;

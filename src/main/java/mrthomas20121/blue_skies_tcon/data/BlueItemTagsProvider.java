@@ -43,14 +43,14 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesItems.aquite, BlueItems.aquite_nugget.get());
-        addGemTags("charoite", SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore, SkiesBlocks.charoite_block, SkiesItems.charoite, BlueItems.charoite_nugget.get());
-        addGemTags("diopside", SkiesBlocks.everdawn_diopside_ore, SkiesBlocks.everbright_diopside_ore, SkiesBlocks.diopside_block, SkiesItems.diopside_gem, BlueItems.diopside_nugget.get());
+        addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesItems.aquite);
+        addGemTags("charoite", SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore, SkiesBlocks.charoite_block, SkiesItems.charoite);
+        addGemTags("diopside", SkiesBlocks.everdawn_diopside_ore, SkiesBlocks.everbright_diopside_ore, SkiesBlocks.diopside_block, SkiesItems.diopside_gem);
         addTags("horizonite", SkiesBlocks.horizonite_ore, SkiesBlocks.horizonite_block, SkiesItems.horizonite_ingot, SkiesItems.horizonite_nugget);
         addTags("falsite", SkiesBlocks.falsite_ore, SkiesBlocks.falsite_block, SkiesItems.falsite_ingot, SkiesItems.falsite_nugget);
         addTags("ventium", SkiesBlocks.ventium_ore, SkiesBlocks.ventium_block, SkiesItems.ventium_ingot, SkiesItems.ventium_nugget);
-        addGemTags("moonstone", SkiesBlocks.everbright_moonstone_ore, SkiesBlocks.everdawn_moonstone_ore, SkiesBlocks.moonstone_block, SkiesBlocks.moonstone.asItem(), BlueItems.moonstone_nugget.get());
-        addGemTags("pyrope", SkiesBlocks.everdawn_pyrope_ore, SkiesBlocks.everbright_pyrope_ore, SkiesBlocks.pyrope_block, SkiesItems.pyrope_gem, BlueItems.pyrope_nugget.get());
+        addGemTags("moonstone", SkiesBlocks.everbright_moonstone_ore, SkiesBlocks.everdawn_moonstone_ore, SkiesBlocks.moonstone_block, SkiesBlocks.moonstone.asItem());
+        addGemTags("pyrope", SkiesBlocks.everdawn_pyrope_ore, SkiesBlocks.everbright_pyrope_ore, SkiesBlocks.pyrope_block, SkiesItems.pyrope_gem);
         addCastTag(BlueItems.MIDNIGHT_SAND);
         addCastTag(BlueItems.CRYSTAL_SAND);
     }
@@ -77,17 +77,14 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
         }
     }
 
-    protected void addGemTags(String name, Block ore, Block ore2, Block block, Item ingot, Item nugget) {
+    protected void addGemTags(String name, Block ore, Block ore2, Block block, Item gem) {
         TagKey<Item> gemTag = create(String.format("forge:gems/%s", name));
-        TagKey<Item> nuggetTag = create(String.format("forge:nuggets/%s", name));
         TagKey<Item> oreTag = create(String.format("forge:ores/%s", name));
         TagKey<Item> blockTag = create(String.format("forge:storage_blocks/%s", name));
 
-        tag(gemTag).add(ingot);
-        tag(nuggetTag).add(nugget);
+        tag(gemTag).add(gem);
         tag(oreTag).add(ore.asItem(), ore2.asItem());
         tag(blockTag).add(block.asItem());
-        tag(nuggets).add(nugget);
     }
 
     protected void addTags(String name, Block ore, Block block, Item ingot, Item nugget) {

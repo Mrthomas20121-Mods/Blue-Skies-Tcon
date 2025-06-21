@@ -17,12 +17,6 @@ public class BlueItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BlueSkiesTcon.MOD_ID);
 
-    public static final RegistryObject<Item> aquite_nugget = ITEMS.register("aquite_nugget", BlueItems::register);
-    public static final RegistryObject<Item> charoite_nugget = ITEMS.register("charoite_nugget", BlueItems::register);
-    public static final RegistryObject<Item> diopside_nugget = ITEMS.register("diopside_nugget", BlueItems::register);
-    public static final RegistryObject<Item> pyrope_nugget = ITEMS.register("pyrope_nugget", BlueItems::register);
-    public static final RegistryObject<Item> moonstone_nugget = ITEMS.register("moonstone_nugget", BlueItems::register);
-
     public static final ItemCast CRYSTAL_SAND = new ItemCast("crystal_sand");
     public static final ItemCast MIDNIGHT_SAND = new ItemCast("midnight_sand");
 
