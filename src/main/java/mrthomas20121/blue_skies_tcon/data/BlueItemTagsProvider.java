@@ -37,11 +37,6 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
     }
 
     @Override
-    public String getName() {
-        return "Blue Skies TCon Item Tags Provider";
-    }
-
-    @Override
     protected void addTags(HolderLookup.Provider provider) {
         addGemTags("aquite", SkiesBlocks.everbright_aquite_ore, SkiesBlocks.everdawn_aquite_ore, SkiesBlocks.aquite_block, SkiesBlocks.raw_aquite_block, SkiesItems.aquite, SkiesItems.raw_aquite);
         addGemTags("charoite", SkiesBlocks.everbright_charoite_ore, SkiesBlocks.everdawn_charoite_ore, SkiesBlocks.charoite_block, SkiesBlocks.raw_charoite_block, SkiesItems.charoite, SkiesItems.raw_charoite);
@@ -118,5 +113,10 @@ public class BlueItemTagsProvider extends ItemTagsProvider {
         tag(oreTag).add(ore.asItem());
         tag(blockTag).add(block.asItem());
         tag(nuggets).add(nugget);
+    }
+
+    @Override
+    public String getName() {
+        return "Blue Skies TCon Item Tags Provider";
     }
 }

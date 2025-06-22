@@ -17,7 +17,6 @@ public class BlueModifiers {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, BlueSkiesTcon.MOD_ID);
 
     public static final ModifierId SKY_BREAKER = new ModifierId(BlueSkiesTcon.MOD_ID, "sky_breaker");
-//    public static final ModifierId SPEEDSTER = new ModifierId(BlueSkiesTcon.MOD_ID, "speedster");
     public static final ModifierId SHATTERING = new ModifierId(BlueSkiesTcon.MOD_ID, "shattering");
 
     public static final StaticModifier<EcstaticModifier> ECSTATIC = MODIFIERS.register("ecstatic", EcstaticModifier::new);

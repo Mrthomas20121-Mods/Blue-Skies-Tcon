@@ -10,6 +10,7 @@ public class BlueModifierProvider extends AbstractModifierProvider {
         super(packOutput);
     }
 
+    // shouldn't be used on dynamic and static modifiers
     @Override
     protected void addModifiers() {
 //        buildModifier(BlueModifiers.SPEEDSTER)
@@ -25,7 +26,6 @@ public class BlueModifierProvider extends AbstractModifierProvider {
 //                        .add()
 //                        .build()
 //                );
-        // shouldn't be used on dynamic and static modifiers
         buildModifier(BlueModifiers.SKY_BREAKER)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(BlueModifiers.SHATTERING);
