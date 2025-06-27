@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
 license = "MIT License"
-issueTrackerURL = "https://github.com/Mrthomas20121/Blue-Skies-Tcon/issues"
+issueTrackerURL = "https://github.com/Mrthomas20121-Mods/Blue-Skies-Tconissues"
 
 [[mods]]
 modId = "blue_skies_tcon"
