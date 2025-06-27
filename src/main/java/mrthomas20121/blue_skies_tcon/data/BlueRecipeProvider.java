@@ -108,6 +108,7 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .save(consumer, BlueSkiesTcon.resource(bucketCastingFolder + "ventium_bucket"));
 
         // repair materials
+        // TODO: missing blocks
         materialRecipe(consumer, BlueMaterialsProvider.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, toolFolder + "aquite");
         materialRecipe(consumer, BlueMaterialsProvider.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, toolFolder + "charoite");
         materialRecipe(consumer, BlueMaterialsProvider.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, toolFolder + "diopside");

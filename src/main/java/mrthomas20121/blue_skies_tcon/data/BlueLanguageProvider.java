@@ -52,9 +52,10 @@ public class BlueLanguageProvider extends LanguageProvider {
 
         add(String.format("effect.%s.ecstatic", BlueSkiesTcon.MOD_ID), "Ecstatic");
 
+        // TODO: add descriptions to encyclopedia
         addModifier(BlueModifiers.SHATTERING, "Shattering", "Multiplies the damage dealt to your target's armor", "Shatter Me");
         addModifier(BlueModifiers.SKY_BREAKER, "Sky Breaker", "Break the limits of the Blue Skies", "We Minecrafters have no limits!");
-        addModifier(BlueModifiers.ULTRAVIOLET.getId(), "Ultraviolet", "Make your targets glow briefly", "Known to the State of California to cause cancer");
+        addModifier(BlueModifiers.ULTRAVIOLET.getId(), "Ultraviolet", "Make your targets glow!", "Known to the State of California to cause cancer");
         addModifier(BlueModifiers.ECSTATIC.getId(), "Ecstatic", "Get a speed boost for using your tools", "Now I'm motivated");
     }
 

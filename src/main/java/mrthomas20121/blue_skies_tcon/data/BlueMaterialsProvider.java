@@ -7,7 +7,6 @@ import net.minecraft.world.item.Tiers;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
-import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.tools.TinkerModifiers;
@@ -60,6 +59,7 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
             addTraits(id, PlatingMaterialStats.LEGGINGS.getId(), mod, BlueModifiers.SKY_BREAKER);
             addTraits(id, PlatingMaterialStats.BOOTS.getId(), mod, BlueModifiers.SKY_BREAKER);
             addTraits(id, StatlessMaterialStats.MAILLE.getIdentifier(), mod);
+            addTraits(id, PlatingMaterialStats.SHIELD.getId(), mod);
         }
 
         @Override
@@ -67,7 +67,7 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
             addDefaultTraits(aquite, ModifierIds.hydraulic);
             addTraits(aquite, HeadMaterialStats.ID, ModifierIds.hydraulic, BlueModifiers.SKY_BREAKER);
             // TODO: not sure if this does anything
-            addTraitsArmor(aquite, ModifierIds.hydraulic);
+            addTraitsArmor(aquite, ModifierIds.depthStrider);
 
             addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());
             addTraits(charoite, HeadMaterialStats.ID, BlueModifiers.ULTRAVIOLET.getId(), BlueModifiers.SKY_BREAKER);
@@ -76,7 +76,9 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
             addTraits(diopside, HeadMaterialStats.ID, BlueModifiers.SHATTERING, BlueModifiers.SKY_BREAKER);
             addDefaultTraits(diopside, BlueModifiers.SHATTERING);
             // TODO: armor does nothing, maybe do the same thing against attackers tools
-            addTraitsArmor(diopside, BlueModifiers.SHATTERING);
+            // doesn't seem possible, theres just not enough context in ItemStack#hurtAndBreak
+            // will just do thorns for now
+            addTraitsArmor(diopside, TinkerModifiers.thorns.getId());
 
             addDefaultTraits(horizonite, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId());
             addTraits(horizonite, HeadMaterialStats.ID, TinkerModifiers.fiery.getId(), TinkerModifiers.autosmelt.getId(), BlueModifiers.SKY_BREAKER);
