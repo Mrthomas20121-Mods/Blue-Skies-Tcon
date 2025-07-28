@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "blue_skies:charoite_block"
+  },
+  "material": "blue_skies_tcon:charoite",
+  "needed": 1,
+  "value": 1
+}

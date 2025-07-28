@@ -108,11 +108,14 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .save(consumer, BlueSkiesTcon.resource(bucketCastingFolder + "ventium_bucket"));
 
         // repair materials
-        // TODO: missing blocks
-        materialRecipe(consumer, BlueMaterialsProvider.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, toolFolder + "aquite");
-        materialRecipe(consumer, BlueMaterialsProvider.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, toolFolder + "charoite");
-        materialRecipe(consumer, BlueMaterialsProvider.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, toolFolder + "diopside");
-        materialRecipe(consumer, BlueMaterialsProvider.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, toolFolder + "pyrope");
+        materialRecipe(consumer, BlueMaterialsProvider.aquite, Ingredient.of(SkiesItems.aquite), 1, 1, toolFolder + "aquite/gem");
+        materialRecipe(consumer, BlueMaterialsProvider.aquite, Ingredient.of(SkiesBlocks.aquite_block.asItem()), 9, 1, toolFolder + "aquite/block");
+        materialRecipe(consumer, BlueMaterialsProvider.charoite, Ingredient.of(SkiesItems.charoite), 1, 1, toolFolder + "charoite/gem");
+        materialRecipe(consumer, BlueMaterialsProvider.charoite, Ingredient.of(SkiesBlocks.charoite_block.asItem()), 9, 1, toolFolder + "charoite/block");
+        materialRecipe(consumer, BlueMaterialsProvider.diopside, Ingredient.of(SkiesItems.diopside_gem), 1, 1, toolFolder + "diopside/gem");
+        materialRecipe(consumer, BlueMaterialsProvider.diopside, Ingredient.of(SkiesBlocks.diopside_block.asItem()), 9, 1, toolFolder + "diopside/block");
+        materialRecipe(consumer, BlueMaterialsProvider.pyrope, Ingredient.of(SkiesItems.pyrope_gem), 1, 1, toolFolder + "pyrope/gem");
+        materialRecipe(consumer, BlueMaterialsProvider.pyrope, Ingredient.of(SkiesBlocks.pyrope_block.asItem()), 9, 1, toolFolder + "pyrope/block");
         metalMaterialRecipe(consumer, BlueMaterialsProvider.horizonite, toolFolder, "horizonite", false);
 
         // material casting
