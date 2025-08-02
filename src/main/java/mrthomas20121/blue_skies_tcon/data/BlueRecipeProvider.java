@@ -122,11 +122,11 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("aquite"), BlueFluids.aquite.get())
                 .ore()
                 .largeGem()
-                .rawOre();
+                .rawOre(); // TODO: raw ores double when they should only 1.33x
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("charoite"), BlueFluids.charoite.get())
                 .ore()
                 .largeGem()
-                .rawOre();
+                .rawOre(); // same problem
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("diopside"), BlueFluids.diopside.get())
                 .ore()
                 .largeGem();
@@ -146,12 +146,12 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
                 .ore()
                 .largeGem();
 
-        // material melting
-        materialMelting(consumer, BlueMaterialsProvider.aquite, BlueFluids.aquite, 100,materialFolder + "aquite");
-        materialMelting(consumer, BlueMaterialsProvider.charoite, BlueFluids.charoite, 100, materialFolder + "charoite");
-        materialMelting(consumer, BlueMaterialsProvider.diopside, BlueFluids.diopside, 100, materialFolder + "diopside");
-        materialMelting(consumer, BlueMaterialsProvider.horizonite, BlueFluids.horizonite, 90, materialFolder + "horizonite");
-        materialMelting(consumer, BlueMaterialsProvider.pyrope, BlueFluids.pyrope, 100, materialFolder + "pyrope");
+        // material part melting and casting
+        materialMeltingCasting(consumer, BlueMaterialsProvider.aquite, BlueFluids.aquite, 100,materialFolder + "aquite/");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.charoite, BlueFluids.charoite, 100, materialFolder + "charoite/");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.diopside, BlueFluids.diopside, 100, materialFolder + "diopside/");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.horizonite, BlueFluids.horizonite, 90, materialFolder + "horizonite/");
+        materialMeltingCasting(consumer, BlueMaterialsProvider.pyrope, BlueFluids.pyrope, 100, materialFolder + "pyrope/");
     }
 
     protected void castMoulding(Consumer<FinishedRecipe> consumer, Ingredient ingredient, CastItemObject cast, IItemCast itemCast) {
