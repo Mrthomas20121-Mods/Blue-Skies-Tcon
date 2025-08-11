@@ -3,6 +3,7 @@ package mrthomas20121.blue_skies_tcon.data;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import com.legacy.blue_skies.registries.SkiesItems;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
+import mrthomas20121.blue_skies_tcon.data.tag.BlueItemTagsProvider;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.item.IItemCast;

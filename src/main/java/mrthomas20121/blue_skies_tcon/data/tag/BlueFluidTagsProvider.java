@@ -1,4 +1,4 @@
-package mrthomas20121.blue_skies_tcon.data;
+package mrthomas20121.blue_skies_tcon.data.tag;
 
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;

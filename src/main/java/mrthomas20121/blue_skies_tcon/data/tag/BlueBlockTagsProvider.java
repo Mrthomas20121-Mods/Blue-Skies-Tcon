@@ -1,6 +1,5 @@
-package mrthomas20121.blue_skies_tcon.data;
+package mrthomas20121.blue_skies_tcon.data.tag;
 
-import com.legacy.blue_skies.data.objects.tags.SkiesBlockTags;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
 import net.minecraft.core.HolderLookup;

@@ -25,9 +25,9 @@
     "blue_skies_tcon:bow_limb_crystal_sand_cast",
     "blue_skies_tcon:bow_grip_crystal_sand_cast",
     "blue_skies_tcon:helmet_plating_crystal_sand_cast",
-    "blue_skies_tcon:chest_plating_crystal_sand_cast",
-    "blue_skies_tcon:leg_plating_crystal_sand_cast",
-    "blue_skies_tcon:boot_plating_crystal_sand_cast",
+    "blue_skies_tcon:chestplate_plating_crystal_sand_cast",
+    "blue_skies_tcon:leggings_plating_crystal_sand_cast",
+    "blue_skies_tcon:boots_plating_crystal_sand_cast",
     "blue_skies_tcon:maille_crystal_sand_cast"
   ]
 }

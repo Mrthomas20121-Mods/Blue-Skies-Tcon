@@ -1,6 +1,9 @@
 package mrthomas20121.blue_skies_tcon;
 
 import mrthomas20121.blue_skies_tcon.data.*;
+import mrthomas20121.blue_skies_tcon.data.tag.BlueBlockTagsProvider;
+import mrthomas20121.blue_skies_tcon.data.tag.BlueFluidTagsProvider;
+import mrthomas20121.blue_skies_tcon.data.tag.BlueItemTagsProvider;
 import mrthomas20121.blue_skies_tcon.init.BlueFluids;
 import mrthomas20121.blue_skies_tcon.init.BlueItems;
 import mrthomas20121.blue_skies_tcon.init.BlueModifiers;

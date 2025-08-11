@@ -178,9 +178,9 @@ public class ItemCast {
         this.bow_limb = BlueItems.ITEMS.register("bow_limb_" + castBase, BlueItems::register);
         this.bow_grip = BlueItems.ITEMS.register("bow_grip_" + castBase, BlueItems::register);
         this.helmet_plating = BlueItems.ITEMS.register("helmet_plating_" + castBase, BlueItems::register);
-        this.chest_plating = BlueItems.ITEMS.register("chest_plating_" + castBase, BlueItems::register);
-        this.leg_plating = BlueItems.ITEMS.register("leg_plating_" + castBase, BlueItems::register);
-        this.boot_plating = BlueItems.ITEMS.register("boot_plating_" + castBase, BlueItems::register);
+        this.chest_plating = BlueItems.ITEMS.register("chestplate_plating_" + castBase, BlueItems::register);
+        this.leg_plating = BlueItems.ITEMS.register("leggings_plating_" + castBase, BlueItems::register);
+        this.boot_plating = BlueItems.ITEMS.register("boots_plating_" + castBase, BlueItems::register);
         this.maille = BlueItems.ITEMS.register("maille_" + castBase, BlueItems::register);
     }
 
