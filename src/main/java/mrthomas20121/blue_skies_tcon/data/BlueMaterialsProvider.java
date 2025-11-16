@@ -67,6 +67,7 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
             addDefaultTraits(aquite, ModifierIds.hydraulic);
             addTraits(aquite, HeadMaterialStats.ID, ModifierIds.hydraulic, BlueModifiers.SKY_BREAKER);
             // TODO: not sure if this does anything
+            // what if this lets you walk on water
             addTraitsArmor(aquite, ModifierIds.depthStrider);
 
             addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());

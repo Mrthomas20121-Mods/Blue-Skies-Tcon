@@ -15,7 +15,7 @@ public class BlueMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
 
     @Override
     protected void addAllMaterials() {
-        // TODO: why is aquite maille also green
+        // ! aquite maille is green due to tinkers bug
         buildMaterial(BlueMaterialsProvider.aquite)
                 .meleeHarvest()
                 .armor()
@@ -51,6 +51,18 @@ public class BlueMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                         .addARGB(216, a(0x4CE849))
                         // 8CF252
                         .addARGB(255, a(0xADF484)).build());
+        /**
+         * falsite
+         * 1d0a44
+         * 2f1070
+         * 331179
+         * 581491
+         * 5e17a6
+         * 761ed8
+         * 7662e5
+         * 8479ef
+         * 9a94f0
+         */
         buildMaterial(BlueMaterialsProvider.horizonite)
                 .meleeHarvest()
                 .armor()
@@ -63,6 +75,17 @@ public class BlueMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                         .addARGB(216, a(0xFF8F3A))
                         // FFAD3A
                         .addARGB(255, a(0xFFC06D)).build());
+        /**
+         * moonstone
+         * 576c7c
+         * 6692a8
+         * 71afce
+         * 95c9e2
+         * b6ddee
+         * c6e6f4
+         * d1effc
+         * e6f3f9
+         */
         buildMaterial(BlueMaterialsProvider.pyrope)
                 .meleeHarvest()
                 .armor()
@@ -75,6 +98,18 @@ public class BlueMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                         .addARGB(178, a(0xF24068))
                         .addARGB(216, a(0xFF768D))
                         .addARGB(255, a(0xFFBCC9)).build());
+        /**
+         * ventium
+         * 3a0a0a
+         * 601111
+         * 661212
+         * 7c1f16
+         * 8e2519
+         * b72020
+         * d12533
+         * dc3838
+         * e4636c
+         */
     }
 
     // hex values are expressed like this so my hex color highlighter works
