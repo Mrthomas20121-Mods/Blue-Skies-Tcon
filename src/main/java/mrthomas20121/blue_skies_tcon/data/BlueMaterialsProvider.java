@@ -66,8 +66,7 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
         protected void addMaterialTraits() {
             addDefaultTraits(aquite, ModifierIds.hydraulic);
             addTraits(aquite, HeadMaterialStats.ID, ModifierIds.hydraulic, BlueModifiers.SKY_BREAKER);
-            // TODO: not sure if this does anything
-            // what if this lets you walk on water
+            // TODO: what if this lets you walk on water
             addTraitsArmor(aquite, ModifierIds.depthStrider);
 
             addDefaultTraits(charoite, BlueModifiers.ULTRAVIOLET.getId());
@@ -118,7 +117,7 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
             // diamond equivalent, faster weaker
             addMaterialStats(charoite,
                     new HeadMaterialStats(1061, 8.0f, Tiers.DIAMOND, 2.75f),
-                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.1f).attackSpeed(1.05f).attackDamage(1.05f).build(),
+                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(1.1f).attackSpeed(1.f).attackDamage(1.05f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(charoite,
                     PlatingMaterialStats.builder().durabilityFactor(33).armor(2, 5, 7, 2).toughness(1f),

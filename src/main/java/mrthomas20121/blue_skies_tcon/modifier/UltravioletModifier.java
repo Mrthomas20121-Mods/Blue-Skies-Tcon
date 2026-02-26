@@ -10,6 +10,7 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
@@ -17,27 +18,35 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class UltravioletModifier extends Modifier implements MeleeHitModifierHook, OnAttackedModifierHook {
+public class UltravioletModifier extends Modifier implements MeleeHitModifierHook, OnAttackedModifierHook, MeleeDamageModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.ON_ATTACKED);
+        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.ON_ATTACKED, ModifierHooks.MELEE_DAMAGE);
     }
 
-    // TODO: what if enemies burned in sunlight
+    @Override
+    public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
+        if (modifier.getLevel() <= 0) return damage;
+
+        LivingEntity living = context.getLivingTarget();
+        if (living == null) return damage;
+
+        MobEffectInstance instance = living.getEffect(MobEffects.GLOWING);
+        if (instance == null || instance.getDuration() <= 0) return damage;
+
+        float levelMultiplier = 1 + 0.05f * (modifier.getLevel() - 1);
+        float durationMultiplier = (float) (1.5f - 0.5f * Math.exp(instance.getDuration() / -30.f)); // approaches 1.5
+        return damage * levelMultiplier * durationMultiplier;
+    }
+
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        int amp = modifier.getLevel() - 1;
-        if (amp < 0) return;
+        if (modifier.getLevel() <= 0) return;
 
         LivingEntity living = context.getLivingTarget();
         if (living == null) return;
 
-        MobEffectInstance instance = living.getEffect(MobEffects.GLOWING);
-        if (instance != null) {
-            instance.applyEffect(living);
-        } else {
-            living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20 * modifier.getLevel(), amp));
-        }
+        living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20 * (modifier.getLevel() + 1), 0));
     }
 
     @Override
@@ -59,5 +68,4 @@ public class UltravioletModifier extends Modifier implements MeleeHitModifierHoo
             }
         }
     }
-
 }
