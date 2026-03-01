@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:casting_basin",
-  "cooling_time": 219,
+  "cooling_time": 205,
   "fluid": {
     "amount": 900,
     "fluid": "blue_skies_tcon:molten_charoite"

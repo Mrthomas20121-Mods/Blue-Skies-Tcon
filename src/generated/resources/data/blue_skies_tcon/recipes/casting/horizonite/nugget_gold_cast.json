@@ -3,7 +3,7 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
-  "cooling_time": 19,
+  "cooling_time": 21,
   "fluid": {
     "amount": 10,
     "fluid": "blue_skies_tcon:molten_horizonite"

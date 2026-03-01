@@ -4,7 +4,7 @@
     "tag": "tconstruct:casts/single_use/gem"
   },
   "cast_consumed": true,
-  "cooling_time": 53,
+  "cooling_time": 60,
   "fluid": {
     "amount": 100,
     "fluid": "blue_skies_tcon:molten_pyrope"

@@ -3,7 +3,7 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
-  "cooling_time": 57,
+  "cooling_time": 63,
   "fluid": {
     "amount": 90,
     "fluid": "blue_skies_tcon:molten_horizonite"

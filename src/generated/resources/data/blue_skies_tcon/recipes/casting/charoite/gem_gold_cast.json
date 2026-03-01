@@ -3,7 +3,7 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/gem"
   },
-  "cooling_time": 73,
+  "cooling_time": 68,
   "fluid": {
     "amount": 100,
     "fluid": "blue_skies_tcon:molten_charoite"
