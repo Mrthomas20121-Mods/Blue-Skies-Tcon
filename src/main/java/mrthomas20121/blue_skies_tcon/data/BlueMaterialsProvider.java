@@ -149,7 +149,7 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
             // melee, armor
             // gold? equivalent
             addMaterialStats(pyrope,
-                    new HeadMaterialStats(300, 11f, Tiers.STONE, 1.55f),
+                    new HeadMaterialStats(300, 11f, Tiers.STONE, 1.5f),
                     HandleMaterialStats.multipliers().durability(1.05f).miningSpeed(1.1f).attackSpeed(1.15f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(pyrope,
