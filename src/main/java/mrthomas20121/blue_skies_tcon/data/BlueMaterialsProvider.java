@@ -127,7 +127,7 @@ public class BlueMaterialsProvider extends AbstractMaterialDataProvider {
             // diamond equivalent, slower stronger
             addMaterialStats(diopside,
                     new HeadMaterialStats(1161, 6f, Tiers.DIAMOND, 3f),
-                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(0.85f).attackSpeed(0.75f).attackDamage(1.30f).build(),
+                    HandleMaterialStats.multipliers().durability(0.95f).miningSpeed(0.85f).attackSpeed(0.75f).attackDamage(1.25f).build(),
                     StatlessMaterialStats.BINDING);
             addArmorShieldStats(diopside,
                     PlatingMaterialStats.builder().durabilityFactor(36).armor(2, 4, 6, 2).toughness(5f),
