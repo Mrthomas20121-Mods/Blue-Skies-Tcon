@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:item_exists",
+      "item": "blue_skies:diopside_boots"
+    }
+  ],
+  "ingredient": {
+    "item": "blue_skies:diopside_boots"
+  },
+  "result": {
+    "amount": 400,
+    "fluid": "blue_skies_tcon:molten_diopside",
+    "unit_size": 25
+  },
+  "temperature": 1000,
+  "time": 133
+}

@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:item_exists",
+      "item": "blue_skies:pyrope_leggings"
+    }
+  ],
+  "ingredient": {
+    "item": "blue_skies:pyrope_leggings"
+  },
+  "result": {
+    "amount": 700,
+    "fluid": "blue_skies_tcon:molten_pyrope",
+    "unit_size": 25
+  },
+  "temperature": 700,
+  "time": 151
+}

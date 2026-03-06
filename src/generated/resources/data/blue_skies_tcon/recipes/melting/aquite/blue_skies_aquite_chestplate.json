@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:item_exists",
+      "item": "blue_skies:aquite_chestplate"
+    }
+  ],
+  "ingredient": {
+    "item": "blue_skies:aquite_chestplate"
+  },
+  "result": {
+    "amount": 800,
+    "fluid": "blue_skies_tcon:molten_aquite",
+    "unit_size": 25
+  },
+  "temperature": 800,
+  "time": 170
+}

@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:item_exists",
+      "item": "blue_skies:aquite_helmet"
+    }
+  ],
+  "ingredient": {
+    "item": "blue_skies:aquite_helmet"
+  },
+  "result": {
+    "amount": 500,
+    "fluid": "blue_skies_tcon:molten_aquite",
+    "unit_size": 25
+  },
+  "temperature": 800,
+  "time": 134
+}

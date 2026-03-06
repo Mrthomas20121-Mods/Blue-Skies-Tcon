@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:item_exists",
+      "item": "blue_skies:charoite_sword"
+    }
+  ],
+  "ingredient": {
+    "item": "blue_skies:charoite_sword"
+  },
+  "result": {
+    "amount": 200,
+    "fluid": "blue_skies_tcon:molten_charoite",
+    "unit_size": 25
+  },
+  "temperature": 950,
+  "time": 92
+}

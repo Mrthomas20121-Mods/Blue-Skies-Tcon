@@ -1,5 +1,6 @@
 package mrthomas20121.blue_skies_tcon.data;
 
+import com.legacy.blue_skies.BlueSkies;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import com.legacy.blue_skies.registries.SkiesItems;
 import mrthomas20121.blue_skies_tcon.BlueSkiesTcon;
@@ -120,26 +121,38 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
         metalMaterialRecipe(consumer, BlueMaterialsProvider.horizonite, toolFolder, "horizonite", false);
 
         // material casting
-        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("aquite"), BlueFluids.aquite.get())
+        SmelteryRecipeBuilder aquiteBuilder = SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("aquite"), BlueFluids.aquite.get())
                 .ore()
                 .largeGem()
-                .rawOre(); // TODO: raw ores double when they should only 1.33x
-        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("charoite"), BlueFluids.charoite.get())
+                .rawOre();
+                // TODO: raw ores double when they should only 1.33x
+        toolSetMelting(aquiteBuilder, "aquite");
+
+        SmelteryRecipeBuilder charoiteBuilder = SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("charoite"), BlueFluids.charoite.get())
                 .ore()
                 .largeGem()
                 .rawOre(); // same problem
-        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("diopside"), BlueFluids.diopside.get())
+        toolSetMelting(charoiteBuilder, "charoite");
+
+        SmelteryRecipeBuilder diopsideBuilder = SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("diopside"), BlueFluids.diopside.get())
                 .ore()
                 .largeGem();
-        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("pyrope"), BlueFluids.pyrope.get())
+        toolSetMelting(diopsideBuilder, "diopside");
+
+        SmelteryRecipeBuilder pyropeBuilder = SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("pyrope"), BlueFluids.pyrope.get())
                 .ore()
                 .largeGem();
+        toolSetMelting(pyropeBuilder, "pyrope");
+
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("falsite"), BlueFluids.falsite.get())
                 .ore()
                 .metal();
-        SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("horizonite"), BlueFluids.horizonite.get())
+
+        SmelteryRecipeBuilder horizoniteBuilder = SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("horizonite"), BlueFluids.horizonite.get())
                 .ore()
                 .metal();
+        toolSetMelting(horizoniteBuilder, "horizonite");
+
         SmelteryRecipeBuilder.fluid(consumer, BlueSkiesTcon.resource("ventium"), BlueFluids.ventium.get())
                 .ore()
                 .metal();
@@ -153,6 +166,18 @@ public class BlueRecipeProvider extends RecipeProvider implements IConditionBuil
         materialMeltingCasting(consumer, BlueMaterialsProvider.diopside, BlueFluids.diopside, 100, materialFolder + "diopside/");
         materialMeltingCasting(consumer, BlueMaterialsProvider.horizonite, BlueFluids.horizonite, 90, materialFolder + "horizonite/");
         materialMeltingCasting(consumer, BlueMaterialsProvider.pyrope, BlueFluids.pyrope, 100, materialFolder + "pyrope/");
+    }
+
+    private void toolSetMelting(SmelteryRecipeBuilder builder, String material) {
+        builder.itemMelting(2, BlueSkies.MODID, material + "_sword", true);
+        builder.itemMelting(3, BlueSkies.MODID, material + "_pickaxe", true);
+        builder.itemMelting(3, BlueSkies.MODID, material + "_axe", true);
+        builder.itemMelting(1, BlueSkies.MODID, material + "_shovel", true);
+        builder.itemMelting(2, BlueSkies.MODID, material + "_hoe", true);
+        builder.itemMelting(5, BlueSkies.MODID, material + "_helmet", true);
+        builder.itemMelting(8, BlueSkies.MODID, material + "_chestplate", true);
+        builder.itemMelting(7, BlueSkies.MODID, material + "_leggings", true);
+        builder.itemMelting(4, BlueSkies.MODID, material + "_boots", true);
     }
 
     protected void castMoulding(Consumer<FinishedRecipe> consumer, Ingredient ingredient, CastItemObject cast, IItemCast itemCast) {

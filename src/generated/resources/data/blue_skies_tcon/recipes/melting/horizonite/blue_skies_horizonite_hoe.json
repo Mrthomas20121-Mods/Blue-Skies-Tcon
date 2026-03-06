@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:damagable_melting",
+  "conditions": [
+    {
+      "type": "forge:item_exists",
+      "item": "blue_skies:horizonite_hoe"
+    }
+  ],
+  "ingredient": {
+    "item": "blue_skies:horizonite_hoe"
+  },
+  "result": {
+    "amount": 180,
+    "fluid": "blue_skies_tcon:molten_horizonite",
+    "unit_size": 10
+  },
+  "temperature": 900,
+  "time": 90
+}
